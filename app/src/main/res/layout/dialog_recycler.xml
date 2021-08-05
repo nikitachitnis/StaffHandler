@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardElevation="@dimen/_5sdp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardBackgroundColor="@color/whiteCardColor"
+    android:background="@drawable/shadow_container">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <RelativeLayout
+            android:id="@+id/rl_quit_learning"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button"
+            android:paddingBottom="@dimen/_5sdp"
+            android:paddingLeft="@dimen/_5sdp"
+            android:paddingRight="@dimen/_5sdp"
+            android:paddingTop="@dimen/_5sdp">
+
+            <TextView
+                android:id="@+id/tv_quit_learning"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:textColor="@color/black"
+                android:layout_margin="@dimen/ten_dp"
+                android:fontFamily="@font/nunitosans_bold"
+                android:text="Exit"
+                android:textSize="@dimen/_20sdp"
+                android:textStyle="bold" />
+            <View
+                android:layout_below="@+id/tv_quit_learning"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:background="@color/divider_color"
+                android:id="@+id/divider"/>
+
+
+
+                <EditText
+                    android:id="@+id/search_editText"
+                    android:layout_width="match_parent"
+                    android:layout_below="@id/divider"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:hint="Search"
+                    android:drawableRight="@drawable/quantum_ic_search_grey600_24"
+                    android:layout_height="wrap_content"/>
+
+            <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+                android:id="@+id/swipeRefresh"
+                android:layout_width="match_parent"
+                android:layout_below="@+id/search_editText"
+                android:layout_height="@dimen/_300sdp">
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_250sdp"
+                    android:layout_marginTop="@dimen/twenty_dp"
+                    android:gravity="center"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/nunitosans_regular"
+                    android:text="@string/exit"
+                    android:textSize="@dimen/_17sdp" />
+            </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:padding="@dimen/_1sdp"
+            android:layout_margin="@dimen/_5sdp"
+            android:layout_below="@+id/rl_quit_learning"
+            android:id="@+id/lvMain"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_yes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Yes"
+
+                android:layout_weight="1"
+                android:padding="@dimen/_2sdp"
+                android:textColor="@color/white"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:background="@drawable/buttonshape" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_no"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_width="match_parent"
+                android:textColor="@color/white"
+                android:text="No"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:background="@drawable/buttonshape"/>
+
+        </LinearLayout>
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

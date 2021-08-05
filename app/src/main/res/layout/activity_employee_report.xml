@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.EmployeeReport">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:gravity="center"
+        app:titleMarginStart="@dimen/_30sdp"
+        app:titleTextColor="@color/blue_400"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:minHeight="?attr/actionBarSize">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_gravity="start"
+            android:gravity="start"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imBack"
+                android:layout_gravity="center"
+                android:tint="@color/white"
+                android:src="@drawable/ic_arrow_back_black_24dp"
+                android:layout_width="@dimen/_27sdp"
+                android:layout_height="@dimen/_27sdp"
+                android:layout_marginEnd="@dimen/_15sdp"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_gravity="center"
+                android:text="Employee Report"
+                android:textColor="@color/white"
+                android:src="@drawable/ic_arrow_back_black_24dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nunitosans_bold"
+                android:textSize="@dimen/_15sdp"
+                android:layout_marginEnd="@dimen/_15sdp"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_gravity="right"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imSend"
+                android:visibility="gone"
+                android:src="@drawable/filesupload"
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="@dimen/_25sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:textSize="16dp" />
+        </LinearLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+    <RelativeLayout
+        android:layout_below="@+id/toolbar"
+        android:id="@+id/rlMain"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rcEmployeeReport"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/no_report_found"
+        android:id="@+id/tvNodata"
+        android:layout_gravity="right"
+        android:gravity="center"
+        android:textSize="25dp"
+        android:layout_marginTop="20dp"
+        android:visibility="gone"
+        android:layout_centerVertical="true"
+        android:fontFamily="@font/nunitosans_bold"
+        android:textColor="@color/black"
+        />
+
+</RelativeLayout>

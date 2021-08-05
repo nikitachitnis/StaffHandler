@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="employeeData"
+            type="com.miscos.staffhandler.employer_java.remote.model.designationlist.employeedesignationwise.EmployeeData" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:weightSum="2">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:text="@{employeeData.name}"
+                android:gravity="center_horizontal"
+                android:textColor="@color/black" />
+
+            <View
+                android:background="@color/gray"
+                android:alpha=".2"
+                android:layout_width="1dp"
+                android:layout_height="@dimen/_33sdp"/>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:layout_height="match_parent">
+
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                     android:text="@{employeeData.status}"
+                    android:gravity="center_horizontal"
+                    android:padding="@dimen/_2sdp"
+                    android:textColor="@color/black" />
+
+                <ImageView
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_gravity="center"
+                    android:visibility="visible"
+                    android:src="@drawable/circle2"
+                    android:gravity="center_horizontal"
+                    android:padding="@dimen/_5sdp"
+                    android:textColor="@color/black" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <View
+            android:background="@color/gray"
+            android:alpha=".2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"/>
+
+    </LinearLayout>
+</layout>

@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="@dimen/_300sdp"
+    android:background="@drawable/shadow_container"
+    android:layout_height="wrap_content">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+
+
+        <TextView
+
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_1sdp"
+            android:fontFamily="@font/nunitosans_bold"
+            android:gravity="center"
+            android:id="@+id/txtlabel"
+            android:layout_weight="1.1"
+            android:nextFocusRight="@id/surName"
+            android:padding="@dimen/_1sdp"
+            android:singleLine="true"
+            android:text="Other deductions details"
+            android:textColor="@color/blue_10"
+            android:textSize="@dimen/_13sdp"></TextView>
+        <ImageView
+            android:id="@+id/imgcancel"
+            android:layout_weight="0.1"
+            android:layout_width="@dimen/_10sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/close" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginTop="@dimen/_1sdp"
+        android:background="@color/divider_color" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="1"
+        android:layout_margin="@dimen/_2sdp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/txtempname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusableInTouchMode="true"
+            android:fontFamily="@font/nunitosans_bold"
+            android:gravity="left"
+            android:nextFocusRight="@id/surName"
+            android:padding="@dimen/_5sdp"
+            android:singleLine="true"
+            android:text="Nikhil Harale"
+            android:layout_margin="@dimen/_1sdp"
+            android:layout_weight="0.5"
+            android:textColor="@color/blue_10"
+            android:textSize="@dimen/_11sdp"></TextView>
+
+        <TextView
+            android:id="@+id/txtempid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:focusableInTouchMode="true"
+            android:fontFamily="@font/nunitosans_bold"
+            android:gravity="center"
+            android:nextFocusRight="@id/surName"
+            android:padding="@dimen/_5sdp"
+            android:singleLine="true"
+            android:layout_margin="@dimen/_1sdp"
+            android:layout_weight="0.5"
+            android:text="Nikhil Harale"
+            android:textColor="@color/blue_10"
+            android:textSize="@dimen/_11sdp"></TextView>
+
+
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginTop="@dimen/_1sdp"
+        android:background="@color/divider_color" />
+
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/nunitosans_bold"
+            android:gravity="center"
+            android:padding="@dimen/_2sdp"
+            android:singleLine="true"
+            android:text="Click here to Add Other Deduction Details +"
+            android:layout_margin="@dimen/_1sdp"
+            android:textColor="@color/black"
+            android:id="@+id/txtaddOtherdetails"
+            android:textSize="@dimen/_11sdp"></TextView>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shadow_container"
+        android:visibility="gone"
+        android:id="@+id/lv_add_otherdetails"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/edtOtherdetails"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="Enter deduction details"
+            android:inputType="textPersonName"
+            />
+
+        <EditText
+            android:id="@+id/edtamount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="Enter Amount"
+            android:inputType="number" />
+<androidx.appcompat.widget.AppCompatButton
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/_20sdp"
+    android:background="@drawable/button_back"
+    android:text="Add"
+    android:layout_margin="@dimen/_5sdp"
+    android:layout_marginBottom="@dimen/_5sdp"
+    android:textColor="@color/white"
+    android:id="@+id/btnadd"/>
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_20sdp"
+            android:background="@drawable/button_back"
+            android:text="Cancel"
+            android:layout_margin="@dimen/_5sdp"
+            android:textColor="@color/white"
+            android:id="@+id/btncancel"/>
+
+    </LinearLayout>
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:divider="@color/black"
+        android:dividerHeight="@dimen/_1sdp"
+        android:id="@+id/other_deduction_list"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginTop="@dimen/_1sdp"
+        android:background="@color/divider_color" />
+
+
+    <TextView
+        android:id="@+id/txtdeductedtax"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:focusableInTouchMode="true"
+        android:fontFamily="@font/nunitosans_bold"
+        android:gravity="right"
+        android:nextFocusRight="@id/surName"
+        android:padding="@dimen/_5sdp"
+        android:text="Deducted Amount :"
+           android:layout_margin="@dimen/_1sdp"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_12sdp"></TextView>
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnadditionalpayments"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_30sdp"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginBottom="@dimen/_5sdp"
+        android:backgroundTint="@color/colorPrimary"
+        android:background="@drawable/buttonshape"
+        android:gravity="center"
+        android:text="Pay"
+        android:layout_below="@+id/cL_sal"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_15sdp"
+        />
+
+</LinearLayout>

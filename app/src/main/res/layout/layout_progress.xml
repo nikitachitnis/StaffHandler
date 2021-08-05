@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View"/>
+
+        <import type="com.miscos.staffhandler.empolyer.util.remoteUtils.Status" />
+
+        <variable
+            name="resource"
+            type="com.miscos.staffhandler.empolyer.util.remoteUtils.Resource"/>
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:clickable="true"
+        android:visibility="@{resource.status == Status.LOADING ? View.VISIBLE : View.GONE,default=gone}"
+        android:background="@color/opacityhintColor">
+
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/circle"
+                android:backgroundTint="@color/divider_color"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true" />
+
+            <ProgressBar
+                android:layout_width="80dp"
+                android:id="@+id/progressBar"
+                android:layout_height="80dp"
+                android:indeterminate="true"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                 />
+
+        </RelativeLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

@@ -1,0 +1,909 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".hrms_management.PolicyAndConfiguration">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:gravity="center"
+        android:minHeight="?attr/actionBarSize"
+        app:titleMarginStart="@dimen/_30sdp"
+        app:titleTextColor="@color/blue_400">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:gravity="start">
+
+            <ImageView
+                android:id="@+id/imBack"
+                android:layout_width="@dimen/_27sdp"
+                android:layout_height="@dimen/_27sdp"
+                android:layout_gravity="center"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:tint="@color/white"
+                android:src="@drawable/ic_arrow_back_black_24dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:id="@+id/txtlabel"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:fontFamily="@font/nunitosans_bold"
+                android:text="@string/policy_config"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_16sdp" />
+        </LinearLayout>
+    </androidx.appcompat.widget.Toolbar>
+    <androidx.core.widget.NestedScrollView
+        android:layout_below="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_above="@+id/btn_hrms_config_save"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/lvd1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_10sdp"
+                android:padding="@dimen/_5sdp"
+                android:visibility="visible"
+                android:background="@drawable/edittext_bg"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:gravity="center_horizontal"
+                    android:padding="@dimen/_2sdp"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+                    <TextView
+                        android:id="@+id/tvsal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/nunitosans_extrabold"
+                        android:gravity="left"
+                        android:layout_weight="1"
+                        android:padding="@dimen/_1sdp"
+                        android:text="Salary Management"
+                        android:textColor="@color/orange_900"
+                        android:textSize="@dimen/_13sdp" />
+
+                    <ImageView
+                        android:id="@+id/salAdd"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/_30sdp"
+                        android:layout_gravity="right"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/nunitosans_regular"
+                        android:gravity="center_horizontal"
+                        android:src="@drawable/ic_add_black_24dp"
+                        android:visibility="visible" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:gravity="center"
+                    android:layout_marginRight="@dimen/_5sdp"
+                    android:orientation="horizontal"
+                    android:weightSum="4">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.1"
+                        android:fontFamily="@font/nunitosans_regular"
+                        android:gravity="start"
+                        android:text="Structure Name"
+                        android:id="@+id/txtsalname"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_10sdp"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.1"
+                        android:fontFamily="@font/nunitosans_regular"
+                        android:gravity="center"
+                        android:text="Amount"
+                        android:visibility="gone"
+                        android:id="@+id/txtamount"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_10sdp"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.8"
+                        android:fontFamily="@font/nunitosans_regular"
+                        android:gravity="center"
+                        android:text="Action"
+                        android:visibility="visible"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_10sdp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginTop="@dimen/_1sdp"
+                    android:background="@color/divider_color" />
+                <TextView
+                    android:id="@+id/txtsalrydata"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/nunitosans_extrabold"
+                    android:gravity="center"
+                    android:visibility="gone"
+                    android:padding="@dimen/_5sdp"
+                    android:text="You have not added any salary structure yet!\nclick '+' button to add salary structure"
+                    android:textColor="@color/blue_100"
+                    android:textSize="@dimen/_12sdp" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_100sdp"
+                    android:visibility="visible"
+                    tools:listitem="@layout/row_layout_sal_structure"
+                    android:id="@+id/recycler_view_salary_struct"/>
+
+            </LinearLayout>
+
+
+            <View
+                android:id="@+id/divider"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:visibility="gone"
+                android:layout_below="@+id/lvd1"
+                android:layout_marginTop="@dimen/_1sdp"
+                android:background="@color/divider_color" />
+
+            <LinearLayout
+                android:id="@+id/lvd2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/divider"
+                android:layout_margin="@dimen/_10sdp"
+                android:background="@drawable/edittext_bg"
+                android:gravity="center"
+                android:visibility="visible"
+                android:orientation="vertical"
+                android:padding="@dimen/_5sdp">
+
+                <LinearLayout
+                    android:id="@+id/lv2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/_2sdp"
+                    android:weightSum="2">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/nunitosans_extrabold"
+                        android:gravity="left"
+                        android:layout_weight="1"
+                        android:padding="@dimen/_1sdp"
+                        android:text="Leave Management"
+                        android:textColor="@color/orange_900"
+                        android:textSize="@dimen/_13sdp" />
+
+                    <ImageView
+                        android:id="@+id/leaveAdd"
+                        android:layout_width="0dp"
+                        android:layout_gravity="right"
+                        android:layout_height="@dimen/_30sdp"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/nunitosans_regular"
+                        android:gravity="right"
+                        android:src="@drawable/ic_add_black_24dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/_5sdp"
+                    android:weightSum="4">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.3"
+                        android:fontFamily="@font/nunitosans_regular"
+                        android:gravity="center"
+                        android:text="Name"
+                        android:id="@+id/txtleave_name"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_10sdp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/spTotalLeave"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.8"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:text="Leaves\n(In Days)"
+                        android:textAlignment="center" />
+
+                    <TextView
+                        android:id="@+id/txtleavetype"
+                        android:layout_width="0dp" android:textStyle="bold"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/nunitosans_regular"
+                        android:gravity="center"
+                        android:text="Type "
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_10sdp" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_15sdp"
+                        android:layout_marginEnd="@dimen/_5sdp"
+                        android:layout_weight="0.5"
+                        android:visibility="visible"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:id="@+id/imgcarryFrwd"
+                        android:text="C/F" />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_15sdp"
+                        android:layout_marginEnd="@dimen/_5sdp"
+                        android:layout_weight="0.5"
+                        android:id="@+id/imgedit"
+                        android:text="" />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_15sdp"
+                        android:layout_marginEnd="@dimen/_5sdp"
+                        android:layout_weight="0.5"
+                        android:id="@+id/imgremove"
+                      android:text="" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:background="@color/divider_color" />
+                <TextView
+                    android:id="@+id/txtleavedata"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/nunitosans_extrabold"
+                    android:gravity="center"
+                    android:visibility="visible"
+                    android:padding="@dimen/_5sdp"
+                    android:text="You have not added any leave structure yet!\nclick '+' button to add leave structure"
+                    android:textColor="@color/blue_100"
+                    android:textSize="@dimen/_12sdp" />
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_100sdp"
+                    tools:listitem="@layout/row_layout_leave_structure"
+                    android:id="@+id/recycler_view_leave_list"/>
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/divider1"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:visibility="gone"
+                android:layout_below="@+id/lvd2"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:background="@color/divider_color" />
+
+            <LinearLayout
+                android:id="@+id/lvss"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/divider1"
+                android:layout_margin="@dimen/_5sdp"
+                android:background="@drawable/edittext_bg"
+                android:orientation="vertical"
+                android:padding="@dimen/_5sdp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/nunitosans_extrabold"
+                    android:gravity="left"
+                    android:padding="@dimen/_5sdp"
+                    android:text="Settings"
+                    android:textColor="@color/orange_900"
+                    android:textSize="@dimen/_13sdp" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:background="@drawable/shadow_container"
+                    android:padding="@dimen/_5sdp">
+
+                    <LinearLayout
+                        android:id="@+id/lvsetting"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:padding="@dimen/_5sdp"
+                        android:weightSum="2">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/_10sdp"
+                            android:layout_weight="1.5"
+                            android:paddingLeft="@dimen/_5sdp"
+                            android:fontFamily="@font/nunitosans_bold"
+                            android:gravity="center"
+                            android:text="Professional tax"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_12sdp"
+                            android:textStyle="bold" />
+
+                        <RadioGroup
+                            android:id="@+id/rdPT"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.5"
+                            android:orientation="horizontal"
+                            android:weightSum="2">
+
+                            <RadioButton
+                                android:id="@+id/rbPTY"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="@dimen/_5sdp"
+                                android:layout_weight="1"
+                                android:text="Yes"
+                                android:textAlignment="viewStart" />
+
+                            <RadioButton
+                                android:id="@+id/rbPTN"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_5sdp"
+                                android:layout_weight="1"
+                                android:text="No"
+                                android:checked="true"
+                                android:textAlignment="viewStart" />
+                        </RadioGroup>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:visibility="gone"
+                        android:id="@+id/lvDefaultPT"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/lvsetting"
+                        android:layout_marginTop="@dimen/_2sdp"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:padding="@dimen/_2sdp"
+                        android:weightSum="3">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/_5sdp"
+                            android:layout_weight="1.1"
+                            android:fontFamily="@font/nunitosans_bold"
+                            android:gravity="center"
+                            android:id="@+id/txtPTvalue"
+                            android:layout_marginStart="@dimen/_5sdp"
+                            android:text="Default value :"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_12sdp"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/etPT"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:hint="value"
+                            android:inputType="number"
+                            android:textSize="@dimen/_12sdp" />
+
+                        <Spinner
+                            android:id="@+id/ptType"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.9"
+                            android:fontFamily="@font/nunitosans_bold"
+                            android:gravity="center" />
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/shadow_container"
+                    android:padding="@dimen/_2sdp">
+
+                    <LinearLayout
+                        android:id="@+id/lvsettings"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:padding="@dimen/_5sdp"
+                        android:weightSum="2">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/_10sdp"
+                            android:layout_weight="1.5"
+                            android:fontFamily="@font/nunitosans_bold"
+                            android:gravity="center"
+                            android:paddingLeft="@dimen/_5sdp"
+                            android:text="Provident Fund"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_12sdp"
+                            android:textStyle="bold" />
+
+                        <RadioGroup
+                            android:id="@+id/rdPF"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.5"
+                            android:orientation="horizontal"
+                            android:weightSum="2">
+
+                            <RadioButton
+                                android:id="@+id/rbPFY"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="@dimen/_5sdp"
+                                android:layout_weight="1"
+                                android:text="Yes"
+                                android:textAlignment="viewStart" />
+
+                            <RadioButton
+                                android:id="@+id/rbPFN"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_5sdp"
+                                android:layout_weight="1"
+                                android:text="No"
+                                android:checked="true"
+                                android:textAlignment="viewStart" />
+                        </RadioGroup>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:visibility="gone"
+                        android:id="@+id/lvDefaultPF"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/lvsettings"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:padding="@dimen/_5sdp"
+                        android:weightSum="3">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/_5sdp"
+                            android:layout_weight="1.1"
+                            android:fontFamily="@font/nunitosans_bold"
+                            android:gravity="center"
+                            android:id="@+id/txtPFvalue"
+                            android:layout_marginStart="@dimen/_5sdp"
+                            android:text="Default Value :"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_12sdp"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/etPF"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:hint="value"
+                            android:inputType="number"
+                            android:textSize="@dimen/_12sdp" />
+
+                        <Spinner
+                            android:id="@+id/pfTypes"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.9"
+                            android:fontFamily="@font/nunitosans_bold"
+                            android:gravity="center"
+                            android:textColor="@color/black" />
+                    </LinearLayout>
+
+
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:background="@drawable/shadow_container"
+                    android:padding="@dimen/_2sdp">
+
+                    <LinearLayout
+                        android:id="@+id/lvTDS"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:padding="@dimen/_5sdp"
+                        android:weightSum="2">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/_10sdp"
+                            android:layout_weight="1.5"
+                            android:fontFamily="@font/nunitosans_bold"
+                            android:gravity="center"
+                            android:text="TDS"
+                            android:paddingLeft="@dimen/_5sdp"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_12sdp"
+                            android:textStyle="bold" />
+
+                        <RadioGroup
+                            android:id="@+id/rdgroupTDS"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.5"
+                            android:orientation="horizontal"
+                            android:weightSum="2">
+
+                            <RadioButton
+                                android:id="@+id/rdTDSYes"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="@dimen/_5sdp"
+                                android:layout_weight="1"
+                                android:text="Yes"
+                                android:textAlignment="viewStart" />
+
+                            <RadioButton
+                                android:id="@+id/rdTDSNo"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_5sdp"
+                                android:layout_weight="1"
+                                android:text="No"
+                                android:checked="true"
+                                android:textAlignment="viewStart" />
+                        </RadioGroup>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:visibility="gone"
+                        android:id="@+id/lvDefaultTDS"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/lvTDS"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:padding="@dimen/_5sdp"
+                        android:weightSum="3">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/_5sdp"
+                            android:layout_weight="1.1"
+                            android:fontFamily="@font/nunitosans_bold"
+                            android:gravity="center"
+                            android:id="@+id/txtTDSvalue"
+                            android:layout_marginStart="@dimen/_5sdp"
+                            android:text="Default Value :"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_12sdp"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/edtTDS"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:hint="value"
+                            android:inputType="number"
+                            android:textSize="@dimen/_12sdp" />
+
+                        <Spinner
+                            android:id="@+id/TDStypes"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.9"
+                            android:fontFamily="@font/nunitosans_bold"
+                            android:gravity="center"
+                            android:textColor="@color/black" />
+                    </LinearLayout>
+
+
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:background="@drawable/shadow_container"
+                    android:padding="@dimen/_2sdp">
+
+
+                    <LinearLayout
+                        android:id="@+id/lvGST"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:padding="@dimen/_5sdp"
+                        android:weightSum="2">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/_10sdp"
+                            android:layout_weight="1.5"
+                            android:fontFamily="@font/nunitosans_bold"
+                            android:gravity="center"
+                            android:text="GST"
+                            android:paddingStart="@dimen/_5sdp"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_12sdp"
+                            android:textStyle="bold" />
+
+                        <RadioGroup
+                            android:id="@+id/rdgroupGST"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.5"
+                            android:orientation="horizontal"
+                            android:weightSum="2">
+
+                            <RadioButton
+                                android:id="@+id/rdGSTYes"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="@dimen/_5sdp"
+                                android:layout_weight="1"
+                                android:text="Yes"
+                                android:textAlignment="viewStart" />
+
+                            <RadioButton
+                                android:id="@+id/rdGSTNo"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_5sdp"
+                                android:layout_weight="1"
+                                android:text="No"
+                                android:checked="true"
+                                android:textAlignment="viewStart" />
+                        </RadioGroup>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:visibility="gone"
+                        android:id="@+id/lvDefaultGST"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/lvGST"
+                        android:orientation="horizontal"
+                        android:padding="@dimen/_5sdp"
+                        android:weightSum="3">
+
+                        <TextView
+                            android:id="@+id/txtgstvalue"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/_5sdp"
+                            android:layout_weight="1.1"
+                            android:fontFamily="@font/nunitosans_bold"
+                            android:gravity="center"
+                            android:layout_marginStart="@dimen/_5sdp"
+                            android:text="Default Value :"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_12sdp"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/edtGST"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:hint="value"
+                            android:inputType="number"
+                            android:textSize="@dimen/_12sdp" />
+
+                        <Spinner
+                            android:id="@+id/GSTtypes"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.9"
+                            android:fontFamily="@font/nunitosans_bold"
+                            android:gravity="center"
+                            android:textColor="@color/black" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:fontFamily="@font/nunitosans_bold"
+                        android:gravity="end"
+                        android:layout_below="@+id/lvDefaultGST"
+                        android:text="Note : GST is only for cosultant"
+                        android:paddingTop="@dimen/_5sdp"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_7sdp"
+                        android:textStyle="bold" />
+
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:background="@drawable/shadow_container"
+                    android:padding="@dimen/_2sdp">
+
+                    <LinearLayout
+                        android:id="@+id/lvESIC"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:padding="@dimen/_5sdp"
+                        android:weightSum="2">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/_10sdp"
+                            android:layout_weight="1.5"
+                            android:fontFamily="@font/nunitosans_bold"
+                            android:gravity="center"
+                            android:text="ESIC"
+                            android:paddingStart="@dimen/_5sdp"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_12sdp"
+                            android:textStyle="bold" />
+
+                        <RadioGroup
+                            android:id="@+id/rdgroupESIC"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.5"
+                            android:orientation="horizontal"
+                            android:weightSum="2">
+
+                            <RadioButton
+                                android:id="@+id/rdESICYes"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="@dimen/_5sdp"
+                                android:layout_weight="1"
+                                android:text="Yes"
+                                android:textAlignment="viewStart" />
+
+                            <RadioButton
+                                android:id="@+id/rdESICNo"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_5sdp"
+                                android:layout_weight="1"
+                                android:text="No"
+                                android:checked="true"
+                                android:textAlignment="viewStart" />
+                        </RadioGroup>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:visibility="gone"
+                        android:id="@+id/lvDefaultESIC"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/lvESIC"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:padding="@dimen/_5sdp"
+                        android:weightSum="3">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/_5sdp"
+                            android:layout_weight="1.1"
+                            android:fontFamily="@font/nunitosans_bold"
+                            android:gravity="center"
+                            android:id="@+id/txtESICvalue"
+                            android:layout_marginStart="@dimen/_5sdp"
+                            android:text="Default Value :"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_12sdp"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/edtESIC"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:hint="value"
+                            android:inputType="number"
+                            android:textSize="@dimen/_12sdp" />
+
+                        <Spinner
+                            android:id="@+id/ESICtypes"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.9"
+                            android:fontFamily="@font/nunitosans_bold"
+                            android:gravity="center"
+                            android:textColor="@color/black" />
+                    </LinearLayout>
+
+                </RelativeLayout>
+            </LinearLayout>
+
+
+        </RelativeLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_hrms_config_save"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/button_back"
+        android:fontFamily="@font/nunitosans_bold"
+        android:text="Save"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_13sdp" />
+</RelativeLayout>

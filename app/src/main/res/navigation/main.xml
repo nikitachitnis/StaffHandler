@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/main"
+    app:startDestination="@id/form1Fragment">
+
+    <fragment
+        android:id="@+id/form1Fragment"
+        android:name="com.miscos.staffhandler.employer_java.fragment.Form1Fragment"
+        android:label="form1Fragment">
+
+        <action
+            app:destination="@id/form2Fragment"
+            android:id="@id/form2Fragment"/>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/form2Fragment"
+        android:name="com.miscos.staffhandler.employer_java.fragment.Form2Fragment"
+        android:label="form2Fragment">
+
+        <argument
+            app:argType="string"
+            android:name="employerId"
+            app:nullable="true"
+            android:defaultValue="@null"/>
+
+        <argument
+            app:argType="string"
+            android:name="password"
+            app:nullable="true"
+            android:defaultValue="@null"/>
+
+        <action
+            app:destination="@id/form3Fragment"
+            android:id="@id/form3Fragment"/>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/form3Fragment"
+        android:name="com.miscos.staffhandler.employer_java.fragment.Form3Fragment"
+        android:label="form3Fragment">
+
+        <argument
+            app:argType="string"
+            android:name="employerId"
+            app:nullable="true"
+            android:defaultValue="@null"/>
+
+        <action
+            app:destination="@id/holidayList"
+            android:id="@id/holidayList"/>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/holidayList"
+        android:name="com.miscos.staffhandler.empolyer.main.owner.dialog.HolidayListDialog"
+        android:label="holidayList">
+
+        <argument
+            app:argType="string"
+            android:name="employerId"
+            app:nullable="true"
+            android:defaultValue="@null"/>
+
+        <argument
+            app:argType="string[]"
+            android:name="holidayList"
+            app:nullable="true"
+            android:defaultValue="@null"/>
+
+    </fragment>
+
+</navigation>

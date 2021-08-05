@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:id="@+id/lyr_office"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_15sdp"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:weightSum="2">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight=".9"
+                android:text="From Date"
+                android:gravity="center_horizontal"
+                android:padding="@dimen/_5sdp"
+                android:editable="false"
+                android:textSize="@dimen/_9ssp"
+                android:focusable="false"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/edt_from"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1.1"
+                android:drawableTint="@color/colorPrimaryDark"
+                android:drawableRight="@drawable/ic_baseline_calendar"
+                android:padding="@dimen/_2sdp"
+                android:focusable="false"
+                android:textSize="@dimen/_9ssp"
+                android:textAlignment="center"
+                android:background="@drawable/border"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight=".9"
+                android:text="To Date"
+                android:textSize="@dimen/_9ssp"
+                android:gravity="center_horizontal"
+                android:padding="@dimen/_5sdp"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/edt_to"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1.1"
+                android:layout_marginRight="@dimen/_2sdp"
+                android:padding="@dimen/_2sdp"
+                android:focusable="false"
+                android:textSize="@dimen/_9ssp"
+                android:drawableTint="@color/colorPrimaryDark"
+                android:drawableRight="@drawable/ic_baseline_calendar"
+                android:background="@drawable/border"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </LinearLayout>
+
+
+</LinearLayout>

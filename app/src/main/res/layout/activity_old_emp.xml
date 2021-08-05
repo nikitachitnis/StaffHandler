@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.OldEmpActivity">
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/appbarlv"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        android:layout_alignParentTop="true">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:text="Old Employee Feedback"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+
+            app:titleTextAppearance="@style/toolbarText"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+    </com.google.android.material.appbar.AppBarLayout>
+    <EditText
+        android:id="@+id/search_emp_editText"
+        android:layout_width="match_parent"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:padding="@dimen/_5sdp"
+        android:background="@drawable/border_text"
+        android:drawableRight="@drawable/quantum_ic_search_grey600_24"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:hint="Search employee by name"
+     android:layout_below="@id/appbarlv"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:id="@+id/txtnodata"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_below="@id/search_emp_editText"
+        android:text="No old Employee data available" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view_oldemp"
+        android:layout_width="match_parent"
+        android:visibility="visible"
+        android:layout_height="match_parent"
+        tools:listitem="@layout/row_old_employee_data"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+         android:layout_below="@+id/search_emp_editText"
+        >
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+</RelativeLayout>
+</layout>

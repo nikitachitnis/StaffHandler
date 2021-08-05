@@ -1,0 +1,658 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".ssa.latearrivalearlydeparture.LateArrivalEarlyDepartureActivity">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:gravity="center"
+            android:minHeight="?attr/actionBarSize"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:titleMarginStart="@dimen/_30sdp"
+            app:titleTextColor="@color/blue_400">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="?actionBarSize">
+
+                <LinearLayout
+                    android:id="@+id/lyr_back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentStart="true"
+                    android:layout_gravity="start"
+                    android:gravity="start">
+
+                    <ImageView
+                        android:id="@+id/imBack"
+                        android:layout_width="@dimen/_27sdp"
+                        android:layout_height="@dimen/_27sdp"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="@dimen/_17sdp"
+                        app:srcCompat="@drawable/ic_arrow_back_black_24dp"
+                        android:tint="@color/white" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="@dimen/_15sdp"
+                        android:fontFamily="@font/nunitosans_bold"
+                        android:text="@string/late_arrival_amp_early_departure"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_15sdp" />
+                </LinearLayout>
+
+            </RelativeLayout>
+        </androidx.appcompat.widget.Toolbar>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:layout_marginTop="20dp"
+                    app:cardElevation="@dimen/_5sdp"
+                    app:cardCornerRadius="@dimen/_10sdp"
+                    >
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/_4sdp"
+                        android:orientation="vertical"
+                        >
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:paddingLeft="@dimen/_10sdp"
+                            android:layout_marginBottom="@dimen/_6sdp"
+                            android:fontFamily="@font/nunitosans_bold"
+                            android:text="Late Arrival in office "
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_13ssp"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:gravity="center_vertical"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="@dimen/_10sdp"
+                                android:fontFamily="@font/montserrat"
+                                android:text="Maximum Daily Permitted Delay "
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_11ssp" />
+
+                            <EditText
+                                android:id="@+id/edt_max_daily_delay"
+                                android:inputType="number"
+                                android:maxLength="3"
+                                android:gravity="center"
+                                android:paddingLeft="@dimen/_5sdp"
+                                android:paddingRight="@dimen/_5sdp"
+                                android:textSize="@dimen/_11ssp"
+                                android:background="@drawable/edittext_bg"
+                                android:layout_width="@dimen/_40sdp"
+                                android:layout_height="wrap_content" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="@dimen/_10sdp"
+                                android:layout_marginRight="@dimen/_10sdp"
+                                android:fontFamily="@font/montserrat"
+                                android:text="Min "
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_11ssp" />
+                        </LinearLayout>
+
+                        <View
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:background="@color/gray"
+                            android:alpha=".2"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"/>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:gravity="center_vertical"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="@dimen/_10sdp"
+                                android:fontFamily="@font/montserrat"
+                                android:text="Maximum Permitted Delays in a month"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_11ssp" />
+
+                            <Spinner
+                                android:id="@+id/sp_max_monthly_delay"
+                                android:layout_width="wrap_content"
+                                android:layout_marginRight="@dimen/_10sdp"
+                                android:layout_height="wrap_content" />
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:background="@color/gray"
+                            android:alpha=".2"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"/>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:gravity="center_vertical"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="@dimen/_10sdp"
+                                android:fontFamily="@font/montserrat"
+                                android:text="Penalty for every  "
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_11ssp" />
+
+                            <Spinner
+                                android:id="@+id/sp_penalty_every"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="@dimen/_10sdp"
+                                android:layout_marginRight="@dimen/_5sdp"
+                                android:fontFamily="@font/montserrat"
+                                android:text="Min @ Rs "
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_11ssp" />
+
+
+                            <EditText
+                                android:id="@+id/edt_penalty_rs"
+                                android:background="@drawable/edittext_bg"
+                                android:layout_width="@dimen/_40sdp"
+                                android:textSize="@dimen/_11ssp"
+                                android:paddingLeft="@dimen/_5sdp"
+                                android:paddingRight="@dimen/_5sdp"
+                                android:maxLines="1"
+                                android:gravity="center"
+                                android:singleLine="true"
+                                android:layout_marginRight="@dimen/_10sdp"
+                                android:layout_height="wrap_content" />
+                        </LinearLayout>
+                        <View
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:background="@color/gray"
+                            android:alpha=".2"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"/>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:gravity="center_vertical"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="@dimen/_10sdp"
+                                android:fontFamily="@font/montserrat"
+                                android:text="Half Day marking after arrived "
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_11ssp" />
+
+                            <Spinner
+                                android:id="@+id/sp_hour"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="@dimen/_10sdp"
+                                android:layout_marginRight="@dimen/_5sdp"
+                                android:fontFamily="@font/montserrat"
+                                android:text="Hr "
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_11ssp" />
+
+                            <Spinner
+                                android:id="@+id/sp_min"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="@dimen/_10sdp"
+                                android:layout_marginRight="@dimen/_5sdp"
+                                android:fontFamily="@font/montserrat"
+                                android:text="Min "
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_11ssp" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:layout_marginTop="20dp"
+                    app:cardElevation="@dimen/_5sdp"
+                    app:cardCornerRadius="@dimen/_10sdp"
+                    >
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/_4sdp"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/_6sdp"
+                            android:paddingLeft="@dimen/_10sdp"
+                            android:gravity="center"
+                            android:fontFamily="@font/nunitosans_bold"
+                            android:text="Early Departure from office  "
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_13ssp"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:gravity="center_vertical"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="@dimen/_10sdp"
+                                android:fontFamily="@font/montserrat"
+                                android:text="Permitted departure before  "
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_11ssp" />
+
+                            <EditText
+                                android:id="@+id/edt_permitted_dep_min"
+                                android:background="@drawable/edittext_bg"
+                                android:layout_width="@dimen/_40sdp"
+                                android:maxLength="3"
+                                android:singleLine="true"
+                                android:maxLines="1"
+                                android:gravity="center"
+                                android:textSize="@dimen/_11ssp"
+                                android:paddingLeft="@dimen/_5sdp"
+                                android:paddingRight="@dimen/_5sdp"
+                                android:layout_height="wrap_content" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="@dimen/_10sdp"
+                                android:layout_marginRight="@dimen/_10sdp"
+                                android:fontFamily="@font/montserrat"
+                                android:text="Min "
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_11ssp" />
+                        </LinearLayout>
+                        <View
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:background="@color/gray"
+                            android:alpha=".2"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"/>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:gravity="center_vertical"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="@dimen/_10sdp"
+                                android:fontFamily="@font/montserrat"
+                                android:text="Max Permitted early departure in a month"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_11ssp" />
+
+                            <Spinner
+                                android:id="@+id/sp_max_early_dp_month"
+                                android:layout_width="wrap_content"
+                                android:layout_marginRight="@dimen/_10sdp"
+                                android:layout_height="wrap_content" />
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:background="@color/gray"
+                            android:alpha=".2"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"/>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:gravity="center_vertical"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="@dimen/_10sdp"
+                                android:fontFamily="@font/montserrat"
+                                android:text="Penalty on every early denture "
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_11ssp" />
+
+                            <Spinner
+                                android:id="@+id/sp_every_early_dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="@dimen/_10sdp"
+                                android:layout_marginRight="@dimen/_5sdp"
+                                android:fontFamily="@font/montserrat"
+                                android:text="Min @ Rs "
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_11ssp" />
+
+
+                            <EditText
+                                android:id="@+id/edt_every_early_dp_rs"
+                                android:background="@drawable/edittext_bg"
+                                android:layout_width="@dimen/_40sdp"
+                                android:textSize="@dimen/_11ssp"
+                                android:maxLines="1"
+
+                                android:gravity="center"
+                                android:singleLine="true"
+                                android:paddingLeft="@dimen/_5sdp"
+                                android:paddingRight="@dimen/_5sdp"
+                                android:layout_marginRight="@dimen/_10sdp"
+                                android:layout_height="wrap_content" />
+                        </LinearLayout>
+                        <View
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:background="@color/gray"
+                            android:alpha=".2"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"/>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:gravity="center_vertical"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="@dimen/_10sdp"
+                                android:fontFamily="@font/montserrat"
+                                android:text="Half Day marking if left before"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_11ssp" />
+
+                            <Spinner
+                                android:id="@+id/sp_early_hour"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="@dimen/_10sdp"
+                                android:layout_marginRight="@dimen/_5sdp"
+                                android:fontFamily="@font/montserrat"
+                                android:text="Hr "
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_11ssp" />
+
+                            <Spinner
+                                android:id="@+id/sp_early_min"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="@dimen/_10sdp"
+                                android:layout_marginRight="@dimen/_5sdp"
+                                android:fontFamily="@font/montserrat"
+                                android:text="Min "
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_11ssp" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_5sdp"
+                    android:layout_marginRight="@dimen/_5sdp"
+                    android:layout_marginBottom="@dimen/_20sdp"
+                    app:cardElevation="@dimen/_5sdp"
+                    app:cardCornerRadius="@dimen/_10sdp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/_10sdp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="@dimen/_10sdp"
+                            android:layout_marginBottom="@dimen/_6sdp"
+                            android:gravity="center_horizontal"
+                            android:fontFamily="@font/nunitosans_bold"
+                            android:text="Operational Policies "
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_13ssp"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="@dimen/_10sdp"
+                                android:fontFamily="@font/montserrat"
+                                android:text="Permitted departure before  "
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_11ssp" />
+
+                            <RadioGroup
+                                android:id="@+id/rd_group_dp_before"
+                                android:layout_width="wrap_content"
+                                android:orientation="horizontal"
+                                android:layout_height="wrap_content">
+
+                                <RadioButton
+                                    android:id="@+id/rd_dp_yes"
+                                    android:text="Yes"
+                                    android:buttonTint="@color/colorPrimary"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" />
+
+                                <RadioButton
+                                    android:id="@+id/rd_dp_no"
+                                    android:text="NO"
+                                    android:buttonTint="@color/colorPrimary"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" />
+                            </RadioGroup>
+                        </LinearLayout>
+
+                        <View
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:background="@color/gray"
+                            android:alpha=".2"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"/>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:gravity="center_vertical"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="@dimen/_10sdp"
+                                android:fontFamily="@font/montserrat"
+                                android:text="Send Notification to the"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_11ssp" />
+
+                            <Spinner
+                                android:id="@+id/sp_notification"
+                                android:entries="@array/notification_to"
+                                android:layout_width="wrap_content"
+                                android:layout_marginLeft="@dimen/_10sdp"
+                                android:layout_height="wrap_content" />
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:background="@color/gray"
+                            android:alpha=".2"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"/>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:gravity="center_vertical">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="@dimen/_10sdp"
+                                android:fontFamily="@font/montserrat"
+                                android:text="Auto reflect on salary calculation "
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_11ssp" />
+
+                            <RadioGroup
+                                android:id="@+id/rd_group_salary"
+                                android:layout_width="wrap_content"
+                                android:orientation="horizontal"
+                                android:layout_height="wrap_content">
+
+                                <RadioButton
+                                    android:id="@+id/rd_sal_yes"
+                                    android:text="Yes"
+                                    android:buttonTint="@color/colorPrimary"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" />
+
+                                <RadioButton
+                                    android:id="@+id/rd_sal_no"
+                                    android:text="NO"
+                                    android:buttonTint="@color/colorPrimary"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" />
+                            </RadioGroup>
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:id="@+id/txt_submit"
+                    android:layout_width="match_parent"
+                    android:layout_marginRight="@dimen/_30sdp"
+                    android:layout_marginLeft="@dimen/_30sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="@string/submit"
+                    android:textSize="@dimen/_9ssp"
+                    android:background="@drawable/bg_button"
+                    android:paddingTop="@dimen/_7sdp"
+                    android:paddingBottom="@dimen/_7sdp"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</layout>

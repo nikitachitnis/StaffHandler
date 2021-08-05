@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="@dimen/_2sdp"
+        android:weightSum="4">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.1"
+            android:fontFamily="@font/nunitosans_regular"
+            android:gravity="center"
+            android:text="Paid"
+            android:id="@+id/txtleave_name"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_10sdp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/spTotalLeave"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.6"
+            android:text="4"
+            android:textAlignment="center" />
+
+        <TextView
+            android:id="@+id/txtleavetype"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/nunitosans_regular"
+            android:gravity="center"
+            android:text="Per month"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_10sdp" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_15sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:layout_weight="0.5"
+
+            android:id="@+id/imgcarryFrwd"
+            android:src="@drawable/rightarrow" />
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_15sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:layout_weight="0.5"
+            android:id="@+id/imgedit"
+            android:src="@drawable/edit" />
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_15sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:layout_weight="0.5"
+            android:id="@+id/imgremove"
+            android:src="@android:drawable/ic_delete" />
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginTop="@dimen/_1sdp"
+        android:background="@color/divider_color" />
+</LinearLayout>

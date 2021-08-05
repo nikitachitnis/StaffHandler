@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="@dimen/_280sdp"
+    android:layout_height="match_parent"
+    android:padding="@dimen/_15sdp">
+    <TextView
+        android:id="@+id/otpMain"
+        android:textSize="@dimen/_15sdp"
+        android:gravity="center"
+        android:fontFamily="@font/nunitosans_bold"
+        android:textColor="@color/black"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add Leave" />
+
+    <LinearLayout
+        android:layout_below="@+id/otpMain"
+        android:background="@drawable/shadow_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/lv_leave"
+        android:orientation="vertical">
+
+
+
+
+        <EditText
+            android:id="@+id/edtleavename"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:layout_margin="@dimen/_5sdp"
+            android:inputType="textPersonName"
+            android:hint="Name" />
+        <TextView
+
+            android:layout_margin="@dimen/_2sdp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:text="Select No. of leaves allowed (in Days)"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Spinner
+            android:id="@+id/spinNoOfleaves"
+            android:layout_margin="@dimen/_5sdp"
+            android:layout_width="0dp"
+            android:layout_weight="0.5"
+            android:layout_height="wrap_content" />
+        <Spinner
+            android:id="@+id/spindays"
+            android:layout_margin="@dimen/_5sdp"
+            android:layout_width="0dp"
+            android:layout_weight="0.5"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_margin="@dimen/_5sdp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:text="Carry Forwardable ?" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_margin="@dimen/_5sdp"
+            android:orientation="horizontal"
+            android:id="@+id/rdgroupCF"
+            android:layout_height="wrap_content" >
+
+            <RadioButton
+                android:id="@+id/rdbtnYes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Yes" />
+
+            <RadioButton
+                android:id="@+id/rdbtnno"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:checked="true"
+                android:text="No" />
+        </RadioGroup>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/lv_resetdate"
+            android:visibility="gone"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:textColor="@color/black"
+                android:layout_height="wrap_content"
+                android:text="Reset Date(Means when leaves will be start from “zero 0” in the next year)"/>
+            <EditText
+                android:id="@+id/edtresetdate"
+                android:layout_width="match_parent"
+                android:textColor="@color/black"
+                android:layout_height="wrap_content"
+                android:hint="DD-MM-YYYY"
+                android:inputType="text" />
+        </LinearLayout>
+        <TextView
+            android:id="@+id/txttype"
+            android:layout_margin="@dimen/_5sdp"
+            android:layout_width="match_parent"
+            android:textColor="@color/black"
+            android:layout_height="wrap_content"
+            android:text="Type" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_margin="@dimen/_5sdp"
+            android:orientation="horizontal"
+            android:id="@+id/rdgroupleaveType"
+            android:layout_height="wrap_content" >
+            <RadioButton
+                android:id="@+id/rdbtnmonthly"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:checked="true"
+                android:text="Monthly" />
+
+            <RadioButton
+                android:id="@+id/rdbtnasrequired"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="As required" />
+        </RadioGroup>
+
+
+    </LinearLayout>
+    <Button
+        android:id="@+id/btnadd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lv_leave"
+        android:background="@color/red"
+        android:text="Add"
+        android:layout_marginStart="@dimen/_25sdp"
+
+        android:layout_toRightOf="@+id/btncancel"
+
+        android:textColor="@color/white" />
+    <Button
+        android:id="@+id/btncancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lv_leave"
+        android:background="@drawable/button_background"
+        android:text="cancel"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:textColor="@color/white" />
+</RelativeLayout>

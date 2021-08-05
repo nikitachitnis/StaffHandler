@@ -1,0 +1,1120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/grey_100"
+    android:layout_height="match_parent"
+    tools:context=".shiftmanagement.fragments.ShiftManagement">
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:gravity="center"
+        app:titleMarginStart="@dimen/_30sdp"
+        app:titleTextColor="@color/blue_400"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:minHeight="?attr/actionBarSize">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_gravity="start"
+            android:gravity="start"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imBack"
+                android:layout_gravity="center"
+                android:tint="@color/white"
+                android:src="@drawable/ic_arrow_back_black_24dp"
+                android:layout_width="@dimen/_27sdp"
+                android:layout_height="@dimen/_27sdp"
+                android:layout_marginEnd="@dimen/_14sdp"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_gravity="center"
+                android:text="@string/shift_management"
+                android:textColor="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nunitosans_bold"
+                android:textSize="@dimen/_17sdp"
+                android:layout_marginEnd="@dimen/_14sdp"/>
+        </LinearLayout>
+    </androidx.appcompat.widget.Toolbar>
+    <ScrollView
+        android:layout_below="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <LinearLayout
+            android:layout_margin="@dimen/_5sdp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/border_text"
+            android:orientation="vertical">
+            <LinearLayout
+                android:id="@+id/topLay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:layout_margin="@dimen/_2sdp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:fontFamily="@font/nunitosans_semibold"
+                    android:text="No. of Active Shift : "
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_15sdp" />
+
+                <Spinner
+                    android:id="@+id/shiftNo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+            <TextView
+                android:id="@+id/txtnoshifts"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_10sdp"
+                android:layout_weight="0.5"
+                android:visibility="gone"
+                android:layout_gravity="center"
+                android:fontFamily="@font/nunitosans_semibold"
+                android:text="No shifts configured yet!\nPlease Select Shift from dropdown to configure timing."
+                android:textColor="@color/orange_800"
+                android:textSize="@dimen/_13sdp" />
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_view_shift1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_5sdp"
+                android:visibility="gone"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="10dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <Button
+                        android:id="@+id/shiftNo1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_margin="@dimen/_5sdp"
+                        android:background="@drawable/border"
+                        android:padding="@dimen/_5sdp"
+                        android:text="Shift No.- 1"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_10sdp" />
+
+                    <TextView
+                        android:id="@+id/txtlabel1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/shiftNo1"
+                        android:layout_margin="@dimen/_5sdp"
+                        android:fontFamily="@font/nunitosans_semibold"
+                        android:padding="@dimen/_5sdp"
+                        android:text="Name  : "
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_12sdp" />
+
+                    <EditText
+                        android:id="@+id/edtshift1name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/shiftNo1"
+                        android:layout_toRightOf="@+id/txtlabel1"
+                        android:enabled="false"
+                        android:gravity="start"
+                        android:hint="Enter Name"
+                        android:inputType="textPersonName"
+                        android:textSize="@dimen/_12sdp" />
+
+                    <TextView
+                        android:id="@+id/actionText1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_margin="@dimen/_5sdp"
+                        android:padding="@dimen/_5sdp"
+                        android:text="Clear"
+                        android:textColor="@color/red"
+                        android:textSize="@dimen/_12sdp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/txtlabel1"
+                        android:id="@+id/lvshift1"
+                        android:weightSum="2">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:weightSum="2">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="@dimen/_2sdp"
+                                    android:layout_weight="1.4"
+                                    android:background="@drawable/border"
+                                    android:padding="@dimen/_5sdp"
+                                    android:text="Start Time"
+                                    android:textAlignment="center"
+                                    android:textSize="@dimen/_10sdp" />
+
+                                <TextView
+                                    android:id="@+id/startTimeShift1"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="@dimen/_2sdp"
+                                    android:layout_weight="0.6"
+                                    android:background="@drawable/border"
+                                    android:editable="false"
+                                    android:padding="@dimen/_5sdp"
+                                    android:textAlignment="center"
+
+                                    android:textSize="@dimen/_10sdp" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:weightSum="2">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="@dimen/_2sdp"
+                                    android:layout_weight="1.4"
+                                    android:background="@drawable/border"
+                                    android:padding="@dimen/_5sdp"
+                                    android:text="Pre Start Time"
+                                    android:textAlignment="center"
+
+                                    android:textSize="@dimen/_10sdp" />
+
+                                <TextView
+                                    android:id="@+id/preStartTimeShift1"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="@dimen/_2sdp"
+                                    android:layout_weight="0.6"
+                                    android:background="@drawable/border"
+                                    android:editable="false"
+                                    android:padding="@dimen/_5sdp"
+                                    android:textAlignment="center"
+
+                                    android:textSize="@dimen/_10sdp" />
+
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:weightSum="2">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="@dimen/_2sdp"
+                                    android:layout_weight="1.4"
+                                    android:background="@drawable/border"
+                                    android:padding="@dimen/_5sdp"
+                                    android:text="Stop Time"
+                                    android:textAlignment="center"
+                                    android:textSize="@dimen/_10sdp" />
+
+
+                                <TextView
+                                    android:id="@+id/stopTimeShift1"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="@dimen/_2sdp"
+                                    android:layout_weight="0.6"
+                                    android:background="@drawable/border"
+                                    android:editable="false"
+                                    android:padding="@dimen/_5sdp"
+                                    android:textAlignment="center"
+
+                                    android:textSize="@dimen/_10sdp" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:weightSum="2">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="@dimen/_2sdp"
+                                    android:layout_weight="1.4"
+                                    android:background="@drawable/border"
+                                    android:padding="@dimen/_5sdp"
+                                    android:text="Post Stop Time"
+                                    android:textAlignment="center"
+
+                                    android:textSize="@dimen/_10sdp" />
+
+                                <TextView
+                                    android:id="@+id/postStopTimeShift1"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="@dimen/_2sdp"
+                                    android:layout_weight="0.6"
+                                    android:background="@drawable/border"
+                                    android:editable="false"
+                                    android:padding="@dimen/_5sdp"
+                                    android:textAlignment="center"
+
+                                    android:textSize="@dimen/_10sdp" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/lvshift1"
+                        android:orientation="vertical">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/lvbreaktime1"
+                            android:weightSum="4">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/_2sdp"
+                                android:layout_weight="1.4"
+                                android:background="@drawable/border"
+                                android:padding="@dimen/_5sdp"
+                                android:text="Break Time"
+                                android:textAlignment="center"
+                                android:textSize="@dimen/_10sdp" />
+
+                            <TextView
+                                android:id="@+id/break1strattime"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_margin="@dimen/_2sdp"
+                                android:layout_weight="0.6"
+                                android:background="@drawable/border"
+                                android:editable="false"
+                                android:padding="@dimen/_5sdp"
+                                android:textAlignment="center"
+
+                                android:textSize="@dimen/_10sdp" />
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/_2sdp"
+                                android:layout_weight="1.4"
+                                android:background="@drawable/border"
+                                android:padding="@dimen/_5sdp"
+                                android:text="To"
+                                android:textAlignment="center"
+
+                                android:textSize="@dimen/_10sdp" />
+
+                            <TextView
+                                android:id="@+id/break1stoptime"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_margin="@dimen/_2sdp"
+                                android:layout_weight="0.6"
+                                android:background="@drawable/border"
+                                android:editable="false"
+                                android:padding="@dimen/_5sdp"
+                                android:textAlignment="center"
+                                android:text="00:00"
+                                android:textSize="@dimen/_10sdp" />
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:layout_below="@id/lvshift1"
+                            android:weightSum="2">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/_2sdp"
+                                android:layout_weight="1"
+                                android:background="@drawable/border"
+                                android:padding="@dimen/_5sdp"
+                                android:text="Break duration"
+                                android:textAlignment="center"
+
+                                android:textSize="@dimen/_10sdp" />
+
+                            <Spinner
+                                android:id="@+id/breaktimeduration1"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_margin="@dimen/_2sdp"
+                                android:layout_weight="1"
+                                android:background="@drawable/border"
+                                android:textSize="@dimen/_10sdp" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_view_shift2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_5sdp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="8dp"
+                android:visibility="gone"
+                app:cardElevation="10dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <Button
+                        android:id="@+id/shiftNo2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_margin="@dimen/_5sdp"
+                        android:background="@drawable/border"
+                        android:padding="@dimen/_5sdp"
+                        android:text="Shift No.- 2"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_10sdp" />
+
+                    <TextView
+                        android:id="@+id/actionText2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_margin="@dimen/_5sdp"
+                        android:padding="@dimen/_5sdp"
+                        android:text="Clear"
+                        android:textStyle="bold"
+                        android:textColor="@color/red"
+                        android:textSize="@dimen/_12sdp" />
+                    <TextView
+                        android:id="@+id/txtlabel2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_5sdp"
+                        android:padding="@dimen/_5sdp"
+                        android:textStyle="bold"
+                        android:layout_below="@+id/shiftNo2"
+                        android:text="Name  : "
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_12sdp" />
+                    <EditText
+                        android:id="@+id/edtshift1name2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/shiftNo2"
+                        android:layout_toRightOf="@+id/txtlabel2"
+                        android:inputType="textPersonName"
+                        android:enabled="false"
+                        android:textSize="@dimen/_12sdp"
+                        android:gravity="start"
+                        android:hint="Enter Name" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/txtlabel2"
+                        android:id="@+id/lvshift2"
+                        android:weightSum="2">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:weightSum="2">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="@dimen/_2sdp"
+                                    android:layout_weight="1.4"
+                                    android:background="@drawable/border"
+                                    android:padding="@dimen/_5sdp"
+                                    android:text="Start Time"
+                                    android:textAlignment="center"
+                                    android:textSize="@dimen/_10sdp" />
+
+                                <TextView
+                                    android:id="@+id/startTimeShift2"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="@dimen/_2sdp"
+                                    android:layout_weight="0.6"
+                                    android:background="@drawable/border"
+                                    android:editable="false"
+                                    android:padding="@dimen/_5sdp"
+                                    android:textAlignment="center"
+                                    android:text="00:00"
+                                    android:textSize="@dimen/_10sdp" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:weightSum="2">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="@dimen/_2sdp"
+                                    android:layout_weight="1.4"
+                                    android:background="@drawable/border"
+                                    android:padding="@dimen/_5sdp"
+                                    android:text="Pre Start Time"
+                                    android:textAlignment="center"
+
+                                    android:textSize="@dimen/_10sdp" />
+
+                                <TextView
+                                    android:id="@+id/preStartTimeShift2"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="@dimen/_2sdp"
+                                    android:layout_weight="0.6"
+                                    android:background="@drawable/border"
+                                    android:editable="false"
+                                    android:padding="@dimen/_5sdp"
+                                    android:textAlignment="center"
+                                    android:text="00:00"
+                                    android:textSize="@dimen/_10sdp" />
+
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:weightSum="2">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="@dimen/_2sdp"
+                                    android:layout_weight="1.4"
+                                    android:background="@drawable/border"
+                                    android:padding="@dimen/_5sdp"
+                                    android:text="Stop Time"
+                                    android:textAlignment="center"
+
+                                    android:textSize="@dimen/_10sdp" />
+
+                                <TextView
+                                    android:id="@+id/stopTimeShift2"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="@dimen/_2sdp"
+                                    android:layout_weight="0.6"
+                                    android:background="@drawable/border"
+                                    android:editable="false"
+                                    android:padding="@dimen/_5sdp"
+                                    android:textAlignment="center"
+                                    android:text="00:00"
+                                    android:textSize="@dimen/_10sdp" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:weightSum="2">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="@dimen/_2sdp"
+                                    android:layout_weight="1.4"
+                                    android:background="@drawable/border"
+                                    android:padding="@dimen/_5sdp"
+                                    android:text="Post Stop Time"
+                                    android:textAlignment="center"
+
+                                    android:textSize="@dimen/_10sdp" />
+
+                                <TextView
+                                    android:id="@+id/postStopTimeShift2"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="@dimen/_2sdp"
+                                    android:layout_weight="0.6"
+                                    android:background="@drawable/border"
+                                    android:editable="false"
+                                    android:padding="@dimen/_5sdp"
+                                    android:textAlignment="center"
+                                    android:text="00:00"
+                                    android:textSize="@dimen/_10sdp" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/lvshift2"
+                        android:orientation="vertical">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/lvbreaktime2"
+                            android:weightSum="4">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/_2sdp"
+                                android:layout_weight="1.4"
+                                android:background="@drawable/border"
+                                android:padding="@dimen/_5sdp"
+                                android:text="Break Time"
+                                android:textAlignment="center"
+                                android:textSize="@dimen/_10sdp" />
+
+                            <TextView
+                                android:id="@+id/break2strattime"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_margin="@dimen/_2sdp"
+                                android:layout_weight="0.6"
+                                android:background="@drawable/border"
+                                android:editable="false"
+                                android:padding="@dimen/_5sdp"
+                                android:textAlignment="center"
+
+                                android:textSize="@dimen/_10sdp" />
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/_2sdp"
+                                android:layout_weight="1.4"
+                                android:background="@drawable/border"
+                                android:padding="@dimen/_5sdp"
+                                android:text="To"
+                                android:textAlignment="center"
+
+                                android:textSize="@dimen/_10sdp" />
+
+                            <TextView
+                                android:id="@+id/break2stoptime"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_margin="@dimen/_2sdp"
+                                android:layout_weight="0.6"
+                                android:background="@drawable/border"
+                                android:editable="false"
+                                android:padding="@dimen/_5sdp"
+                                android:textAlignment="center"
+                                android:text="00:00"
+                                android:textSize="@dimen/_10sdp" />
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:layout_below="@id/lvshift2"
+                            android:weightSum="2">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/_2sdp"
+                                android:layout_weight="1"
+                                android:background="@drawable/border"
+                                android:padding="@dimen/_5sdp"
+                                android:text="Break duration"
+                                android:textAlignment="center"
+
+                                android:textSize="@dimen/_10sdp" />
+
+                            <Spinner
+                                android:id="@+id/breaktimeduration2"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_margin="@dimen/_2sdp"
+                                android:layout_weight="1"
+                                android:background="@drawable/border"
+                                android:textSize="@dimen/_10sdp" /> />
+
+                        </LinearLayout>
+                    </LinearLayout>
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_view_shift3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_5sdp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="8dp"
+                android:visibility="gone"
+                app:cardElevation="10dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <Button
+                        android:id="@+id/shiftNo3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_margin="@dimen/_5sdp"
+                        android:background="@drawable/border"
+                        android:padding="@dimen/_5sdp"
+                        android:text="Shift No.- 3"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_10sdp" />
+
+                    <TextView
+                        android:id="@+id/actionText3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_margin="@dimen/_5sdp"
+                        android:padding="@dimen/_5sdp"
+                        android:text="Clear"
+                        android:textStyle="bold"
+                        android:textColor="@color/red"
+                        android:textSize="@dimen/_12sdp" />
+                    <TextView
+                        android:id="@+id/txtlabel3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_5sdp"
+                        android:padding="@dimen/_5sdp"
+                        android:fontFamily="@font/nunitosans_semibold"
+                        android:layout_below="@+id/shiftNo3"
+                        android:text="Name  : "
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_12sdp" />
+                    <EditText
+                        android:id="@+id/edtshift1name3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/shiftNo3"
+                        android:layout_toRightOf="@+id/txtlabel3"
+                        android:enabled="false"
+                        android:gravity="start"
+                        android:textSize="@dimen/_12sdp"
+                        android:inputType="textPersonName"
+                        android:hint="Enter Name" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/txtlabel3"
+                        android:id="@+id/lvshift3"
+                        android:weightSum="2">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:weightSum="2">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="@dimen/_2sdp"
+                                    android:layout_weight="1.4"
+                                    android:background="@drawable/border"
+                                    android:padding="@dimen/_5sdp"
+                                    android:text="Start Time"
+                                    android:textAlignment="center"
+                                    android:textSize="@dimen/_10sdp" />
+
+                                <TextView
+                                    android:id="@+id/startTimeShift3"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="@dimen/_2sdp"
+                                    android:layout_weight="0.6"
+                                    android:background="@drawable/border"
+                                    android:editable="false"
+                                    android:padding="@dimen/_5sdp"
+                                    android:textAlignment="center"
+                                    android:text="00:00"
+                                    android:textSize="@dimen/_10sdp" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:weightSum="2">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="@dimen/_2sdp"
+                                    android:layout_weight="1.4"
+                                    android:background="@drawable/border"
+                                    android:padding="@dimen/_5sdp"
+                                    android:text="Pre Start Time"
+                                    android:textAlignment="center"
+
+                                    android:textSize="@dimen/_10sdp" />
+
+                                <TextView
+                                    android:id="@+id/preStartTimeShift3"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="@dimen/_2sdp"
+                                    android:layout_weight="0.6"
+                                    android:background="@drawable/border"
+                                    android:editable="false"
+                                    android:padding="@dimen/_5sdp"
+                                    android:textAlignment="center"
+                                    android:text="00:00"
+                                    android:textSize="@dimen/_10sdp" />
+
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:weightSum="2">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="@dimen/_2sdp"
+                                    android:layout_weight="1.4"
+                                    android:background="@drawable/border"
+                                    android:padding="@dimen/_5sdp"
+                                    android:text="Stop Time"
+                                    android:textAlignment="center"
+
+                                    android:textSize="@dimen/_10sdp" />
+
+                                <TextView
+                                    android:id="@+id/stopTimeShift3"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="@dimen/_2sdp"
+                                    android:layout_weight="0.6"
+                                    android:background="@drawable/border"
+                                    android:editable="false"
+                                    android:padding="@dimen/_5sdp"
+                                    android:textAlignment="center"
+                                    android:text="00:00"
+                                    android:textSize="@dimen/_10sdp" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:weightSum="2">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="@dimen/_2sdp"
+                                    android:layout_weight="1.4"
+                                    android:background="@drawable/border"
+                                    android:padding="@dimen/_5sdp"
+                                    android:text="Post Stop Time"
+                                    android:textAlignment="center"
+
+                                    android:textSize="@dimen/_10sdp" />
+
+                                <TextView
+                                    android:id="@+id/postStopTimeShift3"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="@dimen/_2sdp"
+                                    android:layout_weight="0.6"
+                                    android:background="@drawable/border"
+                                    android:editable="false"
+                                    android:padding="@dimen/_5sdp"
+                                    android:textAlignment="center"
+                                    android:text="00:00"
+                                    android:textSize="@dimen/_10sdp" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/lvshift3"
+                        android:orientation="vertical">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/lvbreaktime3"
+                            android:weightSum="4">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/_2sdp"
+                                android:layout_weight="1.4"
+                                android:background="@drawable/border"
+                                android:padding="@dimen/_5sdp"
+                                android:text="Break Time"
+                                android:textAlignment="center"
+                                android:textSize="@dimen/_10sdp" />
+
+                            <TextView
+                                android:id="@+id/break3strattime"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_margin="@dimen/_2sdp"
+                                android:layout_weight="0.6"
+                                android:background="@drawable/border"
+                                android:editable="false"
+                                android:padding="@dimen/_5sdp"
+                                android:textAlignment="center"
+
+                                android:textSize="@dimen/_10sdp" />
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/_2sdp"
+                                android:layout_weight="1.4"
+                                android:background="@drawable/border"
+                                android:padding="@dimen/_5sdp"
+                                android:text="To"
+                                android:textAlignment="center"
+
+                                android:textSize="@dimen/_10sdp" />
+
+                            <TextView
+                                android:id="@+id/break3stoptime"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_margin="@dimen/_2sdp"
+                                android:layout_weight="0.6"
+                                android:background="@drawable/border"
+                                android:editable="false"
+                                android:padding="@dimen/_5sdp"
+                                android:textAlignment="center"
+                                android:text="00:00"
+                                android:textSize="@dimen/_10sdp" />
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:weightSum="2">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/_2sdp"
+                                android:layout_weight="1"
+                                android:background="@drawable/border"
+                                android:padding="@dimen/_5sdp"
+                                android:text="Break duration"
+                                android:textAlignment="center"
+
+                                android:textSize="@dimen/_10sdp" />
+
+                            <Spinner
+                                android:id="@+id/breaktimeduration3"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_margin="@dimen/_2sdp"
+                                android:layout_weight="1"
+                                android:background="@drawable/border"
+                                android:textSize="@dimen/_10sdp" /> />
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:id="@+id/lv_notification"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:weightSum="6">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:layout_weight="3.8"
+                    android:background="@drawable/border"
+                    android:padding="@dimen/_5sdp"
+                    android:text="Send the Notification Alert’s of the break "
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_10sdp" />
+
+                <RadioGroup
+                    android:id="@+id/rdgroupnotification"
+                    android:layout_width="0dp"
+                    android:layout_weight="2.1"
+                    android:weightSum="2.1"
+                    android:orientation="horizontal"
+                    android:layout_height="match_parent">
+                    <RadioButton
+                        android:id="@+id/rdbtnyes"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1.1"
+                        android:text="Yes"
+                        android:textAlignment="center"
+                        android:textSize="@dimen/_10sdp" />
+
+                    <RadioButton
+                        android:id="@+id/rdbtnNo"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:text="No"
+                        android:checked="true"
+                        android:textAlignment="center"
+                        android:textSize="@dimen/_10sdp" />
+                </RadioGroup>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:weightSum="6">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:layout_weight="3.8"
+                    android:background="@drawable/border"
+                    android:padding="@dimen/_5sdp"
+                    android:text="Generate the start &amp; stop Voice Alarm "
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_10sdp" />
+
+                <RadioGroup
+                    android:id="@+id/rdbtnvoicealarm"
+                    android:layout_width="0dp"
+                    android:layout_weight="2.1"
+                    android:weightSum="2.1"
+                    android:orientation="horizontal"
+                    android:layout_height="match_parent">
+                    <RadioButton
+                        android:id="@+id/rdbtnyesAlarm"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1.1"
+                        android:text="Yes"
+                        android:textAlignment="center"
+                        android:textSize="@dimen/_10sdp" />
+
+                    <RadioButton
+                        android:id="@+id/rdbtnNoAlarm"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:text="No"
+                        android:checked="true"
+                        android:textAlignment="center"
+                        android:textSize="@dimen/_10sdp" />
+                </RadioGroup>
+
+            </LinearLayout>
+            <Button
+                android:id="@+id/btnSave"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:layout_margin="@dimen/_5sdp"
+                android:backgroundTint="@color/blue_600"
+                android:padding="@dimen/_10sdp"
+                android:text="Save" />
+        </LinearLayout>
+    </ScrollView>
+
+
+
+</RelativeLayout>

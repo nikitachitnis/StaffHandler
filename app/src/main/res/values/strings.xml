@@ -1,0 +1,339 @@
+<resources>
+    <string name="app_name" translatable="false">SHLite</string>
+    <string name="title_management">Management</string>
+    <string name="title_activity">Day Activity</string>
+    <string name="title_reports">Reports</string>
+    <string name="title_hrms">HRMS</string>
+    <string name="rationale_title">Permission required</string>
+    <string name="rationale_message"><![CDATA[SHLite needs permission for find your location]]></string>
+    <string name="title_activity_fullscreen">FullscreenActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="login">LOGIN</string>
+    <string name="login_username">Username</string>
+    <string name="deviceid">Device Id</string>
+    <string name="login_password_hint">Password</string>
+    <string name="signup_login_hint">Dont Have Account? Sign Up</string>
+    <string name="login_signup_hint">Don\'t have an account? Sign Up</string>
+    <string name="staff">Welcome to</string>
+    <string name="staff1">Staff Handler Lite</string>
+    <string name="staff2">Have An Account?</string>
+    <string name="signin">Sign In</string>
+    <string name="signup">Sign Up</string>
+    <string name="staff3">Don\'t Have An Account??</string>
+    <string name="employee_entries">Employees list</string>
+    <string name="employee_info">Salary &amp; Leave Information</string>
+    <string name="employee_hrms">Employee HRMS Information</string>
+    <string name="policy_config">Policy &amp; Configuration</string>
+    <string name="policy_config_hrms">HRMS Policy &amp; Configuration</string>
+    <string name="leave_request">Leave Requests</string>
+    <string name="salary_calculation">Salary Calculation &amp; Transfer</string>
+    <string name="old_emp">Old Employee Data</string>
+    <string name="help_support">Help and Support</string>
+    <string name="default_notification_channel_id">Notification</string>
+    <string name="fcm_message">Notification</string>
+    <string name="msg_subscribed">Notificatssion</string>
+    <string name="msg_subscribe_failed">Notifssssication</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="send_excel">Do you want to send this report as an excel file on your email?</string>
+    <string name="exit">Do you want to exit?</string>
+    <string name="registration">Do you really want to cancel registration process?</string>
+    <string name="save">Do you want to save chnages?</string>
+    <string name="cancel_process">Do you want to Cancel QR code scanning?</string>
+    <string name="cancel">Cancel</string>
+    <string name="send_bulk">Please Provide us email address, where we will send you sample format.</string>
+    <string name="under_working">This module is under process,will update you very soon.</string>
+    <string name="click_link">Please click on the below link and use the Access Code to upload Employees detail File.</string>
+    <string name="url_link">www.miscos.in/shl</string>
+    <string name="otpmessage">We have sent OTP on your registered mobile no.Please wait for <big>OTP</big>. If you have received <big>OTP</big> already, please enter below.</string>
+
+
+    <string-array name="business_type">
+        <item>Business Type</item>
+        <item>Service</item>
+        <item>Manufacturing</item>
+    </string-array>
+
+    <string-array name="name_title">
+        <item>Mr</item>
+        <item>Ms</item>
+        <item>Mrs</item>
+    </string-array>
+    <string name="title_activity_login">Sign in</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+
+    <!--employee zone-->
+    <string name="profile">"Profile"</string>
+    <string name="sal_details">"Salary Details"</string>
+    <string name="leave_management">"Leave \n Management"</string>
+    <string name="daily_marking">"Daily Marking"</string>
+    <string name="message">"Message"</string>
+    <string name="company_policy">"Office policies &amp; Notices"</string>
+    <string name="complaints">"Suggestions Box"</string>
+    <string name="consultant">"Consultant"</string>
+    <string name="emergency">"Emergency Entry"</string>
+    <string name="daily_work">"Daily Task \n and Report"</string>
+    <string name="skill_set">"Skill Set \n improvement"</string>
+    <string name="complaint">"Complaint"</string>
+    <string name="employer_zone">Employer Zone</string>
+    <string name="employee_zone">Employee Zone</string>
+    <string name="employee_zone_admin_settings">Employee/Admin Zone</string>
+    <string name="employerzone">Employee/Admin Zone</string>
+    <string name="continuee">Continue</string>
+    <string name="payment">Pay Now</string>
+    <string name="sub">Subscription</string>
+    <string name="subscription">Please choose a Subscription plan to receive the report on your registered email.</string>
+    <string name="perday">Pay for this report</string>
+    <string name="monthly">Monthly plan(₹ 100 /month)</string>
+    <string name="yearly">Unlimited Download</string>
+    <string name="yearlyy">₹ 2200 / year</string>
+    <string name="perdayplan">Are you sure to subscribe Pay par plan?</string>
+    <string name="monthlyplan">Are you sure to subscribe Monthly plan?</string>
+    <string name="yearlyplan">Are you sure to subscribe Yearly plan?</string>
+    <string name="terms_and_condition"><![CDATA[I agree to the Terms and Condition]]></string>
+    <string name="perdayreport">₹ 97 for this report</string>
+    <string name="send_credentials">Send Credentials</string>
+    <string name="edit">Edit</string>
+    <string name="remove">Remove</string>
+    <string name="verify_otp">Verify OTP</string>
+    <string name="otp">OTP</string>
+    <string name="generate_otp">Generate OTP</string>
+    <string name="mobile_no">Mobile No</string>
+    <string name="select_employee">Select Employee</string>
+    <string name="no_employee">No Employee</string>
+    <string name="select_employee1">Select Employee</string>
+    <string name="selectall">Select All</string>
+    <string name="all_emp">All Employees Are Selected</string>
+    <string name="send_credential">Login Details will be sent to the registered mobile number of the Employee. Please Check for Updated details before sending.</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="other">Other</string>
+    <string name="gender">Gender *</string>
+    <string name="update_employee">Update Employee</string>
+    <string name="select_time">Select Time</string>
+    <string name="bulk_employee_creation">Create Employees in Bulk</string>
+    <string name="multipleorg">Employee registered for following organization, you want to add this for current organization too.</string>
+    <string name="submit">Submit</string>
+    <string name="email">Enter Email Address</string>
+    <string name="access_code">Access Code</string>
+    <string name="office_landmark">Office Landmark *</string>
+    <string name="please_send_report">Please send report to registered email</string>
+    <string name="residential_address">Local Address</string>
+    <string name="permanent_address">Permanent Address</string>
+    <string name="no_employee_found">No Employee Found</string>
+    <string name="no_report_found">No Day Report Found</string>
+    <string name="no_admins_found">No Admins Found</string>
+    <string name="no_wifi_found">No Wifi Added</string>
+    <string name="connection_error">Connection Error,Please try after sometime</string>
+    <string name="no_connection">No Connection</string>
+    <string name="qr_with_gps">QR With GPS</string>
+    <string name="gps_with_wifi">GPS With Wifi</string>
+    <string name="help_and_support">Help &amp; Support</string>
+    <string name="register_an_employee">Register Employee</string>
+    <string name="add_an_employee">Add Employee</string>
+    <string name="download_an_employee_report">Download Employee Report</string>
+    <string name="view_an_employee_report">View Employee Report</string>
+    <string name="mark_holidays">Mark Holidays</string>
+    <string name="manually_mark_attendance">Mark Attendance Manually</string>
+    <string name="login_as_an_employee">Login As Employee</string>
+    <string name="qr_configuration">QR Configuration</string>
+    <string name="config_qr">Digital and Static QR Configuration</string>
+    <string name="unregister_an_employee">Remove Employee</string>
+    <string name="mark_attendance">Mark Attendance</string>
+    <string name="mark_holiday">Mark Holiday</string>
+    <string name="make_a_payment">Make A Payment</string>
+    <string name="upgrade_total_employees_system">Upgrade total employees system</string>
+    <string name="admin_setting">Admin Setting</string>
+    <string name="more">More</string>
+    <string name="allow_emergency_duty">Emergency Duty</string>
+    <string name="employee_type">Employee Type</string>
+
+    <string name="holiday_attendance">Holiday Attendance</string>
+    <string name="office_staff">Office Staff</string>
+    <string name="shift_staff">Shift Staff</string>
+    <string name="both">Both</string>
+    <string name="choose_holiday">Please choose option for adding holiday which will be applicable for below staff.</string>
+    <string name="add_holiday">Add Holiday</string>
+    <string name="wifi_management">Other Settings</string>
+    <string name="special_attendance">Special Attendance</string>
+
+    <string name="shift_management">Shift Management</string>
+    <string name="special_management">Special Management</string>
+    <string name="special_shift_management">Special Shift Management</string>
+    <string name="admin_settings">Admin Settings</string>
+    <string name="company_settings">Company Setting</string>
+    <string name="roster_management">Roster Management</string>
+    <string name="admin_zone">Admin Zone</string>
+    <string name="normal_attendnace">Normal Attendance</string>
+
+    <string name="emergency_attendance">Emergency Attendance</string>
+    <string name="all_attendance">All Attendance</string>
+    <string name="settype">If you want to set GPS with QR then first set QR type.</string>
+    <string name="login_employee">Login as Employee</string>
+    <string name="Day_activity">Employee Day Activity</string>
+    <string name="help">If you need any help regarding registration please contact to these numbers.</string>
+    <string name="registration_process">Registration Process</string>
+    <string name="title_activity_h_r_m_s">MainActivity</string>
+    <string name="employee_details">Employee Details</string>
+    <string name="total_amount">Total Amount ₹</string>
+
+    <string name="lbl_salary_leave_informatin">Salary &amp; Leave Details Information</string>
+    <string name="lbl_monthly_salary_rs">Monthly Salary</string>
+    <string name="lbl_leave_salary_rs">Leave Deductions </string>
+    <string name="lbl_taxes_rs">Taxes</string>
+    <string name="lbl_other_deductions">Other Deductions</string>
+    <string name="lbl_net_salary_rs">Net Salary </string>
+    <string name="lbl_remaining_salary_rs">Remaining Salary</string>
+    <string name="lbl_details"><u>Details</u></string>
+    <string name="lbl_leave_details">Leaves Details</string>
+    <string name="lbl_date">Date</string>
+    <string name="lbl_status">Status  </string>
+    <string name="lbl_type">Type </string>
+
+    <!-- Apply For the leave -->
+    <string name="lbl_apply_for_the_leave">Apply For the leave</string>
+    <string name="lbl_full_day">Full Day</string>
+    <string name="lbl_half_day">Half Day</string>
+    <string name="lbl_from_date">From Date</string>
+    <string name="lbl_to_date">To Date</string>
+    <string name="lbl_reason_fro_leave">Reason for Leave</string>
+    <string name="lbl_request_details">Request Details</string>
+    <string name="lbl_submit">Submit</string>
+    <string name="lbl_leaves_status"><u>Leaves Status</u></string>
+    <string name="lbl_leaves_request_status">Leave Request Status</string>
+    <string name="lbl_describe_reason_for_leave">Describe the Reason for this leave.</string>
+
+    <string name="lbl_leave_authority">Leave Requests</string>
+    <string name="lbl_all_emp">All EMP</string>
+    <string name="lbl_old_record">Old Record</string>
+    <string name="lbl_leave_request_list">Leave Request List</string>
+    <string name="lbl_reject">Reject</string>
+    <string name="lbl_accept">Accept</string>
+    <string name="lbl_from_month_year">From Date</string>
+    <string name="lbl_to_month_year">To Date</string>
+    <string name="lbl_search_name_emp_id">Search Name / EMP ID</string>
+
+    <string name="lbl_behavior">Behavior</string>
+    <string name="lbl_Work_deliverabler">Work deliverable</string>
+    <string name="lbl_Attitude">Attitude</string>
+    <string name="lbl_Multi_tasking">Multi tasking</string>
+    <string name="lbl_Time_punctual">Time punctual</string>
+    <string name="lbl_Employee_Details">Employee Details</string>
+    <string name="lbl_feedback_term">I am submitting this information as best of my knowledge &amp; by clicking the button I accepting the terms &amp; conditions</string>
+
+    <string name="lbl_last_month_salary">Last Month Salary</string>
+    <string name="lbl_joined_from">Joined From</string>
+    <string name="lbl_last_working_date">Last working Date</string>
+    <string name="lbl_close">Close</string>
+    <string name="lbl_employee_feedback">Employee Feedback</string>
+    <string name="lbl_employee_evaluatio">Employee Feedback</string>
+    <string name="lbl_old_employee_feedback">Old Employee Feedback</string>
+    <string name="please_select_day_type">Please Select Day Type</string>
+    <string name="please_select_from_date">Please Select From Date</string>
+    <string name="please_select_to_date">Please Select To Date</string>
+    <string name="please_enter_request_details">Please enter request details</string>
+    <string name="str_leave_deductions">Leave Deductions</string>
+    <string name="tax_details">Tax Details</string>
+    <string name="other_deduction_details">Other Deduction Details</string>
+    <string name="employee_information">Employee Information</string>
+    <string name="lbl_ratings">Ratings</string>
+    <string name="lbl_evaluation">Evaluation</string>
+
+    <string name="lbl_emp_name">Employee Name</string>
+    <string name="lbl_emp_id">Employee ID</string>
+    <string name="lbl_designation_time_join">Designation at the time of Joining</string>
+    <string name="lbl_designation_time_leaving">Designation at the time of Leaving</string>
+    <string name="lbl_date_of_join">Date of Joining</string>
+    <string name="lbl_date_of_leaving">Date of Leaving</string>
+    <string name="lbl_gross_salary">Gross Salary(₹)</string>
+    <string name="lbl_supervisors_name_designation">Supervisors Name &amp; Designation</string>
+    <string name="lbl_job_knowledge">Job Knowledge</string>
+    <string name="lbl_work_quality">Work Quality</string>
+    <string name="lbl_attendance_punctuality">Attendance / Punctuality</string>
+    <string name="lbl_initiative">Initiative</string>
+    <string name="lbl_technical_skills">Technical Skills</string>
+    <string name="lbl_dependability">Dependability</string>
+    <string name="lbl_forgotpin"><u>Forgot Login Pin ?</u></string>
+    <string name="something_wrong">Something went wrong please try again.</string>
+    <string name="set_time">SET TIME</string>
+    <string name="manage_holidays">Manage Holidays(Add/View Holidays)</string>
+    <string name="holiday_management">Holiday Management</string>
+    <string name="select_date">Select Date</string>
+    <string name="selected_date_will_be_shown_here">Selected Date will be shown here</string>
+    <string name="shift_wise_attendance_status">Shift wise attendance status</string>
+    <string name="department_amp_designation"><![CDATA[Department & Designation]]></string>
+    <string name="late_arrival_amp_early_departure"><![CDATA[Late Arrival & Early Departure]]></string>
+    <string name="in_amp_out"><![CDATA[IN & OUT]]></string>
+    <string name="add_shift">Add Shift</string>
+    <string name="leave_management_for_non_smart_employees">Leave Management for Non Smart Employees</string>
+    <string name="upcoming">Upcoming</string>
+    <string name="last_6_months">Last 6 months</string>
+    <string name="sop_rule_book_notices">SOP, Rule Book, Notices</string>
+    <string name="subjects">Subjects</string>
+    <string name="file_name">File Name</string>
+    <string name="descriptions">Descriptions</string>
+
+    <string-array name="notification_to">
+        <item>Employee</item>
+        <item>Boss</item>
+    </string-array>
+    <string-array name="generated_emp_format">
+        <item>MM</item>
+        <item>YY</item>
+    </string-array>
+    <string-array name="dummy_all">
+        <item>All</item>
+    </string-array>
+    <string-array name="dummy_shift">
+        <item>Shift 1</item>
+        <item>Shift 2</item>
+
+    </string-array>
+    <string-array name="dummy_dep">
+        <item>Electrical Department</item>
+        <item>CS Department</item>
+    </string-array>
+    <string-array name="dummy_deign">
+        <item>Software Developer</item>
+        <item>Software Testing</item>
+    </string-array>
+    <string-array name="dummy_emp">
+        <item>Siddharth</item>
+        <item>Khan</item>
+    </string-array>
+    <string-array name="verification_licence_count">
+        <item>5</item>
+        <item>10</item>
+        <item>15</item>
+        <item>20</item>
+        <item>25</item>
+        <item>30</item>
+        <item>35</item>
+        <item>40</item>
+        <item>45</item>
+        <item>50</item>
+    </string-array>
+    <string-array name="holiday_types">
+        <item>Religious</item>
+        <item>Regional</item>
+        <item>National</item>
+        <item>Local</item>
+        <item>In company</item>
+    </string-array>
+
+    <string-array name="holiday_applied_on">
+        <item>All</item>
+        <item>Office shift</item>
+        <item>1st shift</item>
+        <item>2nd Shift</item>
+        <item>3rd Shift</item>
+    </string-array>
+</resources>

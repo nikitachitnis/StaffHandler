@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".hrms_management.SalTransferNCalculations.SalaryCalculationAndTransfer">
+
+    <!-- TODO: Update blank fragment layout -->
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:gravity="center"
+        android:minHeight="?attr/actionBarSize"
+        app:titleMarginStart="@dimen/_30sdp"
+        app:titleTextColor="@color/blue_400">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:gravity="start">
+
+            <ImageView
+                android:id="@+id/imBack"
+                android:layout_width="@dimen/_27sdp"
+                android:layout_height="@dimen/_27sdp"
+                android:layout_gravity="center"
+                android:tint="@color/white"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:src="@drawable/ic_arrow_back_black_24dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:fontFamily="@font/nunitosans_bold"
+                android:text="@string/salary_calculation"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_13sdp" />
+        </LinearLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/lvMain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar"
+        android:layout_marginTop="@dimen/_3sdp"
+        android:padding="@dimen/_5sdp">
+        <devs.mulham.horizontalcalendar.HorizontalCalendarView
+            android:id="@+id/calendarView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:layout_margin="@dimen/_2sdp"
+            app:layout_constraintBottom_toTopOf="@+id/txtheading"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:textColorSelected="@color/colorPrimaryDark"/>
+        <LinearLayout
+            android:background="@drawable/square_layout"
+            android:id="@+id/linearLayout4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="@dimen/_5sdp"
+            app:layout_constraintBottom_toTopOf="@+id/calendarView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+            <TextView
+                android:id="@+id/spinnerEmployee"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Select Employee"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/blue_10"
+                android:background="@drawable/square_layout"
+                android:dropDownSelector="@color/blue_600"
+                android:fontFamily="@font/nunitosans_bold"
+                android:padding="@dimen/_5sdp"
+                android:textSize="@dimen/_11sdp"
+                android:textColor="@color/white"
+                android:textAlignment="center" />
+            <CheckBox
+                android:id="@+id/checkAllEmployee"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:layout_weight="0.5"
+                android:shadowColor="@color/blue_600"
+                android:text="Select all" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:id="@+id/txtheading"
+            android:inputType="number"
+            android:padding="@dimen/_3sdp"
+            android:fontFamily="@font/nunitosans_bold"
+            android:text="Total Payable"
+            android:textColor="@color/orange_800"
+            android:textSize="@dimen/_13sdp"
+            app:layout_constraintTop_toBottomOf="@id/calendarView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:autofillHints="@string/total_amount" />
+        <LinearLayout
+            android:visibility="visible"
+            android:id="@+id/linearLayout3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:gravity="center"
+            android:background="@drawable/square_layout"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtheading">
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1.5"
+                android:layout_margin="@dimen/_2sdp"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/txttotalAmount"
+                    android:text="Total Amount 1233445"
+                    android:inputType="number"
+                   android:paddingLeft="@dimen/_2sdp"
+                    android:gravity="left"
+                    android:fontFamily="@font/nunitosans_bold"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_10sdp"
+                    />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Due Amount ₹12000"
+                    android:id="@+id/txtdueamount"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/nunitosans_bold"
+                    android:inputType="number"
+                    android:gravity="left"
+                    android:padding="@dimen/_2sdp"
+                    android:textSize="@dimen/_10sdp" />
+            </LinearLayout>
+
+            <CheckBox
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="0.5"
+                android:fontFamily="@font/nunitosans_bold"
+                android:gravity="center"
+                android:checked="true"
+                android:id="@+id/chkwithtax"
+                android:text="With Tax"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_8sdp" />
+        </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/_2sdp"
+        android:id="@+id/recyclerview_emp"
+        android:layout_below="@+id/lvMain"/>
+
+
+</RelativeLayout>

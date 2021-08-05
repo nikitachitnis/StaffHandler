@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="deductionsData"
+            type="com.miscos.staffhandler.hrms_management.hrms.model.response.OtherDeductionResponse.DeductionData" />
+    </data>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/clMain">
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:padding="@dimen/_5sdp"
+        android:text="@{deductionsData.name}"
+        android:gravity="center"
+        android:textSize="@dimen/_10ssp"
+        android:textColor="@color/black"
+        style="@style/fontregular"
+        android:id="@+id/tvOtherDeductionName"
+        app:layout_constraintEnd_toStartOf="@id/tvOtherDeductionAmount"
+        app:layout_constraintStart_toStartOf="parent"/>
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:padding="@dimen/_5sdp"
+        android:gravity="center"
+        android:textSize="@dimen/_10ssp"
+        android:textColor="@color/font_black_color"
+        style="@style/fontregular"
+        android:id="@+id/tvOtherDeductionAmount"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tvOtherDeductionName"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

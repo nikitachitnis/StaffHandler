@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        tools:context=".employerj.activity.AddHolidayActivity">
+
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:gravity="center"
+            android:minHeight="?attr/actionBarSize"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:titleMarginStart="@dimen/_30sdp"
+            app:titleTextColor="@color/blue_400">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="?actionBarSize">
+
+                <LinearLayout
+                    android:id="@+id/lyr_back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_gravity="start"
+                    android:gravity="start">
+
+                    <ImageView
+                        android:id="@+id/imBack"
+                        android:layout_width="@dimen/_27sdp"
+                        android:layout_height="@dimen/_27sdp"
+                        android:layout_gravity="center"
+                        android:tint="@color/white"
+                        android:layout_marginEnd="@dimen/_17sdp"
+                        android:src="@drawable/ic_arrow_back_black_24dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_centerHorizontal="true"
+                    android:orientation="horizontal"
+                    android:layout_toRightOf="@+id/lyr_back"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:gravity="start">
+
+                    <TextView
+                        android:id="@+id/txtheading"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="@dimen/_15sdp"
+                        android:fontFamily="@font/nunitosans_bold"
+                        android:text="Add Holiday"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_15sdp" />
+
+
+
+
+                </LinearLayout>
+                <TextView
+                    android:id="@+id/txtremove"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:drawableTint="@color/white"
+                    android:drawableRight="@android:drawable/ic_menu_delete"
+                    android:fontFamily="@font/nunitosans_bold"
+                    />
+            </RelativeLayout>
+        </androidx.appcompat.widget.Toolbar>
+
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:paddingLeft="18dp"
+            android:paddingRight="18dp"
+            android:paddingBottom="10dp"
+            android:text="Configuring Holidays for year"
+            android:textColor="@color/black"
+            android:textSize="13sp"
+            android:textStyle="bold" />
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="13dp"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="3dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical"
+                        android:paddingLeft="10dp">
+
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal">
+
+                            <ImageView
+                                android:id="@+id/img_holiday"
+                                android:layout_width="120dp"
+                                android:layout_height="120dp"
+                                android:layout_alignParentStart="true"
+                                android:layout_marginBottom="10dp"
+                                android:adjustViewBounds="true"
+                                android:scaleType="fitCenter"
+                                android:src="@drawable/default_place_holder" />
+
+                            <ImageView
+                                android:id="@+id/img_camera"
+                                android:layout_width="50dip"
+                                android:layout_height="50dip"
+                                android:layout_alignRight="@id/img_holiday"
+                                android:layout_alignBottom="@id/img_holiday"
+                                android:layout_marginEnd="-20dp"
+                                android:layout_marginBottom="-10dp"
+                                android:src="@drawable/ic_camera_blue" />
+                        </RelativeLayout>
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="start"
+                            android:padding="8dp"
+                            android:text="Holiday Name"
+                            android:textColor="@color/black"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+
+
+                        <EditText
+                            android:id="@+id/edt_holiday_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/border"
+                            android:gravity="start"
+                            android:hint="Enter holiday name"
+                            android:paddingLeft="18dp"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="10dp"
+                            android:singleLine="false"
+                            android:textColor="@color/black"
+                            android:textSize="13sp" />
+
+
+                        <TextView
+                            android:layout_width="120dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="start"
+                            android:padding="8dp"
+                            android:text="Holiday Type"
+                            android:textColor="@color/black"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+
+                        <Spinner
+                            android:id="@+id/sp_holiday_type"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/border"
+                            android:entries="@array/holiday_types"
+                            android:padding="5dp" />
+
+                        <LinearLayout
+                            android:padding="8dp"
+                            android:gravity="center_vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/txt_date"
+                                android:layout_width="65dp"
+                                android:layout_height="match_parent"
+                                android:text="From"
+                                android:gravity="center_vertical"
+                                android:textColor="@color/black"
+                                android:textSize="13sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/txt_start_date"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:padding="5dp"
+                                android:background="@drawable/border"
+                                android:drawableEnd="@drawable/ic_baseline_calendar"
+                                android:drawablePadding="4dp"
+                                android:fontFamily="@font/nunitosans_regular"
+                                android:gravity="center_vertical"
+                                android:hint="DD-MM-YYYY"
+                                android:textColor="@color/colorAccent"
+                                android:textSize="@dimen/text_size_extra_small"
+                                />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="8dp">
+                            <TextView
+                                android:layout_width="65dp"
+                                android:layout_height="wrap_content"
+                                android:text="To"
+                                android:textColor="@color/black"
+                                android:textSize="13sp"
+                                android:textStyle="bold" />
+
+
+                            <TextView
+                                android:id="@+id/txt_end_date"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:padding="5dp"
+                                android:background="@drawable/border"
+                                android:drawableEnd="@drawable/ic_baseline_calendar"
+                                android:drawablePadding="4dp"
+                                android:fontFamily="@font/nunitosans_regular"
+                                android:gravity="center_vertical"
+                                android:hint="DD-MM-YYYY"
+                                android:textColor="@color/colorAccent"
+                                android:textSize="@dimen/text_size_extra_small"
+                                />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:padding="8dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical">
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Applied On"
+                                android:textColor="@color/black"
+                                android:textSize="13sp"
+                                android:textStyle="bold" />
+
+                            <com.miscos.staffhandler.employer_java.customview.MultiSpinner
+                                android:id="@+id/sp_applied_on"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/border"
+                                android:padding="5dp"
+                                android:layout_marginLeft="10dp"
+                                android:entries="@array/holiday_applied_on" />
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="start"
+                            android:padding="8dp"
+                            android:text="Message for Employees (Optional)"
+                            android:textColor="@color/black"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/edt_holiday_message"
+                            android:layout_width="match_parent"
+                            android:layout_height="80dp"
+                            android:background="@drawable/border"
+                            android:gravity="start"
+                            android:hint="Enter message for employees \n(upto 1000 words)"
+                            android:paddingLeft="18dp"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="10dp"
+                            android:singleLine="false"
+                            android:textColor="@color/black"
+                            android:textSize="13sp" />
+
+
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/submit"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/activity_vertical_margin"
+                            android:fontFamily="@font/nunitosans_semibold"
+                            android:padding="@dimen/activity_vertical_margin"
+                            android:text="Submit"
+                            android:textAllCaps="false"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/text_size_large"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/editTextContainer" />
+
+                    </LinearLayout>
+
+
+                </androidx.cardview.widget.CardView>
+
+            </ScrollView>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+</layout>

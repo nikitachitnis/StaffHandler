@@ -1,0 +1,1019 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    android:layout_width="match_parent"
+    android:id="@+id/coordinatorLayout"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:gravity="center"
+            app:titleMarginStart="@dimen/_30sdp"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimary"
+            app:titleTextAppearance="@style/toolbarText"
+            app:popupTheme="@style/AppTheme.PopupOverlay"
+            android:minHeight="?attr/actionBarSize">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_gravity="start"
+                android:gravity="start"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/imBack"
+                    android:layout_gravity="center"
+                    android:tint="@color/white"
+                    android:src="@drawable/ic_arrow_back_black_24dp"
+                    android:layout_width="@dimen/_27sdp"
+                    android:layout_height="@dimen/_27sdp"
+                    android:layout_marginEnd="@dimen/_14sdp"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+
+                android:gravity="start"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_gravity="center"
+                    android:text="Add Employee"
+                    android:textColor="@color/white"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/nunitosans_bold"
+                    android:textSize="@dimen/_15sdp"
+                    android:layout_marginEnd="@dimen/_14sdp"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_gravity="end"
+                android:gravity="end"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/tvAddBulk"
+                    android:text="Add Bulk"
+                    android:fontFamily="@font/nunitosans_bold"
+                    android:textColor="@color/white"
+                    android:layout_gravity="center_vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:textSize="@dimen/_14sdp" />
+            </LinearLayout>
+        </androidx.appcompat.widget.Toolbar>
+
+
+        <RelativeLayout
+            android:layout_below="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/conLav"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <androidx.core.widget.NestedScrollView
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent">
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/empImage"
+                            android:layout_width="@dimen/_60sdp"
+                            android:layout_height="@dimen/_60sdp"
+                            android:layout_margin="@dimen/_6sdp"
+                            android:src="@drawable/addimage"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                        <TextView
+                            android:id="@+id/txtlabel"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_12sdp"
+                            android:text="Add Employee Picture"
+                            android:visibility="visible"
+                            android:gravity="center"
+                            android:textColor="@color/colorPrimary"
+                            android:layout_marginBottom="@dimen/_3sdp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintBottom_toTopOf="@+id/barrier"
+                            app:layout_constraintTop_toBottomOf="@+id/empImage" />
+
+
+                        <androidx.constraintlayout.widget.Barrier
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/barrier"
+                            app:constraint_referenced_ids="txtlabel"
+                            app:barrierDirection="bottom"/>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/editTextContainer"
+                            android:layout_width="0dp"
+                            android:background="@color/white"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/_10sdp"
+                            android:padding="@dimen/_5sdp"
+                            android:layout_marginTop="@dimen/_2sdp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/barrier">
+
+
+                            <ImageView
+                                android:id="@+id/nameIcon"
+                                android:layout_width="@dimen/_28sdp"
+                                android:layout_height="@dimen/_28sdp"
+
+                                android:src="@drawable/ic_person_blue_24dp"
+                                app:layout_constraintBottom_toBottomOf="@id/name"
+                                app:layout_constraintEnd_toStartOf="@id/name"
+                                app:layout_constraintTop_toTopOf="@id/name"
+                                app:layout_constraintHorizontal_bias="0.363"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintVertical_bias="0.428" />
+
+                            <EditText
+                                android:id="@+id/name"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_50sdp"
+                                android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                                android:layout_marginTop="@dimen/_20sdp"
+                                android:layout_marginEnd="@dimen/activity_vertical_margin"
+
+                                android:background="@color/white"
+                                android:cursorVisible="true"
+                                android:focusableInTouchMode="true"
+                                android:fontFamily="@font/nunitosans_regular"
+                                android:hint="First Name *"
+                                android:inputType="textCapWords"
+                                android:maxLength="20"
+                                android:singleLine="true"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_14sdp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="1dp"
+                                android:layout_marginTop="@dimen/_4sdp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/name"
+                                android:background="@color/divider_color"
+                                android:id="@+id/divider"/>
+
+
+                            <ImageView
+                                android:id="@+id/lnameIcon"
+                                android:layout_width="@dimen/_28sdp"
+                                android:layout_height="@dimen/_28sdp"
+
+                                android:src="@drawable/ic_person_blue_24dp"
+                                app:layout_constraintBottom_toBottomOf="@id/Lname"
+                                app:layout_constraintEnd_toStartOf="@id/Lname"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintHorizontal_bias="0.363"
+                                app:layout_constraintVertical_bias="0.428"
+                                app:layout_constraintTop_toTopOf="@id/Lname" />
+
+                            <EditText
+                                android:id="@+id/Lname"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_50sdp"
+                                android:layout_marginTop="@dimen/_20sdp"
+                                android:layout_marginEnd="@dimen/activity_vertical_margin"
+
+                                android:background="@color/white"
+                                android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                                android:fontFamily="@font/nunitosans_regular"
+                                android:hint="Last Name *"
+                                android:inputType="textCapWords"
+                                android:maxLength="20"
+                                android:singleLine="true"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_14sdp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/divider"/>
+
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="1dp"
+                                android:layout_marginTop="@dimen/_4sdp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/Lname"
+                                android:background="@color/divider_color"
+                                android:id="@+id/divider1"/>
+
+                            <ImageView
+                                android:id="@+id/mobileIcon"
+                                android:layout_width="@dimen/_28sdp"
+                                android:layout_height="@dimen/_28sdp"
+
+                                android:src="@drawable/ic_phone_android_black_24dp"
+                                app:layout_constraintBottom_toBottomOf="@id/mobile"
+                                app:layout_constraintEnd_toStartOf="@id/mobile"
+                                app:layout_constraintTop_toTopOf="@id/mobile"
+                                app:layout_constraintHorizontal_bias="0.363"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintVertical_bias="0.428"/>
+
+                            <EditText
+                                android:id="@+id/mobile"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_50sdp"
+                                android:layout_marginTop="@dimen/_20sdp"
+                                android:layout_marginEnd="@dimen/activity_vertical_margin"
+                                android:background="@color/white"
+                                android:cursorVisible="true"
+
+                                android:fontFamily="@font/nunitosans_regular"
+                                android:hint="Mobile Number *"
+                                android:inputType="number"
+                                android:maxLength="10"
+                                android:nextFocusDown="@id/mail"
+                                android:singleLine="true"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_14sdp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/divider1" />
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="1dp"
+                                android:layout_marginTop="@dimen/_4sdp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/mobile"
+                                android:background="@color/divider_color"
+                                android:id="@+id/divider2"/>
+                            <ImageView
+                                android:id="@+id/emailicon"
+                                android:layout_width="@dimen/_28sdp"
+                                android:layout_height="@dimen/_28sdp"
+
+                                android:src="@drawable/ic_email_black_24dp"
+                                app:layout_constraintBottom_toBottomOf="@id/edtemail"
+                                app:layout_constraintEnd_toStartOf="@id/edtemail"
+                                app:layout_constraintTop_toTopOf="@id/edtemail"
+                                app:layout_constraintHorizontal_bias="0.363"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintVertical_bias="0.428"/>
+
+                            <EditText
+                                android:id="@+id/edtemail"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_50sdp"
+                                android:layout_marginTop="@dimen/_20sdp"
+                                android:layout_marginEnd="@dimen/activity_vertical_margin"
+                                android:background="@color/white"
+                                android:cursorVisible="true"
+                                android:fontFamily="@font/nunitosans_regular"
+                                android:hint="Email ID"
+                                android:inputType="textEmailAddress"
+                                android:singleLine="true"
+                                android:maxLength="320"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_14sdp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/divider2" />
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="1dp"
+                                android:layout_marginTop="@dimen/_4sdp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/edtemail"
+                                android:background="@color/divider_color"
+                                android:id="@+id/divider88"/>
+
+
+                            <ImageView
+                                android:id="@+id/companyIcon"
+                                android:layout_width="@dimen/_28sdp"
+                                android:layout_height="@dimen/_28sdp"
+
+                                app:layout_constraintHorizontal_bias="0.363"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintVertical_bias="0.428"
+                                android:src="@drawable/ic_person_pin_circle_black_24dp"
+                                app:layout_constraintBottom_toBottomOf="@id/etHomeAddress"
+                                app:layout_constraintEnd_toStartOf="@id/etHomeAddress"
+                                app:layout_constraintTop_toTopOf="@id/etHomeAddress" />
+
+                            <EditText
+                                android:id="@+id/etHomeAddress"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_50sdp"
+                                android:layout_marginTop="24dp"
+                                android:layout_marginEnd="@dimen/activity_vertical_margin"
+                                android:background="@color/white"
+                                android:cursorVisible="true"
+                                android:fontFamily="@font/nunitosans_regular"
+                                android:hint="@string/residential_address"
+                                android:inputType="text"
+                                android:maxLength="150"
+                                android:singleLine="true"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_14sdp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/divider88" />
+<CheckBox
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/chkpermanentAddress"
+    app:layout_constraintEnd_toEndOf="parent"
+    android:layout_marginStart="@dimen/_76sdp"
+    android:textColor="@color/colorPrimary"
+    app:layout_constraintTop_toBottomOf="@id/etHomeAddress"
+    android:buttonTint="@color/colorPrimary"
+    android:text=" Same as local address"/>
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="1dp"
+                                android:layout_marginTop="@dimen/_4sdp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+
+                                app:layout_constraintTop_toBottomOf="@id/etHomeAddress"
+                                android:background="@color/divider_color"
+                                android:id="@+id/divider12"/>
+
+                            <ImageView
+                                android:id="@+id/iccompanyIcon"
+                                android:layout_width="@dimen/_28sdp"
+                                android:layout_height="@dimen/_28sdp"
+                                app:layout_constraintHorizontal_bias="0.363"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintVertical_bias="0.428"
+
+                                android:src="@drawable/ic_person_pin_circle_black_24dp"
+                                app:layout_constraintBottom_toBottomOf="@id/edtPermanentAddress"
+                                app:layout_constraintEnd_toStartOf="@id/edtPermanentAddress"
+                                app:layout_constraintTop_toTopOf="@id/edtPermanentAddress" />
+
+                            <EditText
+                                android:id="@+id/edtPermanentAddress"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_50sdp"
+                                android:layout_marginEnd="@dimen/activity_vertical_margin"
+                                android:background="@color/white"
+                                android:cursorVisible="true"
+
+                                android:fontFamily="@font/nunitosans_regular"
+                                android:hint="@string/permanent_address"
+                                android:inputType="text"
+                                android:maxLength="150"
+                                android:singleLine="true"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_14sdp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/chkpermanentAddress" />
+
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="1dp"
+                                android:layout_marginTop="@dimen/_4sdp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/edtPermanentAddress"
+                                android:background="@color/divider_color"
+                                android:id="@+id/divider3"/>
+                            <ImageView
+                                android:id="@+id/ageIcon"
+                                android:layout_width="@dimen/_23sdp"
+                                android:layout_height="@dimen/_26sdp"
+                                android:layout_marginBottom="@dimen/_2sdp"
+
+                                android:src="@drawable/ic_calendar_birthday"
+                                app:layout_constraintBottom_toBottomOf="@id/age"
+                                app:layout_constraintEnd_toStartOf="@id/age"
+                                app:layout_constraintTop_toTopOf="@id/age"
+                                app:layout_constraintHorizontal_bias="0.363"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintVertical_bias="0.428" />
+
+                            <TextView
+                                android:id="@+id/age"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_50sdp"
+                                android:layout_marginTop="@dimen/_14sdp"
+                                android:layout_marginEnd="@dimen/activity_vertical_margin"
+                                android:background="@color/white"
+                                android:fontFamily="@font/nunitosans_regular"
+                                android:hint="Date of Birth"
+                                android:maxLength="10"
+
+                                android:inputType="number"
+                                android:singleLine="true"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_14sdp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/divider3" />
+
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="1dp"
+                                android:layout_marginTop="@dimen/_4sdp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/age"
+                                android:background="@color/divider_color"
+                                android:id="@+id/divider4"/>
+                            <ImageView
+                                android:id="@+id/dobIcon"
+                                android:layout_width="@dimen/_28sdp"
+                                android:layout_height="@dimen/_28sdp"
+
+                                android:src="@drawable/ic_date_range_black_24dp"
+                                app:layout_constraintBottom_toBottomOf="@id/doj"
+                                app:layout_constraintEnd_toStartOf="@id/doj"
+                                app:layout_constraintTop_toTopOf="@id/doj"
+                                app:layout_constraintHorizontal_bias="0.363"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintVertical_bias="0.428" />
+
+                            <TextView
+                                android:id="@+id/doj"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_50sdp"
+                                android:layout_marginTop="@dimen/_14sdp"
+                                android:layout_marginEnd="@dimen/activity_vertical_margin"
+                                android:background="@color/white"
+                                android:fontFamily="@font/nunitosans_regular"
+                                android:hint="Date of Joining"
+                                android:maxLength="10"
+                                android:inputType="number"
+
+                                android:singleLine="true"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_14sdp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/divider4" />
+
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="1dp"
+                                android:layout_marginTop="@dimen/_4sdp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/doj"
+                                android:background="@color/divider_color"
+                                android:id="@+id/divider5"/>
+                            <ImageView
+                                android:id="@+id/aadharIcon"
+                                android:layout_width="@dimen/_28sdp"
+                                android:layout_height="@dimen/_28sdp"
+                                android:src="@drawable/ic_id_card"
+
+                                app:layout_constraintBottom_toBottomOf="@id/edtAddharno"
+                                app:layout_constraintEnd_toStartOf="@id/edtAddharno"
+                                app:layout_constraintTop_toTopOf="@id/edtAddharno"
+                                app:layout_constraintHorizontal_bias="0.363"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintVertical_bias="0.428"/>
+
+                            <EditText
+                                android:id="@+id/edtAddharno"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_50sdp"
+                                android:layout_marginTop="@dimen/_20sdp"
+                                android:layout_marginEnd="@dimen/activity_vertical_margin"
+                                android:background="@color/white"
+                                android:cursorVisible="true"
+                                android:fontFamily="@font/nunitosans_regular"
+                                android:hint="Adhar Number *"
+                                android:inputType="number"
+                                android:maxLength="14"
+                                android:singleLine="true"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_14sdp"
+                                app:layout_constraintEnd_toStartOf="@id/txtverify"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/divider5" />
+                            <TextView
+                                android:id="@+id/txtverify"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/nunitosans_bold"
+                                android:text="Verify"
+                                android:textColor="@color/blue_900"
+                                android:textSize="@dimen/_13sdp"
+                                android:visibility="visible"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toEndOf="@id/edtAddharno"
+                                app:layout_constraintTop_toTopOf="@id/edtAddharno" />
+
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="1dp"
+                                android:layout_marginTop="@dimen/_4sdp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/edtAddharno"
+                                android:background="@color/divider_color"
+                                android:id="@+id/divider6"/>
+
+                            <ImageView
+                                android:id="@+id/PanIcon"
+                                android:layout_width="@dimen/_28sdp"
+                                android:layout_height="@dimen/_28sdp"
+                                android:src="@drawable/ic_pan_card"
+                                app:layout_constraintBottom_toBottomOf="@id/edtPanNo"
+                                app:layout_constraintEnd_toStartOf="@id/edtPanNo"
+                                app:layout_constraintTop_toTopOf="@id/edtPanNo"
+                                app:layout_constraintHorizontal_bias="0.363"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintVertical_bias="0.428" />
+
+                            <EditText
+                                android:id="@+id/edtPanNo"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_50sdp"
+                                android:layout_marginTop="@dimen/_14sdp"
+                                android:layout_marginEnd="@dimen/activity_vertical_margin"
+                                android:background="@color/white"
+                                android:fontFamily="@font/nunitosans_regular"
+                                android:hint="Pan Number e.g. ALWPG5809L"
+                                android:maxLength="10"
+                                android:inputType="text"
+                                android:singleLine="true"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_14sdp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/divider6" />
+
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="1dp"
+                                android:layout_marginTop="@dimen/_4sdp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/edtPanNo"
+                                android:background="@color/divider_color"
+                                android:id="@+id/divider7"/>
+                            <ImageView
+                                android:id="@+id/deptIcon"
+                                android:layout_width="@dimen/_28sdp"
+                                android:layout_height="@dimen/_28sdp"
+                                android:src="@drawable/ic_designation"
+                                app:layout_constraintBottom_toBottomOf="@id/spindept"
+                                app:layout_constraintEnd_toStartOf="@id/spindept"
+                                app:layout_constraintTop_toTopOf="@id/spindept"
+                                app:layout_constraintHorizontal_bias="0.363"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintVertical_bias="0.428"/>
+
+                            <Spinner
+                                android:id="@+id/spindept"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_50sdp"
+                                android:layout_marginTop="@dimen/_20sdp"
+                                android:layout_marginEnd="@dimen/activity_vertical_margin"
+                                android:background="@drawable/spinnerstyle"
+                                android:dropDownSelector="@color/blue_600"
+                                android:fontFamily="@font/nunitosans_regular"
+                                android:singleLine="true"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_14sdp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/divider7" />
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="1dp"
+                                android:layout_marginTop="@dimen/_4sdp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/spindept"
+                                android:background="@color/divider_color"
+                                android:id="@+id/divider10"/>
+                            <ImageView
+                                android:id="@+id/designationIcon"
+                                android:layout_width="@dimen/_28sdp"
+                                android:layout_height="@dimen/_28sdp"
+                                android:src="@drawable/ic_designation"
+                                app:layout_constraintBottom_toBottomOf="@id/spindesign"
+                                app:layout_constraintEnd_toStartOf="@id/spindesign"
+                                app:layout_constraintTop_toTopOf="@id/spindesign"
+                                app:layout_constraintHorizontal_bias="0.363"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintVertical_bias="0.428"/>
+
+                            <Spinner
+                                android:id="@+id/spindesign"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_50sdp"
+                                android:layout_marginTop="@dimen/_20sdp"
+                                android:layout_marginEnd="@dimen/activity_vertical_margin"
+                                android:background="@drawable/spinnerstyle"
+                                android:dropDownSelector="@color/blue_600"
+                                android:fontFamily="@font/nunitosans_regular"
+                                android:singleLine="true"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_14sdp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/divider10" />
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="1dp"
+                                android:layout_marginTop="@dimen/_4sdp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/spindesign"
+                                android:background="@color/divider_color"
+                                android:id="@+id/divider8"/>
+                            <TextView
+                                android:id="@+id/gender"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_10sdp"
+                                android:layout_marginTop="@dimen/_14sdp"
+                                android:layout_marginEnd="@dimen/_20sdp"
+                                android:fontFamily="@font/nunitosans_regular"
+                                android:text="@string/gender"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_13sdp"
+                                android:visibility="visible"
+                                app:layout_constraintBottom_toTopOf="@+id/textView2"
+                                app:layout_constraintEnd_toStartOf="@id/genderRadioGroup"
+                                app:layout_constraintHorizontal_bias="0.0"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/divider8" />
+
+                            <RadioGroup
+                                android:id="@+id/genderRadioGroup"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="@dimen/_10sdp"
+                                android:orientation="horizontal"
+                                android:visibility="visible"
+                                app:layout_constraintBottom_toBottomOf="@id/gender"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="@id/gender">
+
+                                <RadioButton
+                                    android:id="@+id/male"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="@dimen/_5sdp"
+                                    android:fontFamily="@font/nunitosans_regular"
+                                    android:shadowColor="@color/blue_600"
+                                    android:text="@string/male"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/_10sdp" />
+
+                                <RadioButton
+                                    android:id="@+id/female"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="@dimen/_5sdp"
+                                    android:fontFamily="@font/nunitosans_regular"
+                                    android:shadowColor="@color/blue_600"
+                                    android:text="@string/female"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/_10sdp" />
+
+                                <RadioButton
+                                    android:id="@+id/Other"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="@dimen/_5sdp"
+                                    android:fontFamily="@font/nunitosans_regular"
+                                    android:shadowColor="@color/blue_600"
+                                    android:text="@string/other"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/_10sdp" />
+
+                            </RadioGroup>
+
+                            <TextView
+                                android:id="@+id/textView2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_12sdp"
+                                android:text="(optional)"
+                                android:visibility="gone"
+                                android:layout_marginBottom="@dimen/_10sdp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toEndOf="parent"
+                                app:layout_constraintBottom_toTopOf="@+id/genderRadioGroup"
+                                app:layout_constraintTop_toBottomOf="@+id/genderRadioGroup" />
+                            <TextView
+                                android:id="@+id/lbl_settings"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_7sdp"
+                                android:fontFamily="@font/nunitosans_regular"
+                                android:text="Settings"
+                                android:drawableTint="@color/colorPrimaryDark"
+                                android:drawablePadding="@dimen/_5sdp"
+                                android:drawableStart="@drawable/ic_profile"
+                                app:layout_constraintHorizontal_bias="0.0"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/genderRadioGroup"
+                                android:textColor="@color/black"
+                                android:layout_marginTop="@dimen/_3sdp"
+                                android:textSize="@dimen/_13sdp" />
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:padding="@dimen/_2sdp"
+                                app:layout_constraintBottom_toTopOf="@+id/btnsubmit"
+                                android:background="@drawable/border1"
+                                app:layout_constraintHorizontal_bias="0.0"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/lbl_settings">
+
+
+                                <TextView
+                                    android:id="@+id/employee_type"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/_7sdp"
+                                    android:fontFamily="@font/nunitosans_regular"
+                                    android:text="@string/employee_type"
+                                    android:textColor="@color/black"
+                                    android:layout_marginTop="@dimen/_6sdp"
+                                    android:layout_below="@+id/allowEmergency"
+                                    android:textSize="@dimen/_12sdp" />
+
+                                <RadioGroup
+                                    android:id="@+id/employeeRadio"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/employee_type"
+                                    android:layout_marginEnd="@dimen/_15sdp"
+                                    android:orientation="horizontal">
+
+                                    <RadioButton
+                                        android:id="@+id/officeStaff"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginEnd="@dimen/_3sdp"
+                                        android:fontFamily="@font/nunitosans_regular"
+                                        android:shadowColor="@color/blue_600"
+                                        android:text="Office Staff"
+                                        android:textColor="@color/black"
+                                        android:textSize="@dimen/_10sdp" />
+
+                                    <RadioButton
+                                        android:id="@+id/shiftStaff"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginEnd="@dimen/_5sdp"
+                                        android:fontFamily="@font/nunitosans_regular"
+                                        android:shadowColor="@color/blue_600"
+                                        android:text="Shift Staff"
+                                        android:textColor="@color/black"
+                                        android:textSize="@dimen/_10sdp" />
+                                </RadioGroup>
+                                <TextView
+                                    android:id="@+id/allow_emergency"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginStart="@dimen/_7sdp"
+                                    android:layout_marginTop="@dimen/_7sdp"
+                                    android:fontFamily="@font/nunitosans_regular"
+                                    android:text="@string/allow_emergency_duty"
+                                    android:textColor="@color/black"
+                                    android:gravity="center"
+                                    android:layout_alignParentTop="true"
+                                    android:textSize="@dimen/_12sdp" />
+                                <RadioGroup
+                                    android:id="@+id/allowEmergency"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/allow_emergency"
+                                    android:orientation="horizontal"
+                                    >
+                                    <RadioButton
+                                        android:id="@+id/yes"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/nunitosans_regular"
+                                        android:shadowColor="@color/blue_600"
+                                        android:text="Allow"
+                                        android:layout_marginEnd="@dimen/_5sdp"
+                                        android:textColor="@color/black"
+                                        android:textSize="@dimen/_10sdp" />
+
+                                    <RadioButton
+                                        android:id="@+id/no"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginEnd="@dimen/_5sdp"
+                                        android:fontFamily="@font/nunitosans_regular"
+                                        android:shadowColor="@color/blue_600"
+                                        android:text="Deny"
+                                        android:textColor="@color/black"
+                                        android:textSize="@dimen/_10sdp" />
+                                </RadioGroup>
+                                <TextView
+                                    android:id="@+id/employee_type2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginStart="@dimen/_7sdp"
+                                    android:layout_marginTop="@dimen/_7sdp"
+                                    android:fontFamily="@font/nunitosans_regular"
+                                    android:text="Employment Type "
+                                    android:textColor="@color/black"
+                                    android:gravity="center"
+                                    android:layout_below="@id/employeeRadio"
+                                    android:textSize="@dimen/_12sdp" />
+                                <RadioGroup
+                                    android:id="@+id/rdgroupEmptype2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/employee_type2"
+                                    android:orientation="horizontal"
+                                    >
+                                    <RadioButton
+                                        android:id="@+id/rdbtnpayrole"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/nunitosans_regular"
+                                        android:shadowColor="@color/blue_600"
+                                        android:text="Company Payrole"
+                                        android:layout_marginEnd="@dimen/_5sdp"
+                                        android:textColor="@color/black"
+                                        android:textSize="@dimen/_10sdp" />
+
+                                    <RadioButton
+                                        android:id="@+id/rdbtncontract"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginEnd="@dimen/_5sdp"
+                                        android:fontFamily="@font/nunitosans_regular"
+                                        android:shadowColor="@color/blue_600"
+                                        android:text="Contract Basis"
+                                        android:textColor="@color/black"
+                                        android:textSize="@dimen/_10sdp" />
+                                </RadioGroup>
+                                <TextView
+                                    android:id="@+id/contractype"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginStart="@dimen/_7sdp"
+                                    android:layout_marginTop="@dimen/_7sdp"
+                                    android:fontFamily="@font/nunitosans_regular"
+                                    android:text="Contract Type "
+                                    android:visibility="gone"
+                                    android:textColor="@color/black"
+                                    android:gravity="center"
+                                    android:layout_below="@id/rdgroupEmptype2"
+                                    android:textSize="@dimen/_12sdp" />
+                                <RadioGroup
+                                    android:id="@+id/rdgroupContracttype"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:visibility="gone"
+                                    android:layout_below="@id/contractype"
+                                    android:orientation="horizontal"
+                                    >
+                                    <RadioButton
+                                        android:id="@+id/rdbtnself"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/nunitosans_regular"
+                                        android:shadowColor="@color/blue_600"
+                                        android:text="Self"
+                                        android:layout_marginEnd="@dimen/_5sdp"
+                                        android:textColor="@color/black"
+                                        android:textSize="@dimen/_10sdp" />
+
+                                    <RadioButton
+                                        android:id="@+id/rdbtnthirdparty"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginEnd="@dimen/_5sdp"
+                                        android:fontFamily="@font/nunitosans_regular"
+                                        android:shadowColor="@color/blue_600"
+                                        android:text="Third Party"
+                                        android:textColor="@color/black"
+                                        android:textSize="@dimen/_10sdp" />
+                                </RadioGroup>
+                                <EditText
+                                    android:id="@+id/edtcontracttype"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:ems="10"
+                                    android:visibility="gone"
+                                    android:layout_below="@id/rdgroupContracttype"
+                                    android:inputType="textPersonName"
+                                    android:hint="Enter name of third party" />
+                                <TextView
+                                    android:id="@+id/employee_phn_type"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginStart="@dimen/_7sdp"
+                                    android:layout_marginTop="@dimen/_7sdp"
+                                    android:fontFamily="@font/nunitosans_regular"
+                                    android:text="Employee having smartphone ?"
+                                    android:textColor="@color/black"
+                                    android:gravity="center"
+                                    android:layout_below="@id/edtcontracttype"
+                                    android:textSize="@dimen/_12sdp" />
+
+
+
+                                <RadioGroup
+                                    android:id="@+id/rdgroupEmptype3"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/employee_phn_type"
+                                    android:orientation="horizontal"
+                                    >
+                                    <RadioButton
+                                        android:id="@+id/rdbtnyes_smartphn"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/nunitosans_regular"
+                                        android:shadowColor="@color/blue_600"
+                                        android:text="Yes"
+                                        android:layout_marginEnd="@dimen/_5sdp"
+                                        android:textColor="@color/black"
+                                        android:textSize="@dimen/_10sdp" />
+
+                                    <RadioButton
+                                        android:id="@+id/rdbtnno_smartphn"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginEnd="@dimen/_5sdp"
+                                        android:fontFamily="@font/nunitosans_regular"
+                                        android:shadowColor="@color/blue_600"
+                                        android:text="No"
+                                        android:textColor="@color/black"
+                                        android:textSize="@dimen/_10sdp" />
+                                </RadioGroup>
+
+
+                            </RelativeLayout>
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/btnSubmit"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/activity_vertical_margin"
+                            android:background="@drawable/buttonshape"
+                            android:fontFamily="@font/nunitosans_semibold"
+                            android:gravity="center"
+                            android:text="Add Employee"
+                            android:textAllCaps="false"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_12sdp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/editTextContainer" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.core.widget.NestedScrollView>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

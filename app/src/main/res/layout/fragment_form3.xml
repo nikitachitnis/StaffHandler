@@ -1,0 +1,899 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="resource"
+            type="com.miscos.staffhandler.empolyer.util.remoteUtils.Resource" />
+
+        <variable
+            name="data"
+            type="com.miscos.staffhandler.employer_java.remote.model.fetchdataform2.EmployeeDataItem" />
+
+        <!--        <variable
+                    name="data"
+                    type="com.miscos.staffhandler.empolyer.model.EmploerDataItem" />-->
+
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#f8fafd">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:background="@drawable/shadow_container"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/logo"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:layout_marginEnd="2dp"
+                    android:src="@drawable/ic_logo"
+                    app:layout_constraintBottom_toBottomOf="@id/title"
+                    app:layout_constraintEnd_toStartOf="@id/title"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/title" />
+
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="19dp"
+                    android:fontFamily="@font/nunitosans_bold"
+                    android:text="Policy &amp; Configuration"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_14sdp"
+                    app:layout_constraintBottom_toTopOf="@+id/editTextContainer"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/logo"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.51" />
+
+                <androidx.constraintlayout.widget.Barrier
+                    android:id="@+id/barrier"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:barrierDirection="bottom"
+                    app:constraint_referenced_ids="logo,title" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/editTextContainer"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/barrier">
+
+
+                    <ImageView
+                        android:id="@+id/logoIcon"
+                        android:layout_width="@dimen/_25sdp"
+                        android:layout_height="@dimen/_25sdp"
+                        android:layout_marginStart="@dimen/_20sdp"
+                        android:layout_marginEnd="@dimen/_20sdp"
+                        android:src="@drawable/ic_upload"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="@id/companyLogo"
+                        app:layout_constraintEnd_toStartOf="@id/companyLogo"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/companyLogo" />
+
+                    <TextView
+                        android:id="@+id/companyLogo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_7sdp"
+                        android:visibility="gone"
+                        android:layout_marginEnd="@dimen/_7sdp"
+                        android:layout_marginBottom="21dp"
+                        android:fontFamily="@font/nunitosans_regular"
+                        android:text="Company Logo"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_15sdp"
+                        app:layout_constraintBottom_toTopOf="@+id/divider7"
+                        app:layout_constraintEnd_toStartOf="@id/uploadLogo"
+                        app:layout_constraintStart_toEndOf="@+id/logoIcon"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <Button
+                        android:id="@+id/uploadLogo"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_15sdp"
+                        android:fontFamily="@font/nunitosans_bold"
+                        android:gravity="center"
+                        android:text="UPLOAD"
+                        android:visibility="gone"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_8sdp"
+                        app:layout_constraintBottom_toBottomOf="@id/companyLogo"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/companyLogo"
+                        app:layout_constraintVertical_bias="1.0" />
+
+                    <!--<ImageView
+                        android:id="@+id/uploadedImage"
+                        android:layout_width="@dimen/_50sdp"
+                        android:layout_height="@dimen/_45sdp"
+                        android:layout_marginEnd="@dimen/activity_vertical_margin"
+                        android:visibility="visible"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/companyLogo"
+                        app:layout_constraintTop_toTopOf="@id/uploadLogo" />
+-->
+                    <androidx.constraintlayout.widget.Barrier
+                        android:id="@+id/barrier1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:barrierDirection="bottom"
+                        app:constraint_referenced_ids="logoIcon" />
+
+
+                    <View
+                        android:id="@+id/divider7"
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="@dimen/layout_margin_extra_large"
+                        android:visibility="gone"
+                        android:background="@color/divider_color"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/barrier1" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/cL_officetime"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="visible"
+                        android:background="@drawable/border"
+                        android:paddingTop="@dimen/_5sdp"
+                        android:paddingBottom="@dimen/_5sdp"
+                        app:layout_constraintBottom_toTopOf="@+id/manageHolidays"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/barrier1">
+
+                        <ImageView
+                            android:id="@+id/timeIcon"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_marginEnd="@dimen/activity_vertical_margin"
+                            android:src="@drawable/ic_time"
+                            app:layout_constraintBottom_toBottomOf="@id/time"
+                            app:layout_constraintEnd_toStartOf="@id/time"
+                            app:layout_constraintTop_toTopOf="@id/time" />
+
+
+                        <TextView
+                            android:id="@+id/time"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/layout_margin_xxxl"
+                            android:layout_marginEnd="@dimen/activity_vertical_margin"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:fontFamily="@font/nunitosans_bold"
+                            android:text="Office Timings"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/text_size_small"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+
+                        <TextView
+                            android:id="@+id/openingTime"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/layout_margin_xxxl"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:layout_marginEnd="@dimen/activity_vertical_margin"
+                            android:fontFamily="@font/nunitosans_regular"
+                            android:text="Opening Time"
+                            android:textColor="@color/black_60"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/time" />
+
+
+                        <TextView
+                            android:id="@+id/setOpeningTime"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/layout_margin_xxxl"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginEnd="@dimen/activity_vertical_margin"
+                            android:layout_marginBottom="30dp"
+                            android:background="@drawable/bottom_line_border"
+                            android:drawableRight="@drawable/ic_edit"
+                            android:fontFamily="@font/nunitosans_regular"
+                            android:gravity="start|center"
+                            android:text="@string/set_time"
+                            android:textColor="@color/colorAccent"
+                            android:textSize="@dimen/_12sdp"
+                            app:layout_constraintBottom_toTopOf="@id/closingTime"
+                            app:layout_constraintStart_toStartOf="@+id/openingTime"
+                            app:layout_constraintTop_toBottomOf="@id/openingTime" />
+
+
+                        <TextView
+                            android:id="@+id/closingTime"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/layout_margin_xxxl"
+                            android:layout_marginTop="@dimen/layout_margin_large"
+                            android:layout_marginEnd="@dimen/activity_vertical_margin"
+                            android:fontFamily="@font/nunitosans_regular"
+                            android:text="Closing Time"
+                            android:textColor="@color/black_60"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/setOpeningTime" />
+
+
+                        <TextView
+                            android:id="@+id/setclosingTime"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/layout_margin_xxxl"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginEnd="@dimen/activity_vertical_margin"
+                            android:background="@drawable/bottom_line_border"
+                            android:drawableRight="@drawable/ic_edit"
+                            android:fontFamily="@font/nunitosans_regular"
+                            android:gravity="start|center"
+                            android:text="@string/set_time"
+                            android:textColor="@color/colorAccent"
+                            android:textSize="@dimen/_12sdp"
+                            app:layout_constraintBottom_toTopOf="@id/preStartTime"
+                            app:layout_constraintStart_toStartOf="@+id/closingTime"
+                            app:layout_constraintTop_toBottomOf="@id/closingTime" />
+
+
+                        <TextView
+                            android:id="@+id/preStartTime"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/layout_margin_xxxl"
+                            android:layout_marginTop="@dimen/layout_margin_large"
+                            android:layout_marginEnd="@dimen/activity_vertical_margin"
+                            android:fontFamily="@font/nunitosans_regular"
+                            android:text="Pre-Start time"
+                            android:textColor="@color/black_60"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/setclosingTime" />
+
+
+                        <TextView
+                            android:id="@+id/setPreStartTime"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/layout_margin_xxxl"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginEnd="@dimen/activity_vertical_margin"
+                            android:background="@drawable/bottom_line_border"
+                            android:drawableRight="@drawable/ic_edit"
+                            android:fontFamily="@font/nunitosans_regular"
+                            android:gravity="start|center"
+                            android:text="@string/set_time"
+                            android:textColor="@color/colorAccent"
+                            android:textSize="@dimen/_12sdp"
+                            app:layout_constraintBottom_toTopOf="@id/postClosingTime"
+                            app:layout_constraintStart_toStartOf="@+id/preStartTime"
+                            app:layout_constraintTop_toBottomOf="@id/preStartTime" />
+
+
+                        <TextView
+                            android:id="@+id/postClosingTime"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/layout_margin_xxxl"
+                            android:layout_marginTop="@dimen/layout_margin_large"
+                            android:layout_marginEnd="@dimen/activity_vertical_margin"
+                            android:layout_marginBottom="@dimen/layout_margin_extra_large"
+                            android:fontFamily="@font/nunitosans_regular"
+                            android:text="Post closing time"
+                            android:textColor="@color/black_60"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/setPreStartTime" />
+
+
+                        <TextView
+                            android:id="@+id/setPostClosingTime"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/layout_margin_xxxl"
+                            android:layout_marginEnd="@dimen/activity_vertical_margin"
+                            android:background="@drawable/bottom_line_border"
+                            android:drawableRight="@drawable/ic_edit"
+                            android:fontFamily="@font/nunitosans_regular"
+                            android:gravity="start|center"
+                            android:text="@string/set_time"
+                            android:textColor="@color/colorAccent"
+                            android:textSize="@dimen/_12sdp"
+                            app:layout_constraintStart_toStartOf="@+id/postClosingTime"
+                            app:layout_constraintTop_toBottomOf="@id/postClosingTime" />
+
+                        <TextView
+                            android:id="@+id/breakstartTime"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/layout_margin_xxxl"
+                            android:layout_marginTop="@dimen/layout_margin_large"
+                            android:layout_marginEnd="@dimen/activity_vertical_margin"
+                            android:layout_marginBottom="@dimen/layout_margin_extra_large"
+                            android:fontFamily="@font/nunitosans_regular"
+                            android:text="Break Start time"
+                            android:textColor="@color/black_60"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/setPostClosingTime" />
+
+
+                        <TextView
+                            android:id="@+id/setBreakStartTime"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/layout_margin_xxxl"
+                            android:layout_marginEnd="@dimen/activity_vertical_margin"
+                            android:background="@drawable/bottom_line_border"
+                            android:drawableRight="@drawable/ic_edit"
+                            android:fontFamily="@font/nunitosans_regular"
+                            android:gravity="start|center"
+                            android:text="@string/set_time"
+                            android:textColor="@color/colorAccent"
+                            android:textSize="@dimen/_12sdp"
+                            app:layout_constraintStart_toStartOf="@+id/breakstartTime"
+                            app:layout_constraintTop_toBottomOf="@id/breakstartTime" />
+                        <TextView
+                            android:id="@+id/breakStopTime"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/layout_margin_xxxl"
+                            android:layout_marginTop="@dimen/layout_margin_large"
+                            android:layout_marginEnd="@dimen/activity_vertical_margin"
+                            android:layout_marginBottom="@dimen/layout_margin_extra_large"
+                            android:fontFamily="@font/nunitosans_regular"
+                            android:text="Break Stop time"
+                            android:textColor="@color/black_60"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/setBreakStartTime" />
+
+
+                        <TextView
+                            android:id="@+id/setBreakStopTime"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/layout_margin_xxxl"
+                            android:layout_marginEnd="@dimen/activity_vertical_margin"
+                            android:background="@drawable/bottom_line_border"
+                            android:drawableRight="@drawable/ic_edit"
+                            android:fontFamily="@font/nunitosans_regular"
+                            android:gravity="start|center"
+                            android:text="@string/set_time"
+                            android:textColor="@color/colorAccent"
+                            android:textSize="@dimen/_12sdp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="@+id/breakStopTime"
+                            app:layout_constraintTop_toBottomOf="@id/breakstartTime" />
+                        <TextView
+                            android:id="@+id/breakDuration"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/layout_margin_xxxl"
+                            android:layout_marginTop="@dimen/layout_margin_large"
+                            android:layout_marginEnd="@dimen/activity_vertical_margin"
+                            android:layout_marginBottom="@dimen/layout_margin_extra_large"
+                            android:fontFamily="@font/nunitosans_regular"
+                            android:text="Break Duration"
+                            android:textColor="@color/black_60"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/setBreakStopTime" />
+
+
+                        <Spinner
+                            android:id="@+id/spinDuration"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/layout_margin_xxxl"
+                            android:layout_marginEnd="@dimen/activity_vertical_margin"
+                            android:drawableRight="@drawable/ic_edit"
+                            android:fontFamily="@font/nunitosans_regular"
+                            android:gravity="start|center"
+                            android:textColor="@color/colorAccent"
+                            android:textSize="@dimen/_12sdp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="@+id/breakDuration"
+                            app:layout_constraintTop_toBottomOf="@id/breakDuration"
+                            />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <LinearLayout
+                        android:id="@+id/lv_weekoff"
+                        android:orientation="vertical"
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:background="@drawable/border"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintBottom_toTopOf="@id/lv_weekoff"
+                        app:layout_constraintTop_toBottomOf="@id/manageHolidays">
+
+
+                        <TextView
+                            android:id="@+id/weekOff"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:layout_marginEnd="@dimen/activity_vertical_margin"
+                            android:fontFamily="@font/nunitosans_bold"
+                            android:text=" Week Off"
+                            android:padding="@dimen/_5sdp"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/text_size_small"
+                            />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/weekOffRecyclerView"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_35sdp"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="@dimen/activity_vertical_margin"
+                            />
+                    </LinearLayout>
+                    <TextView
+                        android:id="@+id/manageHolidays"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:layout_marginBottom="5dp"
+                        android:fontFamily="@font/nunitosans_bold"
+                        android:gravity="center"
+                        android:visibility="visible"
+                        android:drawableRight="@drawable/next"
+                        android:padding="@dimen/_5sdp"
+                        android:background="@drawable/border"
+                        android:text="@string/late_arrival_amp_early_departure"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_12sdp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/cL_officetime"
+                        app:layout_constraintVertical_bias="0.0" />
+                    <LinearLayout
+                        android:id="@+id/lv_settings"
+                        android:orientation="vertical"
+                        android:layout_height="match_parent"
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:background="@drawable/border"
+                        app:layout_constraintStart_toStartOf="@id/lv_weekoff"
+                        app:layout_constraintEnd_toEndOf="@id/lv_weekoff"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/lv_weekoff">
+
+                        <LinearLayout
+                            android:id="@+id/lyr_enable_adhar"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="10dp"
+                            android:gravity="center_vertical"
+                            android:orientation="vertical"
+                            >
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="@dimen/_5sdp"
+                                android:fontFamily="@font/nunitosans_semibold"
+                                android:text="Like to enable Adhar Number verifications of employees ?"
+                                android:textColor="@color/black" />
+
+                            <RadioGroup
+                                android:id="@+id/rg_adhar_enable"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="end"
+                                android:gravity="start"
+                                android:orientation="horizontal">
+
+                                <RadioButton
+                                    android:id="@+id/r_y"
+                                    android:checked="@{data.wantAdharVerification.equalsIgnoreCase(`Y`)}"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginRight="-15dp"
+                                    android:buttonTint="@color/orange_800" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:padding="6dp"
+                                    android:text="Y"
+                                    android:textColor="@color/black" />
+
+                                <RadioButton
+                                    android:id="@+id/r_n"
+                                    android:checked="@{data.wantAdharVerification==null||data.wantAdharVerification.equals(``)||data.wantAdharVerification.equalsIgnoreCase(`N`)}"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginRight="-15dp"
+                                    android:buttonTint="@color/orange_800" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:padding="6dp"
+                                    android:text="N"
+                                    android:textColor="@color/black" />
+
+                            </RadioGroup>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/lyr_verification"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="@dimen/_2sdp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            app:layout_constraintBottom_toTopOf="@id/lyr_save_feedback"
+                            app:layout_constraintTop_toBottomOf="@id/lyr_enable_adhar">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/black_square_background"
+                                android:padding="8dp"
+                                android:text="@{data.perVerificationText}"
+                                android:textColor="@color/black"
+                                android:textSize="13sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dp"
+                                android:background="@drawable/black_square_background"
+                                android:padding="8dp"
+                                android:text="Available"
+                                android:textColor="@color/black"
+                                android:textSize="13sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dp"
+                                android:background="@drawable/black_square_background"
+                                android:gravity="center"
+                                android:text="@{data.availableCount}"
+                                android:padding="8dp"
+                                android:textColor="@color/black"
+                                android:textSize="13sp"
+                                android:textStyle="bold" />
+
+
+                            <TextView
+                                android:id="@+id/txt_recharge"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="end"
+                                android:layout_marginLeft="10dp"
+                                android:background="@drawable/buttonshape"
+                                android:padding="8dp"
+                                android:text="Recharge"
+                                android:textColor="@color/white"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/lyr_save_feedback"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:orientation="vertical"
+                            app:layout_constraintBottom_toTopOf="@id/lyr_emp_activities"
+                            app:layout_constraintTop_toBottomOf="@id/lyr_verification">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="@dimen/_5sdp"
+                                android:fontFamily="@font/nunitosans_semibold"
+                                android:text="Like to enable facility to save feedback for employees
+before the exit formalities ?"
+                                android:textColor="@color/black" />
+
+                            <RadioGroup
+                                android:id="@+id/rg_feedback"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="end"
+                                android:gravity="start"
+                                android:orientation="horizontal">
+
+                                <RadioButton
+                                    android:id="@+id/feedback_y"
+                                    android:checked="@{data.enableSaveFeedbackEmployee.equalsIgnoreCase(`Y`)}"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginRight="-15dp"
+                                    android:buttonTint="@color/orange_800" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:padding="6dp"
+                                    android:text="Y"
+                                    android:textColor="@color/black" />
+
+                                <RadioButton
+                                    android:id="@+id/feedback_n"
+                                    android:checked="@{data.enableSaveFeedbackEmployee==null||data.enableSaveFeedbackEmployee.equals(``)||data.enableSaveFeedbackEmployee.equalsIgnoreCase(`N`)}"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginRight="-15dp"
+                                    android:buttonTint="@color/orange_800" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+
+                                    android:padding="6dp"
+                                    android:text="N"
+                                    android:textColor="@color/black" />
+
+                            </RadioGroup>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/lyr_emp_activities"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:orientation="vertical"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            app:layout_constraintBottom_toTopOf="@id/lyr_employee_no_manually"
+                            app:layout_constraintTop_toBottomOf="@id/lyr_save_feedback">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/nunitosans_semibold"
+                                android:padding="@dimen/_5sdp"
+                                android:text="Enable meployee activities &amp; messages"
+                                android:textColor="@color/black" />
+
+                            <RadioGroup
+                                android:id="@+id/rg_emp_activity"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="end"
+                                android:gravity="start"
+                                android:orientation="horizontal">
+
+                                <RadioButton
+                                    android:id="@+id/activity_y"
+                                    android:checked="@{data.enableEmployeeActivityMessage.equalsIgnoreCase(`Y`)}"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginRight="-15dp"
+                                    android:buttonTint="@color/orange_800" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:padding="6dp"
+                                    android:text="Y"
+                                    android:textColor="@color/black" />
+
+                                <RadioButton
+                                    android:id="@+id/activity_n"
+                                    android:checked="@{data.enableEmployeeActivityMessage==null||data.enableEmployeeActivityMessage.equalsIgnoreCase(`N`)}"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginRight="-15dp"
+                                    android:buttonTint="@color/orange_800" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:padding="6dp"
+                                    android:text="N"
+                                    android:textColor="@color/black" />
+
+                            </RadioGroup>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/lyr_employee_no_manually"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:orientation="vertical"
+                            app:layout_constraintBottom_toTopOf="@id/lyr_auto_generated_will"
+                            app:layout_constraintTop_toBottomOf="@id/lyr_emp_activities">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/nunitosans_semibold"
+                                android:padding="@dimen/_5sdp"
+                                android:text="Want to enter employee number manually ?"
+                                android:textColor="@color/black" />
+
+                            <RadioGroup
+                                android:id="@+id/rg_emp_manually"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="end"
+                                android:gravity="start"
+                                android:orientation="horizontal">
+
+                                <RadioButton
+                                    android:id="@+id/emp_no_manually_y"
+                                    android:checked="@{data.employeeNumberType.equalsIgnoreCase(`Y`)}"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginRight="-15dp"
+                                    android:buttonTint="@color/orange_800" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:padding="6dp"
+                                    android:text="Y"
+                                    android:textColor="@color/black" />
+
+                                <RadioButton
+                                    android:id="@+id/emp_no_manually_n"
+                                    android:checked="@{data.employeeNumberType==null||data.employeeNumberType.equals(``)||data.employeeNumberType.equalsIgnoreCase(`N`)}"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+
+                                    android:layout_marginRight="-15dp"
+                                    android:buttonTint="@color/orange_800" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:padding="6dp"
+                                    android:text="N"
+                                    android:textColor="@color/black" />
+
+                            </RadioGroup>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/lyr_auto_generated_will"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="20dp"
+                            android:gravity="start"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="6dp"
+                                android:text="Auto Generated Employee Number Format will "
+                                android:textColor="@color/black"
+                                android:layout_marginRight="@dimen/_2sdp"
+                                android:textSize="13sp" />
+                            <LinearLayout
+
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginBottom="20dp"
+                                android:gravity="start"
+                                android:orientation="horizontal">
+                                <com.chaos.view.PinView
+                                    android:id="@+id/emp_name_char"
+                                    style="@style/PinWidget.PinView"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:cursorVisible="true"
+                                    android:layout_gravity="center_vertical"
+                                    android:inputType="textCapCharacters"
+                                    android:padding="3dp"
+                                    android:textColor="@color/black"
+                                    android:textSize="14sp"
+                                    app:cursorColor="@color/black"
+                                    app:cursorWidth="2dp"
+                                    app:itemCount="3"
+                                    app:itemHeight="35dp"
+                                    app:itemRadius="4dp"
+                                    app:itemSpacing="1dp"
+                                    app:itemWidth="30dp"
+                                    app:lineColor="@color/black"
+                                    app:lineWidth="1.2dp"
+                                    app:viewType="rectangle" />
+
+                                <Spinner
+                                    android:id="@+id/sp_emp_month"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_gravity="center_vertical"
+                                    android:entries="@array/generated_emp_format" />
+
+                                <com.chaos.view.PinView
+                                    android:id="@+id/emp_company_char"
+                                    style="@style/PinWidget.PinView"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:cursorVisible="true"
+                                    android:inputType="number"
+                                    android:padding="3dp"
+                                    android:textColor="@color/black"
+                                    android:textSize="14sp"
+                                    app:cursorColor="@color/black"
+                                    app:cursorWidth="2dp"
+                                    app:itemCount="3"
+                                    app:itemHeight="30dp"
+                                    android:layout_gravity="center_vertical"
+                                    app:itemRadius="4dp"
+                                    app:itemSpacing="1dp"
+                                    app:itemWidth="30dp"
+                                    app:lineColor="@color/black"
+                                    app:lineWidth="1.2dp"
+                                    app:viewType="rectangle" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/submit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/activity_vertical_margin"
+                    android:fontFamily="@font/nunitosans_semibold"
+                    android:padding="@dimen/activity_vertical_margin"
+                    android:text="Save"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_large"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/editTextContainer" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+        <include
+            android:id="@+id/progress"
+            layout="@layout/layout_progress"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:resource="@{resource}" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

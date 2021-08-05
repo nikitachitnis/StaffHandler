@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/_10sdp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clDetails"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_7sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:background="@drawable/gray_rounded_rectangle"
+            android:padding="@dimen/_7sdp"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvlblFromDate"
+                style="@style/boldLblStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/lbl_from_month_year"
+                app:layout_constraintEnd_toStartOf="@id/tvlblToDate"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvlblToDate"
+                style="@style/boldLblStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_7sdp"
+                android:text="@string/lbl_to_month_year"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/tvlblFromDate"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvFromDate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:background="@drawable/gray_rounded_rectangle"
+                android:drawableEnd="@drawable/ic_calander"
+                android:hint="@string/lbl_from_month_year"
+                android:padding="@dimen/_5sdp"
+                style="@style/fontregular"
+                android:textSize="@dimen/_10ssp"
+                android:textColorHint="@color/font_lbl_gray"
+                app:layout_constraintEnd_toEndOf="@id/tvlblFromDate"
+                app:layout_constraintStart_toStartOf="@id/tvlblFromDate"
+                app:layout_constraintTop_toBottomOf="@id/tvlblFromDate" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvToDate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:background="@drawable/gray_rounded_rectangle"
+                android:drawableEnd="@drawable/ic_calander"
+                android:hint="@string/lbl_to_month_year"
+                android:padding="@dimen/_5sdp"
+                android:textSize="@dimen/_10ssp"
+                style="@style/fontregular"
+                android:textColorHint="@color/font_lbl_gray"
+                app:layout_constraintEnd_toEndOf="@id/tvlblToDate"
+                app:layout_constraintStart_toStartOf="@id/tvlblToDate"
+                app:layout_constraintTop_toBottomOf="@id/tvlblToDate" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvLblRequestDetails"
+                style="@style/boldLblStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:gravity="center"
+                android:text="@string/lbl_request_details"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvToDate" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/edtRequestDetails"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:background="@drawable/gray_rounded_rectangle"
+                android:gravity="top|left"
+                android:lines="4"
+                android:editable="false"
+                android:padding="@dimen/_5sdp"
+                android:textColorHint="@color/font_lbl_gray"
+                android:textSize="@dimen/_11ssp"
+                app:layout_constraintTop_toBottomOf="@id/tvLblRequestDetails" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnAccept"
+                style="@style/fontbold"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:background="@drawable/bg_green_button"
+                android:paddingStart="@dimen/_10sdp"
+                android:paddingEnd="@dimen/_10sdp"
+                android:text="@string/lbl_accept"
+                android:textAllCaps="false"
+                android:textColor="@color/color_white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/edtRequestDetails" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnReject"
+                style="@style/fontbold"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/bg_red_button"
+                android:paddingStart="@dimen/_10sdp"
+                android:paddingEnd="@dimen/_10sdp"
+                android:text="@string/lbl_reject"
+                android:textAllCaps="false"
+                android:textColor="@color/color_white"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/edtRequestDetails" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

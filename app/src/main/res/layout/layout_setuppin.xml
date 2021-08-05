@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/loginCard"
+    app:cardCornerRadius="@dimen/_10sdp"
+    android:elevation="@dimen/_20sdp"
+    android:layout_width="@dimen/_300sdp"
+    android:shadowColor="#000"
+    android:shadowDx="0"
+    android:shadowDy="30"
+    android:shadowRadius="50"
+    android:layout_gravity="center"
+    android:layout_marginTop="@dimen/loginViewsMargin"
+    android:layout_marginBottom="@dimen/loginViewsMargin"
+    app:cardUseCompatPadding="true"
+
+    >
+    <!--    android:background="@color/whiteCardColor">-->
+
+    <LinearLayout
+        style="@style/linearParent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:padding="@dimen/loginViewsMargin"
+        android:shadowColor="#000"
+        android:shadowDx="0"
+        android:shadowDy="30"
+        android:shadowRadius="50">
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:layout_marginLeft="@dimen/_15sdp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/orange_400"
+            android:textSize="@dimen/_12sdp"
+            android:id="@+id/txtlabel"
+            android:padding="@dimen/_5sdp"
+            android:text="Enter Login Pin " />
+
+        <com.chaos.view.PinView
+                android:id="@+id/edit_loginPin"
+                style="@style/PinWidget.PinView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:cursorVisible="true"
+                android:inputType="numberPassword"
+                android:textColor="@color/black"
+                android:imeOptions="actionDone"
+                android:itemBackground="#00000000"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:cursorWidth="2dp"
+                app:hideLineWhenFilled="false"
+                app:itemCount="4"
+                app:itemHeight="48dp"
+                app:itemRadius="4dp"
+                app:itemSpacing="5dp"
+                app:itemWidth="48dp"
+                app:lineColor="@color/colorPrimaryDark"
+                app:lineWidth="2dp"
+                android:layout_gravity="center"
+                app:viewType="rectangle"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:textColor="@color/orange_400"
+            android:textSize="@dimen/_12sdp"
+            android:id="@+id/txtlabel2"
+            android:padding="@dimen/_5sdp"
+            android:layout_marginLeft="@dimen/_15sdp"
+            android:text="Re-enter Login Pin " />
+        <com.chaos.view.PinView
+            android:id="@+id/edit_loginPinreenter"
+            style="@style/PinWidget.PinView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:cursorVisible="true"
+            android:inputType="numberPassword"
+            android:textColor="@color/black"
+            android:imeOptions="actionDone"
+            android:itemBackground="#00000000"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:cursorWidth="2dp"
+            app:hideLineWhenFilled="false"
+            app:itemCount="4"
+            app:itemHeight="48dp"
+            app:itemRadius="4dp"
+            app:itemSpacing="5dp"
+            app:itemWidth="48dp"
+            app:lineColor="@color/colorPrimaryDark"
+            app:lineWidth="2dp"
+            android:layout_gravity="center"
+            app:viewType="rectangle"/>
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_verify"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+          android:layout_gravity="center"
+            android:text="Verify"
+            android:visibility="gone"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
+            style="@style/generateButton" />
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

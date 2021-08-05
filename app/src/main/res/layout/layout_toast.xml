@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/snackbar_color"
+    android:id="@+id/rootLayout"
+    android:paddingStart="@dimen/activity_vertical_margin"
+    android:paddingEnd="@dimen/activity_vertical_margin"
+    android:paddingTop="@dimen/layout_margin_xxl"
+    android:paddingBottom="@dimen/layout_margin_xxl">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:id="@+id/text"
+        android:textSize="@dimen/text_size_large"
+        android:fontFamily="@font/nunitosans_semibold"
+        android:textColor="@color/white"
+        android:text="This is a custom toast"/>
+
+</LinearLayout>

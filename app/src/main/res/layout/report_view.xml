@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        app:cardUseCompatPadding="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/_5sdp"
+        android:layout_margin="@dimen/_5sdp"
+        android:padding="@dimen/_3sdp"
+        app:cardBackgroundColor="@color/cardview_shadow_end_color"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:padding="@dimen/_10sdp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:id="@+id/lv1"
+                android:padding="@dimen/_3sdp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="3"
+                android:layout_marginTop="@dimen/_5sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:layout_weight="0.7"
+                    android:layout_gravity="end"
+                    android:src="@drawable/emp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.7"
+                    android:fontFamily="@font/nunitosans_bold"
+                    android:gravity="start"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:textSize="@dimen/_14sdp"
+                    android:text="Name :"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/tvName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.6"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:fontFamily="@font/nunitosans_regular"
+                    android:gravity="start"
+                    android:text=""
+                    android:textSize="@dimen/_13sdp"
+                    android:textColor="@color/black" />
+            </LinearLayout>
+            <LinearLayout
+                android:padding="@dimen/_3sdp"
+                android:id="@+id/linearLayout3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="3"
+                android:layout_marginTop="@dimen/_5sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/lv1">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:layout_weight="0.7"
+                    android:layout_gravity="end"
+                    android:fontFamily="@font/nunitosans_regular"
+                    android:src="@drawable/calendar1"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.7"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:fontFamily="@font/nunitosans_bold"
+                    android:gravity="start"
+                    android:text="Date :"
+                    android:textSize="@dimen/_14sdp"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/tvDate"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.6"
+                    android:fontFamily="@font/nunitosans_regular"
+                    android:gravity="start"
+                    android:text=""
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:textSize="@dimen/_13sdp"
+                    android:textColor="@color/blue_700" />
+            </LinearLayout>
+            <LinearLayout
+                android:padding="@dimen/_3sdp"
+                android:id="@+id/linearLayout1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="3"
+                android:layout_marginTop="@dimen/_5sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/linearLayout3">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_weight="0.7"
+                    android:fontFamily="@font/nunitosans_regular"
+                    android:src="@drawable/dayin"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.7"
+                    android:fontFamily="@font/nunitosans_bold"
+                    android:gravity="start"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:text="Day In :"
+                    android:textSize="@dimen/_14sdp"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/tvDayIn"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.6"
+                    android:fontFamily="@font/nunitosans_regular"
+                    android:gravity="start"
+                    android:text=""
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:textSize="@dimen/_13sdp"
+                    android:textColor="@color/blue_700" />
+            </LinearLayout>
+            <LinearLayout
+                android:padding="@dimen/_3sdp"
+                android:id="@+id/linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="3"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/linearLayout1">
+
+                <ImageView
+                    android:id="@+id/tvFlatNo"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_weight="0.7"
+                    android:fontFamily="@font/nunitosans_regular"
+                    android:src="@drawable/dayout"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txtflatno"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.8"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:textSize="@dimen/_14sdp"
+                    android:fontFamily="@font/nunitosans_bold"
+                    android:gravity="start"
+                    android:text="Day Out :"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/tvDayout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.5"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:fontFamily="@font/nunitosans_regular"
+                    android:gravity="start"
+                    android:text=""
+                    android:textSize="@dimen/_13sdp"
+                    android:textColor="@color/blue_700" />
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

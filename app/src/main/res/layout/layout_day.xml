@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:gravity="center"
+        android:layout_below="@+id/rlMain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/editTextContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/grey_3"
+            android:layout_margin="@dimen/_5sdp"
+            android:backgroundTint="@color/grey_5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <TextView
+                android:id="@+id/gender"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:gravity="center"
+                android:fontFamily="@font/nunitosans_bold"
+                android:padding="@dimen/_2sdp"
+                android:text="Select Employee"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_14sdp"
+                app:layout_constraintBottom_toTopOf="@+id/spinnerEmployee"
+                app:layout_constraintEnd_toEndOf="@+id/spinnerEmployee"
+                app:layout_constraintStart_toStartOf="@+id/spinnerEmployee"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Spinner
+                android:id="@+id/spinnerEmployee"
+                android:layout_width="@dimen/_220sdp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="6dp"
+                android:background="@drawable/spinnerstyle"
+                android:dropDownSelector="@color/blue_600"
+                android:fontFamily="@font/nunitosans_bold"
+                android:nextFocusDown="@id/companyName"
+                android:outlineAmbientShadowColor="@color/blue_600"
+                android:textAlignment="center"
+                android:textDirection="anyRtl"
+                android:textSize="@dimen/text_size_small"
+                app:layout_constraintBottom_toTopOf="@+id/tvDate"
+                app:layout_constraintEnd_toEndOf="@+id/tvDate"
+                app:layout_constraintStart_toStartOf="@+id/btnTime"
+                app:layout_constraintTop_toBottomOf="@+id/gender" />
+
+            <Spinner
+                android:id="@+id/spinnerEmployee1"
+                android:layout_width="@dimen/_220sdp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/spinnerstyle"
+                android:outlineAmbientShadowColor="@color/blue_600"
+                android:textSize="@dimen/text_size_small"
+                android:dropDownSelector="@color/blue_600"
+                android:visibility="gone"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:fontFamily="@font/nunitosans_regular"
+                android:textDirection="anyRtl"
+                app:layout_constraintBottom_toTopOf="@+id/btnTime"
+                app:layout_constraintEnd_toEndOf="@+id/btnTime"
+                app:layout_constraintHorizontal_bias="0.542"
+                app:layout_constraintStart_toStartOf="@+id/btnTime"
+                app:layout_constraintTop_toBottomOf="@+id/gender" />
+            <Button
+                android:id="@+id/tvDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_55sdp"
+                android:layout_marginStart="@dimen/_55sdp"
+                android:gravity="center"
+                android:text="@string/select_date"
+                android:drawableEnd="@drawable/calendar1"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_12sdp"
+                app:layout_constraintTop_toBottomOf="@+id/spinnerEmployee"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/btnTime"
+                app:layout_constraintStart_toStartOf="parent" />
+            <Button
+                android:layout_marginTop="@dimen/_5sdp"
+                android:id="@+id/btnTime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_12sdp"
+                android:text="@string/select_time"
+                android:drawableRight="@drawable/clock"
+                android:gravity="center"
+                android:textSize="@dimen/_12sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvDate"
+                android:layout_marginEnd="@dimen/_55sdp"
+                android:layout_marginStart="@dimen/_55sdp" />
+            <TextView
+                android:layout_marginTop="@dimen/_5sdp"
+                android:id="@+id/tvSetTime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:text="@string/select_time"
+                android:gravity="center"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/spinnerEmployee"
+                android:layout_marginEnd="@dimen/_55sdp"
+                android:layout_marginStart="@dimen/_55sdp" />
+            <LinearLayout
+                android:id="@+id/linearLayout2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:orientation="horizontal"
+                android:padding="@dimen/_5sdp"
+                android:weightSum="2"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnTime">
+
+                <Button
+                    android:id="@+id/btnDayIn"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+
+                    android:layout_weight="1"
+                    android:textSize="@dimen/_12sdp"
+                    android:textColor="@color/white"
+                    android:background="@drawable/buttonshape"
+                    android:text="Mark Day IN" />
+
+                <Button
+                    android:id="@+id/btnDayOut"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:textSize="@dimen/_12sdp"
+                    android:layout_marginStart="@dimen/_10sdp"
+
+                    android:layout_weight="1"
+
+                    android:textColor="@color/white"
+                    android:background="@drawable/buttonshape"
+                    android:text="Mark Day Out" />
+
+            </LinearLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:id="@+id/dvAdminSetting"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:layout_below="@+id/editTextContainer"
+            android:background="@color/divider_color"
+            />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/editTextContainer1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/dvAdminSetting"
+            android:layout_margin="@dimen/_5sdp"
+            android:background="@color/grey_3"
+            android:backgroundTint="@color/grey_5">
+            <TextView
+                android:id="@+id/txttitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:fontFamily="@font/nunitosans_bold"
+                android:gravity="center"
+                android:text="Daywise Employee Attendance Report"
+                android:padding="@dimen/_5sdp"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_14sdp"
+                app:layout_constraintBottom_toTopOf="@+id/tvSelectDate"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:id="@+id/tvSelectDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_marginBottom="1dp"
+                android:layout_marginEnd="@dimen/_55sdp"
+                android:layout_marginStart="@dimen/_55sdp"
+                android:fontFamily="@font/nunitosans_bold"
+                android:gravity="center"
+                android:background="@drawable/button_back"
+                android:text="Select Date"
+                android:padding="@dimen/_5sdp"
+                android:drawableRight="@drawable/calendar1"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_12sdp"
+                app:layout_constraintBottom_toTopOf="@+id/tvselectedDate"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvselectedDate"
+                android:layout_width="@dimen/_220sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_50sdp"
+                android:dropDownSelector="@color/blue_600"
+                android:fontFamily="@font/nunitosans_regular"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:nextFocusDown="@id/companyName"
+                android:text="@string/selected_date_will_be_shown_here"
+                android:textSize="@dimen/text_size_small"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.542"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvSelectDate" />
+            <RadioGroup
+                android:id="@+id/alertRadioGroup"
+                android:layout_width="0dp"
+                android:weightSum="3"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toTopOf="@+id/btnGoForDateSelect"
+               app:layout_constraintEnd_toEndOf="parent"
+               app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvselectedDate"
+                android:layout_height="wrap_content">
+                <RadioButton
+                    android:id="@+id/rdbtnofficestaff"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1.1"
+                    android:textColor="@color/black"
+                    android:text="Office Staff"
+                    android:buttonTint="@color/colorPrimary"
+                    android:fontFamily="@font/nunitosans_regular"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/_10sdp" />
+
+                <RadioButton
+                    android:id="@+id/rdbtnshiftstaff"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:text="Shift Staff"
+                    android:buttonTint="@color/colorPrimary"
+                    android:checked="true"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/nunitosans_regular"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/_10sdp" />
+                <RadioButton
+                    android:id="@+id/rdbtnBoth"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:textColor="@color/black"
+                    android:text="Both"
+                    android:buttonTint="@color/colorPrimary"
+                    android:checked="true"
+                    android:fontFamily="@font/nunitosans_regular"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/_10sdp" />
+            </RadioGroup>
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnGoForDateSelect"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_weight="1"
+                android:background="@drawable/buttonshape"
+                android:text="Go"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/alertRadioGroup"
+                app:layout_constraintStart_toStartOf="@+id/alertRadioGroup"
+                app:layout_constraintTop_toBottomOf="@+id/alertRadioGroup" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

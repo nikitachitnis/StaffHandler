@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.30" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvRatingsTitle"
+            style="@style/fontbold"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Attendance/Punctuality"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="@id/clCh"
+            android:textSize="@dimen/_10ssp"
+            app:layout_constraintEnd_toStartOf="@id/guideline"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clCh"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/guideline"
+            app:layout_constraintTop_toTopOf="parent">
+
+        <RadioGroup
+            android:id="@+id/rgbRating"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatRadioButton
+
+                android:id="@+id/chExcellent"
+                android:layout_width="@dimen/_45sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_marginStart="@dimen/_7sdp"
+                android:button="@drawable/custom_btn_radio" />
+
+            <androidx.appcompat.widget.AppCompatRadioButton
+                android:id="@+id/chGood"
+
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:button="@drawable/custom_btn_radio" />
+
+            <androidx.appcompat.widget.AppCompatRadioButton
+                android:id="@+id/chAvg"
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:button="@drawable/custom_btn_radio"
+                />
+
+            <androidx.appcompat.widget.AppCompatRadioButton
+                android:id="@+id/chBelowAvg"
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:button="@drawable/custom_btn_radio" />
+
+            <androidx.appcompat.widget.AppCompatRadioButton
+
+                android:layout_width="@dimen/_45sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:id="@+id/chPoor"
+                android:button="@drawable/custom_btn_radio"
+               />
+
+        </RadioGroup>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/fontbold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Comments"
+            android:paddingTop="@dimen/_5sdp"
+            android:paddingBottom="@dimen/_5sdp"
+            android:visibility="gone"
+            android:id="@+id/tvComment"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:textSize="@dimen/_10ssp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/clCh"/>
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edtComment"
+            android:layout_width="0dp"
+            android:visibility="gone"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/clCh"
+            android:background="@drawable/gray_rounded_rectangle"
+            android:padding="@dimen/_4sdp"
+            android:textSize="@dimen/_10ssp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginStart="@dimen/_5sdp"
+            app:layout_constraintStart_toEndOf="@id/tvComment"
+            app:layout_constraintEnd_toEndOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

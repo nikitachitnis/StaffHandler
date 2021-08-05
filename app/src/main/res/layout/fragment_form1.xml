@@ -1,0 +1,620 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <data>
+        <variable
+            name="resource"
+            type="com.miscos.staffhandler.empolyer.util.remoteUtils.Resource" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#f8fafd">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <ImageView
+                    android:id="@+id/logo"
+                    android:layout_width="72dp"
+                    android:layout_height="72dp"
+                    android:layout_margin="@dimen/activity_vertical_margin"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginEnd="20dp"
+                    android:src="@drawable/ic_logo"
+                    app:layout_constraintBottom_toBottomOf="@id/title"
+                    app:layout_constraintEnd_toStartOf="@id/title"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/title" />
+
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="22dp"
+                    android:layout_marginBottom="37dp"
+                    android:fontFamily="@font/nunitosans_bold"
+                    android:text="Administrator Details"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_extra_extra_large"
+                    app:layout_constraintBottom_toTopOf="@+id/editTextContainer"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+                <ImageView
+                    android:id="@+id/help"
+                    android:layout_width="@dimen/_30sdp"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_margin="@dimen/activity_vertical_margin"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginEnd="20dp"
+                    app:layout_constraintBottom_toBottomOf="@id/title"
+                    app:layout_constraintTop_toTopOf="@id/title"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/title"
+                    android:src="@drawable/help" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Help"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:textSize="@dimen/_9sdp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/nunitosans_semibold"
+                    app:layout_constraintEnd_toEndOf="@+id/help"
+                    app:layout_constraintStart_toStartOf="@+id/help"
+                    app:layout_constraintTop_toBottomOf="@+id/help" />
+                <androidx.constraintlayout.widget.Barrier
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/barrier"
+                    app:constraint_referenced_ids="logo,title"
+                    app:barrierDirection="bottom"/>
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/barrier"
+                    android:background="@drawable/shadow_container"
+                    android:id="@+id/editTextContainer">
+
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:id="@+id/nameIcon"
+                        android:src="@drawable/ic_name"
+                        android:tint="@color/colorPrimary"
+                        android:layout_marginEnd="@dimen/activity_vertical_margin"
+                        app:layout_constraintEnd_toStartOf="@id/spinner_title"
+                        app:layout_constraintTop_toTopOf="@id/spinner_title"
+                        app:layout_constraintBottom_toBottomOf="@id/spinner_title"/>
+
+                    <Spinner
+                        android:id="@+id/spinner_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:entries="@array/name_title"
+                        android:layout_marginStart="60dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginEnd="10dp"
+                        android:textColor="@color/black_60"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/name"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <EditText
+                        android:id="@+id/name"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:cursorVisible="true"
+                        android:background="#00000000"
+                        android:focusableInTouchMode="true"
+                        android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                        android:nextFocusRight="@id/surName"
+                        android:textColorHint="@color/black_60"
+                        android:layout_marginStart="160dp"
+                        android:layout_marginTop="@dimen/layout_margin_extra_large"
+                        android:fontFamily="@font/nunitosans_regular"
+                        android:hint="First Name *"
+                        android:inputType="textPersonName"
+                        android:maxLength="20"
+                        android:singleLine="true"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/surName"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size_small">
+
+                        <requestFocus />
+                    </EditText>
+
+                    <EditText
+                        android:id="@+id/surName"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:background="#00000000"
+                        android:cursorVisible="true"
+                        android:fontFamily="@font/nunitosans_regular"
+                        android:hint="Last Name *"
+                        android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                        android:nextFocusDown="@id/mobile"
+                        android:textColorHint="@color/black_60"
+                        android:inputType="textPersonName"
+                        android:singleLine="true"
+                        android:maxLength="20"
+                        app:layout_constraintStart_toEndOf="@id/name"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/name"
+                        app:layout_constraintBottom_toBottomOf="@id/name"
+                        android:layout_marginStart="@dimen/activity_vertical_margin"
+                        android:layout_marginEnd="@dimen/activity_vertical_margin"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size_small" />
+
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/name"
+                        android:background="@color/divider_color"
+                        android:layout_marginTop="@dimen/layout_margin_extra_large"
+                        android:id="@+id/divider"/>
+
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:id="@+id/mobileIcon"
+                        android:src="@drawable/ic_phone"
+                        android:tint="@color/colorPrimary"
+                        android:layout_marginEnd="@dimen/activity_vertical_margin"
+                        app:layout_constraintEnd_toStartOf="@id/mobile"
+                        app:layout_constraintTop_toTopOf="@id/mobile"
+                        app:layout_constraintBottom_toBottomOf="@id/mobile"/>
+
+
+
+                    <EditText
+                        android:id="@+id/mobile"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:background="#00000000"
+                        android:cursorVisible="true"
+                        android:fontFamily="@font/nunitosans_regular"
+                        android:hint="Mobile Number*"
+                        android:maxLength="10"
+                        android:nextFocusDown="@id/mail"
+                        android:inputType="phone"
+                        android:singleLine="true"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/divider"
+                        android:layout_marginStart="@dimen/layout_margin_xxxl"
+                        android:layout_marginEnd="@dimen/activity_vertical_margin"
+                        android:layout_marginTop="@dimen/layout_margin_extra_large"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/black_60"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/mobile"
+                        android:background="@color/divider_color"
+                        android:layout_marginTop="@dimen/layout_margin_extra_large"
+                        android:id="@+id/divider2"/>
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:id="@+id/mailIcon"
+                        android:tint="@color/colorPrimary"
+                        android:src="@drawable/ic_mail"
+                        android:layout_marginEnd="@dimen/activity_vertical_margin"
+                        app:layout_constraintEnd_toStartOf="@id/mail"
+                        app:layout_constraintTop_toTopOf="@id/mail"
+                        app:layout_constraintBottom_toBottomOf="@id/mail"/>
+
+
+                    <EditText
+                        android:id="@+id/mail"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:background="#00000000"
+                        android:cursorVisible="true"
+                        android:fontFamily="@font/nunitosans_regular"
+                        android:hint="Email Id *"
+                        android:nextFocusDown="@id/businessType"
+                        android:inputType="textEmailAddress"
+                        android:singleLine="true"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/divider2"
+                        android:layout_marginStart="@dimen/layout_margin_xxxl"
+                        android:layout_marginEnd="@dimen/activity_vertical_margin"
+                        android:layout_marginTop="@dimen/layout_margin_extra_large"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/black_60"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/mail"
+                        android:background="@color/divider_color"
+                        android:layout_marginTop="@dimen/layout_margin_extra_large"
+                        android:id="@+id/divider3"/>
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:id="@+id/businessIcon"
+                        android:src="@drawable/ic_business"
+                        android:tint="@color/colorPrimary"
+                        app:layout_constraintEnd_toStartOf="@id/businessType"
+                        app:layout_constraintTop_toTopOf="@id/businessType"
+                        app:layout_constraintBottom_toBottomOf="@id/businessType"/>
+
+
+
+                    <Spinner
+                        android:id="@+id/businessType"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:entries="@array/business_type"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/divider3"
+                        android:layout_marginStart="44dp"
+                        android:layout_marginEnd="@dimen/activity_vertical_margin"
+                        android:nextFocusDown="@id/companyName"
+                        android:layout_marginTop="@dimen/layout_margin_large"
+                        android:textColor="@color/black_60"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/businessType"
+                        android:background="@color/divider_color"
+                        android:layout_marginTop="@dimen/layout_margin_large"
+                        android:id="@+id/divider4"/>
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:id="@+id/companyIcon"
+                        android:src="@drawable/ic_company"
+                        android:layout_marginEnd="@dimen/activity_vertical_margin"
+                        android:tint="@color/colorPrimary"
+                        app:layout_constraintEnd_toStartOf="@id/companyName"
+                        app:layout_constraintTop_toTopOf="@id/companyName"
+                        app:layout_constraintBottom_toBottomOf="@id/companyName"/>
+
+
+                    <EditText
+                        android:id="@+id/companyName"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:background="#00000000"
+                        android:cursorVisible="true"
+                        android:fontFamily="@font/nunitosans_regular"
+                        android:hint="Company Name *"
+                        android:inputType="text"
+                        android:singleLine="true"
+                        android:maxLength="100"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/divider4"
+                        android:layout_marginStart="@dimen/layout_margin_xxxl"
+                        android:layout_marginEnd="@dimen/activity_vertical_margin"
+                        android:layout_marginTop="@dimen/layout_margin_extra_large"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/black_60"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/companyName"
+                        android:background="@color/divider_color"
+                        android:layout_marginTop="@dimen/layout_margin_extra_large"
+                        android:id="@+id/divider5"/>
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:id="@+id/ageIcon"
+                        android:src="@drawable/ic_age"
+                        android:layout_marginEnd="@dimen/activity_vertical_margin"
+                        android:tint="@color/colorPrimary"
+                        app:layout_constraintEnd_toStartOf="@id/age"
+                        app:layout_constraintTop_toTopOf="@id/age"
+                        app:layout_constraintBottom_toBottomOf="@id/age"/>
+
+
+
+                    <EditText
+                        android:id="@+id/age"
+                        android:layout_width="0dp"
+                        android:hint="Age (optional)"
+                        android:background="#00000000"
+                        android:cursorVisible="true"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:singleLine="true"
+                        android:textColorHint="@color/black_60"
+                        android:fontFamily="@font/nunitosans_regular"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/divider5"
+                        android:layout_marginStart="@dimen/layout_margin_xxxl"
+                        android:layout_marginEnd="@dimen/activity_vertical_margin"
+                        android:layout_marginTop="@dimen/layout_margin_extra_large"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size_small" />
+
+
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/age"
+                        android:background="@color/divider_color"
+                        android:layout_marginTop="@dimen/layout_margin_extra_large"
+                        android:id="@+id/divider6"/>
+
+                    <ImageView
+                        android:id="@+id/genderIcon"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_gender"
+                        android:tint="@color/colorPrimary"
+                        android:layout_marginEnd="@dimen/activity_vertical_margin"
+                        app:layout_constraintBottom_toBottomOf="@id/gender"
+                        app:layout_constraintStart_toStartOf="@+id/ageIcon"
+                        app:layout_constraintTop_toTopOf="@id/gender" />
+
+                    <TextView
+                        android:id="@+id/gender"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/nunitosans_regular"
+                        android:text="Gender"
+                        android:gravity="center"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/genderRadioGroup"
+                        app:layout_constraintTop_toBottomOf="@id/divider6"
+                        android:layout_marginStart="@dimen/_25sdp"
+                        android:layout_marginTop="@dimen/layout_margin_extra_large"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size_small" />
+
+
+                    <RadioGroup
+                        android:id="@+id/genderRadioGroup"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_5sdp"
+                        android:orientation="horizontal"
+                        android:gravity="center"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/gender"
+                        app:layout_constraintBottom_toBottomOf="@id/gender">
+
+                        <RadioButton
+                            android:id="@+id/male"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/male"
+                            android:layout_marginEnd="@dimen/_5sdp"
+                            android:fontFamily="@font/nunitosans_regular"
+                            android:textSize="@dimen/text_size_small"
+                            android:textColor="@color/black"/>
+
+                        <RadioButton
+                            android:id="@+id/female"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/female"
+                            android:layout_marginEnd="@dimen/_5sdp"
+                            android:fontFamily="@font/nunitosans_regular"
+                            android:textSize="@dimen/text_size_small"
+                            android:textColor="@color/black"/>
+
+                        <RadioButton
+                            android:id="@+id/other"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/other"
+                            android:fontFamily="@font/nunitosans_regular"
+                            android:textSize="@dimen/text_size_small"
+                            android:textColor="@color/black"/>
+
+
+                    </RadioGroup>
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/gender"
+                        android:background="@color/divider_color"
+                        android:layout_marginTop="@dimen/layout_margin_extra_large"
+                        android:id="@+id/divider7"/>
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:id="@+id/addressIcon"
+                        android:src="@drawable/ic_address"
+                        android:layout_marginEnd="@dimen/activity_vertical_margin"
+                        android:tint="@color/colorPrimary"
+                        app:layout_constraintEnd_toStartOf="@id/officeAddress"
+                        app:layout_constraintTop_toTopOf="@id/officeAddress"
+                        app:layout_constraintBottom_toBottomOf="@id/officeAddress"/>
+
+
+                    <TextView
+                        android:id="@+id/officeAddress"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/layout_margin_xxxl"
+                        android:layout_marginTop="@dimen/layout_margin_extra_large"
+                        android:layout_marginEnd="@dimen/activity_vertical_margin"
+                        android:background="#00000000"
+                        android:fontFamily="@font/nunitosans_regular"
+                        android:text="@string/office_landmark"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size_small"
+                        app:layout_constraintBottom_toBottomOf="@id/divider8"
+                        app:layout_constraintEnd_toStartOf="@id/setLocation"
+                        app:layout_constraintHorizontal_bias="1.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/divider7"
+                        app:layout_constraintVertical_bias="0.0" />
+
+                    <ImageButton
+                        android:id="@+id/setLocation"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        app:layout_constraintTop_toTopOf="@id/officeAddress"
+                        app:layout_constraintBottom_toBottomOf="@id/officeAddress"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:background="@drawable/ic_gps"
+                        android:layout_marginEnd="@dimen/activity_vertical_margin"/>
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/officeAddress"
+                        android:background="@color/divider_color"
+                        android:layout_marginTop="@dimen/layout_margin_extra_large"
+                        android:id="@+id/divider8"/>
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:id="@+id/address1Icon"
+                        android:src="@drawable/ic_address"
+                        android:tint="@color/colorPrimary"
+                        android:layout_marginEnd="@dimen/activity_vertical_margin"
+                        app:layout_constraintEnd_toStartOf="@id/officeAddressLand"
+                        app:layout_constraintTop_toTopOf="@id/officeAddressLand"
+                        app:layout_constraintBottom_toBottomOf="@id/officeAddressLand"/>
+
+
+                    <EditText
+                        android:id="@+id/officeAddressLand"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/layout_margin_xxxl"
+                        android:layout_marginTop="@dimen/layout_margin_extra_large"
+                        android:layout_marginEnd="@dimen/_30sdp"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:background="#00000000"
+                        android:fontFamily="@font/nunitosans_regular"
+                        android:hint="Office Address"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size_small"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.47"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/divider8"
+                        app:layout_constraintVertical_bias="0.0" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <LinearLayout
+                    android:id="@+id/lvReg"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:layout_marginEnd="@dimen/_20sdp"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    app:layout_constraintTop_toBottomOf="@+id/editTextContainer"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent">
+                    <CheckBox
+                        android:gravity="center"
+                        android:id="@+id/cbTerms"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                    <TextView
+                        android:gravity="center"
+                        android:id="@+id/tvTerms"
+                        android:text="@string/terms_and_condition"
+                        android:textSize="@dimen/_13sdp"
+                        android:textColor="@color/blue_500"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+
+                <com.google.android.material.button.MaterialButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Submit"
+                    android:id="@+id/submit"
+                    android:padding="@dimen/activity_vertical_margin"
+                    android:layout_margin="@dimen/activity_vertical_margin"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_large"
+                    android:fontFamily="@font/nunitosans_semibold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/lvReg"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+        <include
+            android:id="@+id/progress"
+            layout="@layout/layout_progress"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:resource="@{resource}" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

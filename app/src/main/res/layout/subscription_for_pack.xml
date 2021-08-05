@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <ImageView
+        android:id="@+id/imCancel"
+        android:src="@drawable/close"
+        android:layout_alignParentEnd="true"
+        android:padding="@dimen/_5sdp"
+        android:layout_width="@dimen/_25sdp"
+        android:layout_height="@dimen/_25sdp"/>
+    <TextView
+        android:id="@+id/tvMain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:fontFamily="@font/nunitosans_extrabold"
+        android:gravity="center"
+        android:padding="@dimen/_5sdp"
+        android:text="@string/sub"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_15sdp" />
+
+    <TextView
+        android:id="@+id/tvMaint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvMain"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:fontFamily="@font/nunitosans_semibold"
+        android:gravity="center"
+        android:padding="@dimen/_10sdp"
+        android:text="@string/subscription"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_12sdp" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_below="@+id/tvMaint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/cardView"
+            android:background="@color/white">
+
+            <TextView
+                android:id="@+id/tvDisscountP"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="10% OFF"
+                android:textColor="@color/black"
+                android:backgroundTint="@drawable/button_background"
+                android:textSize="@dimen/_14sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:fontFamily="@font/nunitosans_extrabold"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/perdayPlan"
+                app:layout_constraintStart_toStartOf="@+id/perdayPlan" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/perdayPlan"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_120sdp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:shadowColor="#000"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="10dp"
+                app:cardMaxElevation="10dp"
+                app:layout_constraintEnd_toStartOf="@+id/yearlyPlan"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvDisscountP">
+
+                <LinearLayout
+                    android:id="@+id/cv_one_login"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:fontFamily="@font/nunitosans_bold"
+                        android:gravity="center"
+                        android:text="@string/perday"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_13sdp" />
+
+                    <TextView
+                        android:id="@+id/tvPAmount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_7sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:fontFamily="@font/nunitosans_bold"
+                        android:gravity="center"
+                        android:text="@string/perdayreport"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_9sdp" />
+
+                    <com.github.lguipeng.library.animcheckbox.AnimCheckBox
+                        android:id="@+id/cbParDay"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:padding="4dp"
+
+                        app:circle_color="@color/orange_900"
+                        app:stroke_color="@color/blue_400"
+                        app:stroke_width="4dp" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+            <TextView
+                android:id="@+id/tvDisscountY"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="20% OFF"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:textColor="@color/black"
+                android:backgroundTint="@drawable/button_background"
+                android:textSize="@dimen/_14sdp"
+                android:fontFamily="@font/nunitosans_extrabold"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/yearlyPlan"
+                app:layout_constraintStart_toStartOf="@+id/yearlyPlan" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/yearlyPlan"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_120sdp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:shadowColor="#000"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="10dp"
+                app:cardMaxElevation="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/perdayPlan"
+                app:layout_constraintTop_toBottomOf="@+id/tvDisscountY">
+
+                <LinearLayout
+                    android:id="@+id/cv_one_login1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:fontFamily="@font/nunitosans_bold"
+                        android:gravity="center"
+                        android:text="@string/yearly"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_13sdp" />
+
+                    <TextView
+                        android:id="@+id/tvYAmount"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_7sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:fontFamily="@font/nunitosans_bold"
+                        android:gravity="center"
+                        android:text="@string/perdayreport"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_9sdp"  />
+
+                    <com.github.lguipeng.library.animcheckbox.AnimCheckBox
+                        android:id="@+id/cbYearly"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:padding="4dp"
+                        app:circle_color="@color/orange_900"
+                        app:stroke_color="@color/blue_400"
+                        app:stroke_width="4dp" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_payment"
+                android:layout_width="@dimen/_150sdp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:layout_weight="1"
+                android:fontFamily="@font/nunitosans_extrabold"
+                android:text="@string/payment"
+                android:textSize="@dimen/_13sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/yearlyPlan"
+                app:layout_constraintStart_toStartOf="@+id/perdayPlan"
+                app:layout_constraintTop_toBottomOf="@+id/yearlyPlan" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+</RelativeLayout>

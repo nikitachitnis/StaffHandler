@@ -1,0 +1,462 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardBackgroundColor="@color/white"
+    android:layout_margin="5dp">
+    <RelativeLayout
+        android:id="@+id/rlDetails"
+        android:layout_width="match_parent"
+        android:background="@drawable/square_layout"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/_5sdp"
+            android:id="@+id/cL_sal"
+         >
+
+            <TextView
+                android:id="@+id/txtempname"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:background="@drawable/square_layout"
+                android:focusableInTouchMode="true"
+                android:fontFamily="@font/nunitosans_bold"
+                android:gravity="center"
+                android:nextFocusRight="@id/surName"
+                android:padding="@dimen/_5sdp"
+                android:singleLine="true"
+                android:text="Nikhil Harale"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black_60"
+                android:textSize="@dimen/_11sdp"
+                app:layout_constraintEnd_toStartOf="@id/txtempid"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/txtempid"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_25sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:background="@drawable/square_layout"
+                android:fontFamily="@font/nunitosans_bold"
+                android:gravity="center"
+                android:nextFocusDown="@id/mobile"
+                android:padding="@dimen/_5sdp"
+                android:singleLine="true"
+                android:text="Nikh12"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_11sdp"
+                app:layout_constraintBottom_toBottomOf="@id/txtempname"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/txtempname"
+                app:layout_constraintTop_toTopOf="@id/txtempname" />
+
+            <View
+                android:id="@+id/divider"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:background="@color/divider_color"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtempname" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:id="@+id/lv_actualsal"
+                android:layout_margin="@dimen/_2sdp"
+                app:layout_constraintTop_toBottomOf="@id/divider">
+            <TextView
+                android:id="@+id/tvActucalSal"
+                android:layout_width="0dp"
+                android:padding="@dimen/_1sdp"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/nunitosans_bold"
+                android:layout_weight="1"
+                android:gravity="right|center"
+                android:text="Actual Salary (₹)"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12sdp"
+              />
+
+            <EditText
+                android:id="@+id/etActucalSal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:hint="15000₹"
+                android:fontFamily="@font/nunitosans_regular"
+                android:background="@android:color/transparent"
+                android:layout_weight="1"
+                android:padding="@dimen/_2sdp"
+                android:inputType="number"
+                android:maxLength="10"
+                android:enabled="false"
+                android:layout_margin="@dimen/_2sdp"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_13sdp"
+                />
+            </LinearLayout>
+
+            <View
+                android:id="@+id/divider1"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:visibility="gone"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:background="@color/divider_color"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/lv_actualsal" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:id="@+id/lv_netpayable"
+                android:layout_margin="@dimen/_2sdp"
+                app:layout_constraintTop_toBottomOf="@id/divider1">
+                <TextView
+                    android:layout_width="0dp"
+                    android:padding="@dimen/_1sdp"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/nunitosans_bold"
+                    android:layout_weight="1"
+                    android:gravity="right|center"
+                    android:text="Net Payable Salary (₹)"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12sdp"
+                    />
+
+                <EditText
+                    android:id="@+id/edtnetpayable"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:hint="15000₹"
+                    android:fontFamily="@font/nunitosans_regular"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent"
+                    android:padding="@dimen/_2sdp"
+                    android:maxLength="10"
+                    android:enabled="false"
+                    android:layout_margin="@dimen/_2sdp"
+                    android:singleLine="true"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_13sdp"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:id="@+id/lv_remainsal"
+                android:layout_margin="@dimen/_2sdp"
+                app:layout_constraintTop_toBottomOf="@id/lv_netpayable">
+                <TextView
+                    android:id="@+id/tvActucalSal1"
+                    android:layout_width="0dp"
+                    android:padding="@dimen/_1sdp"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/nunitosans_bold"
+                    android:layout_weight="1"
+                    android:gravity="right|center"
+                    android:text="Remaining Salary (₹)"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12sdp"
+                    />
+
+                <EditText
+                    android:id="@+id/edtremamingsal"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:hint="15000₹"
+                    android:fontFamily="@font/nunitosans_regular"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent"
+                    android:padding="@dimen/_2sdp"
+                    android:inputType="number"
+                    android:maxLength="10"
+                    android:enabled="false"
+                    android:layout_margin="@dimen/_2sdp"
+                    android:singleLine="true"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_13sdp"
+                    />
+            </LinearLayout>
+
+
+            <View
+                android:id="@+id/divider2"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/layout_margin_extra_large"
+                android:visibility="gone"
+                android:background="@color/divider_color"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/lv_remainsal" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:id="@+id/lv_leavededuct"
+                android:layout_margin="@dimen/_2sdp"
+                app:layout_constraintTop_toBottomOf="@id/divider2">
+                <TextView
+                    android:id="@+id/tvActucalSal2"
+                    android:layout_width="0dp"
+                    android:padding="@dimen/_1sdp"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/nunitosans_regular"
+                    android:layout_weight="1.2"
+                    android:gravity="right|center"
+                    android:text="Leave Deduction (₹)"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12sdp"
+                    />
+
+                <EditText
+                    android:id="@+id/edtleavededuc"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:hint="Enter amount (₹)"
+                    android:background="@drawable/square_layout"
+                    android:fontFamily="@font/nunitosans_regular"
+                    android:layout_weight="1"
+                    android:padding="@dimen/_2sdp"
+                    android:maxLength="10"
+                    android:enabled="true"
+                    android:inputType="numberDecimal"
+                    android:layout_margin="@dimen/_2sdp"
+                    android:singleLine="true"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_13sdp"
+                    />
+                <ImageView
+                    android:id="@+id/tvDetails"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:gravity="end"
+                    android:src="@drawable/ic_info"
+                    android:layout_marginLeft="@dimen/_2sdp"
+                    android:layout_marginRight="@dimen/_2sdp"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_9sdp"
+                 />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:id="@+id/lv_taxdeduct"
+                android:layout_margin="@dimen/_2sdp"
+                app:layout_constraintTop_toBottomOf="@id/lv_leavededuct">
+                <TextView
+                    android:id="@+id/tvActucalSal3"
+                    android:layout_width="0dp"
+                    android:padding="@dimen/_1sdp"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/nunitosans_regular"
+                    android:layout_weight="1.2"
+                    android:gravity="right|center"
+                    android:text="Tax Deduction (₹)"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12sdp"
+                    />
+
+                <EditText
+                    android:id="@+id/edtTaxdeduc"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:hint="Enter amount (₹)"
+                    android:fontFamily="@font/nunitosans_regular"
+                    android:layout_weight="1"
+                    android:background="@drawable/square_layout"
+                    android:padding="@dimen/_2sdp"
+                    android:inputType="number"
+                    android:maxLength="10"
+                    android:enabled="false"
+                    android:layout_margin="@dimen/_2sdp"
+                    android:singleLine="true"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_13sdp"
+                    />
+                <ImageView
+                    android:id="@+id/tvDetails1"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:gravity="end"
+                    android:layout_marginRight="@dimen/_2sdp"
+                    android:layout_marginLeft="@dimen/_2sdp"
+                    android:src="@drawable/ic_info"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_9sdp"
+                    />
+            </LinearLayout>
+
+
+
+            <View
+                android:id="@+id/divider3"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:background="@color/divider_color"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/lv_leavededuct" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:id="@+id/lv_otherdeduct"
+                android:layout_margin="@dimen/_2sdp"
+                app:layout_constraintTop_toBottomOf="@id/lv_taxdeduct">
+                <TextView
+                    android:id="@+id/tvOtherdeductions"
+                    android:layout_width="0dp"
+                    android:padding="@dimen/_1sdp"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/nunitosans_regular"
+                    android:layout_weight="1.2"
+                    android:gravity="right|center"
+                    android:text="Other Deduction (₹)"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12sdp"
+                    />
+
+                <EditText
+                    android:id="@+id/edtOtherdeductions"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:hint="Enter amount (₹)"
+                    android:fontFamily="@font/nunitosans_regular"
+                    android:layout_weight="1"
+                    android:background="@drawable/square_layout"
+                    android:padding="@dimen/_2sdp"
+                    android:inputType="number"
+                    android:maxLength="10"
+                    android:enabled="false"
+                    android:layout_margin="@dimen/_2sdp"
+                    android:singleLine="true"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_13sdp"
+                    />
+                <ImageView
+                    android:id="@+id/tvOtherDetails"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:gravity="end"
+                    android:layout_marginRight="@dimen/_2sdp"
+                    android:layout_marginLeft="@dimen/_2sdp"
+                    android:src="@drawable/ic_info"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_9sdp"
+                    />
+            </LinearLayout>
+            <View
+                android:id="@+id/divider7"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:background="@color/divider_color"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:visibility="visible"
+                app:layout_constraintTop_toBottomOf="@id/lv_otherdeduct" />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnadditionalpayments"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginRight="@dimen/_5sdp"
+
+                android:background="@color/transparent"
+                android:gravity="center"
+                android:drawableTint="@color/colorPrimary"
+                android:drawableRight="@drawable/next"
+                android:text="Additional Payments (₹)  "
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/lv_otherdeduct"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="@dimen/_10sdp"
+                />
+            <View
+                android:id="@+id/divider4"
+                android:layout_width="0dp"
+                android:layout_height="1.5dp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:background="@color/divider_color"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btnadditionalpayments" />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/tvActucalSal4"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:backgroundTint="@color/colorPrimary"
+                android:background="@drawable/buttonshape"
+                android:gravity="center"
+                android:text="Pay"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_15sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/divider4" />
+
+            <EditText
+                android:id="@+id/edtfinalamount"
+                android:layout_width="@dimen/_150sdp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/_5sdp"
+                android:gravity="center"
+                android:hint="Enter amount (₹)"
+                android:inputType="numberDecimal"
+                android:background="@drawable/square_layout"
+                android:padding="@dimen/_2sdp"
+                android:maxLength="10"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_14sdp"
+                app:layout_constraintBottom_toBottomOf="@id/tvActucalSal4"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tvActucalSal4" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.EmployeeManagementFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:gravity="center"
+                app:titleMarginStart="@dimen/_30sdp"
+                app:titleTextColor="@color/blue_400"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimary"
+                android:minHeight="?attr/actionBarSize">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_gravity="start"
+                    android:gravity="start"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/imBack"
+                        android:layout_gravity="center"
+                        android:tint="@color/white"
+                        android:src="@drawable/ic_arrow_back_black_24dp"
+                        android:layout_width="@dimen/_27sdp"
+                        android:layout_height="@dimen/_27sdp"
+                        android:layout_marginEnd="@dimen/_15sdp"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_gravity="start"
+                    android:gravity="start"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_gravity="center"
+                        android:text="Employee list"
+                        android:textColor="@color/white"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/nunitosans_bold"
+                        android:textSize="@dimen/_15sdp"
+                        android:layout_marginEnd="@dimen/_15sdp"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_gravity="end"
+                    android:gravity="end"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/imAddEmployee"
+                        android:gravity="center"
+                        android:text="+ Add"
+                        android:fontFamily="@font/nunitosans_bold"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_12sdp"
+                        android:layout_width="@dimen/_40sdp"
+                        android:layout_height="@dimen/_40sdp"
+                        android:layout_marginEnd="@dimen/_15sdp"/>
+                </LinearLayout>
+            </androidx.appcompat.widget.Toolbar>
+            <EditText
+                android:id="@+id/search_emp_editText"
+                android:layout_width="match_parent"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:padding="@dimen/_5sdp"
+                android:background="@drawable/spinner_item_border"
+                android:drawableRight="@drawable/quantum_ic_search_grey600_24"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:textSize="@dimen/_10ssp"
+                android:hint="Search employee by name/designation/department"
+                android:layout_below="@+id/toolbar"
+                android:layout_height="wrap_content"/>
+            <RelativeLayout
+                android:layout_below="@+id/search_emp_editText"
+                android:visibility="visible"
+                android:id="@+id/rlMain"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+                    android:id="@+id/pullToRefresh"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rcEmployeeList"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+                </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/no_employee_found"
+            android:layout_centerInParent="true"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/tvNodata"
+            android:layout_gravity="right"
+            android:gravity="center"
+            android:textSize="25dp"
+            android:layout_marginTop="20dp"
+            android:visibility="gone"
+            android:fontFamily="@font/nunitosans_bold"
+            android:textColor="@color/black"
+            />
+        <Button
+            android:id="@+id/addEmployee"
+            android:layout_below="@+id/tvNodata"
+            android:text="Add Employee"
+            android:gravity="center"
+            android:backgroundTint="@color/green_400"
+            android:visibility="gone"
+            android:layout_marginStart="@dimen/_85sdp"
+            android:layout_marginEnd="@dimen/_85sdp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </RelativeLayout>
+
+
+</FrameLayout>

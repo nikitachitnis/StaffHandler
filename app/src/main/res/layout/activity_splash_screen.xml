@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SplashScreen">
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ImageView
+        android:id="@+id/spImg"
+        android:padding="@dimen/_10sdp"
+        android:scaleType="centerInside"
+        android:src="@drawable/ic_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_350sdp"/>
+    <TextView
+        android:id="@+id/tvSp"
+        android:layout_below="@+id/spImg"
+        android:text="Staff Handler Lite"
+        android:textSize="@dimen/_27sdp"
+        android:gravity="center"
+        android:fontFamily="@font/nunitosans_bold"
+        android:textColor="@color/orange_900"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/tvSp1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:fontFamily="@font/nunitosans_semibold"
+        android:gravity="center"
+        android:layout_above="@+id/spImg1"
+        android:text="By"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_18sdp" />
+
+    <ImageView
+        android:id="@+id/spImg1"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_55sdp"
+        android:src="@drawable/splashlogo"
+        android:layout_alignParentBottom="true" />
+</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

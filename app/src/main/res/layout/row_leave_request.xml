@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="leaveData"
+            type="com.miscos.staffhandler.hrms_management.hrms.model.response.FetchApplyLeaveData.LeaveApplyDatum" />
+    </data>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/_7sdp"
+    android:id="@+id/clMain"
+    android:layout_margin="@dimen/_5sdp"
+    android:background="@drawable/gray_rounded_rectangle">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvlblFromDate"
+            style="@style/boldLblStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/lbl_from_date"
+            app:layout_constraintEnd_toStartOf="@id/tvlblToDate"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvlblToDate"
+            style="@style/boldLblStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_7sdp"
+            android:text="@string/lbl_to_date"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tvlblFromDate"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvFromDate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+
+            app:layout_constraintEnd_toEndOf="@id/tvlblFromDate"
+            app:layout_constraintStart_toStartOf="@id/tvlblFromDate"
+            app:layout_constraintTop_toBottomOf="@id/tvlblFromDate" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvToDate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            app:layout_constraintEnd_toEndOf="@id/tvlblToDate"
+            app:layout_constraintStart_toStartOf="@id/tvlblToDate"
+            app:layout_constraintTop_toBottomOf="@id/tvlblToDate" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvlblStatus"
+        style="@style/boldLblStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/lbl_status"
+        android:layout_marginTop="@dimen/_7sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvFromDate" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvStatus"
+        style="@style/regularLblStyle"
+        android:layout_width="0dp"
+        android:layout_marginStart="@dimen/_7sdp"
+        android:layout_height="wrap_content"
+        android:text="@{leaveData.leaveStatus}"
+        android:inputType="textCapWords"
+        app:layout_constraintStart_toEndOf="@id/tvlblStatus"
+        app:layout_constraintTop_toTopOf="@+id/tvlblStatus"
+        app:layout_constraintBottom_toBottomOf="@+id/tvlblStatus"/>
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvlblType"
+        style="@style/boldLblStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/lbl_type"
+        android:layout_marginTop="@dimen/_7sdp"
+        app:layout_constraintStart_toStartOf="@id/tvToDate"
+        app:layout_constraintTop_toBottomOf="@+id/tvToDate" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvType"
+        style="@style/regularLblStyle"
+        android:layout_width="wrap_content"
+        android:layout_marginStart="@dimen/_7sdp"
+        android:layout_height="wrap_content"
+        android:capitalize="words"
+        android:inputType="textCapWords"
+        app:layout_constraintStart_toEndOf="@id/tvlblType"
+        app:layout_constraintTop_toTopOf="@+id/tvlblType"
+        app:layout_constraintBottom_toBottomOf="@+id/tvlblType"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

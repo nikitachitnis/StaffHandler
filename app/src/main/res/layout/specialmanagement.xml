@@ -1,0 +1,871 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".shiftmanagement.fragments.SpecialManagement">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:gravity="center"
+        app:titleMarginStart="@dimen/_30sdp"
+        app:titleTextColor="@color/blue_400"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:minHeight="?attr/actionBarSize">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_gravity="start"
+            android:gravity="start"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imBack"
+                android:tint="@color/white"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_arrow_back_black_24dp"
+                android:layout_width="@dimen/_27sdp"
+                android:layout_height="@dimen/_27sdp"
+                android:layout_marginEnd="@dimen/_14sdp"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_gravity="center"
+                android:text="@string/special_management"
+                android:textColor="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nunitosans_bold"
+                android:textSize="@dimen/_17sdp"
+                android:layout_marginEnd="@dimen/_14sdp"/>
+        </LinearLayout>
+    </androidx.appcompat.widget.Toolbar>
+    <ScrollView
+        android:layout_below="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/searchCardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_5sdp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="10dp">
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/searchText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:text="Search Office Staff"
+                        android:textAlignment="center"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_14sdp" />
+
+                    <LinearLayout
+                        android:id="@+id/searchEmployeeLay"
+                        android:layout_below="@id/searchText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:layout_marginEnd="@dimen/_5sdp"
+                        android:weightSum="4">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:layout_marginEnd="@dimen/_10sdp"
+                            android:layout_weight="1.3"
+                            android:text="Name :"
+                            android:textAlignment="viewEnd"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_12sdp" />
+
+                        <AutoCompleteTextView
+                            android:id="@+id/employeeName"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:drawableRight="@drawable/quantum_ic_search_grey600_24"
+                            android:layout_marginTop="@dimen/_3sdp"
+                            android:autofillHints="Enter name"
+                            android:textSize="@dimen/_12sdp"
+                            android:layout_weight="2.7"
+                            android:hint="Enter Name" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/employeeIdLay"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/searchEmployeeLay"
+                        android:layout_margin="@dimen/_5sdp"
+                        android:weightSum="4">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:layout_marginEnd="@dimen/_10sdp"
+                            android:layout_weight="1.3"
+                            android:text="Employee No :"
+                            android:textAlignment="viewEnd"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_12sdp" />
+
+                        <AutoCompleteTextView
+                            android:id="@+id/employeeId"
+                            android:layout_width="0dp"
+                            android:drawableRight="@drawable/quantum_ic_search_grey600_24"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_3sdp"
+                            android:layout_weight="2.7"
+                            android:textSize="@dimen/_12sdp"
+                            android:hint="Enter Employee No" />
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:layout_marginEnd="@dimen/_10sdp"
+                            android:layout_weight="1.3"
+                            android:visibility="gone"
+                            android:text=""
+                            android:id="@+id/txtemployeehiddenid"
+                            android:textAlignment="viewEnd"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_12sdp" />
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/btnGo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/employeeIdLay"
+                        android:layout_centerHorizontal="true"
+                        android:layout_margin="@dimen/_5sdp"
+                        android:backgroundTint="@color/blue_600"
+                        android:padding="@dimen/_5sdp"
+                        android:text="Go" />
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/specialTimingCardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/searchCardView"
+                android:layout_margin="@dimen/_5sdp"
+                app:cardBackgroundColor="@color/white"
+                android:visibility="visible"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="10dp">
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/rl_timing"
+                    >
+
+                    <Button
+                        android:id="@+id/specialTimingText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_margin="@dimen/_5sdp"
+                        android:background="@drawable/border"
+                        android:padding="@dimen/_5sdp"
+                        android:text="Special Timing 1"
+                        android:textAlignment="center"
+                        android:textSize="@dimen/_10ssp" />
+
+                    <TextView
+                        android:id="@+id/actionText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_margin="@dimen/_5sdp"
+                        android:padding="@dimen/_5sdp"
+                        android:text="Clear"
+                        android:textStyle="bold"
+                        android:textColor="@color/red"
+                        android:textSize="@dimen/_12sdp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/specialTimingText"
+                        android:weightSum="2">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:weightSum="2">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="@dimen/_5sdp"
+                                    android:layout_weight="1.4"
+                                    android:background="@drawable/border"
+                                    android:padding="@dimen/_5sdp"
+                                    android:text="Start Time"
+                                    android:textAlignment="center"
+                                    android:textSize="@dimen/_10sdp" />
+
+                                <TextView
+                                    android:id="@+id/startTime"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="@dimen/_5sdp"
+                                    android:layout_weight="0.6"
+                                    android:background="@drawable/border"
+                                    android:padding="@dimen/_5sdp"
+                                    android:text="00:00"
+                                    android:textAlignment="center"
+                                    android:textSize="@dimen/_10sdp" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:weightSum="2">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="@dimen/_5sdp"
+                                    android:layout_weight="1.4"
+                                    android:background="@drawable/border"
+                                    android:padding="@dimen/_5sdp"
+                                    android:text="Pre Start Time"
+                                    android:textAlignment="center"
+                                    android:textSize="@dimen/_10sdp" />
+
+                                <TextView
+                                    android:id="@+id/preStartTime"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="@dimen/_5sdp"
+                                    android:layout_weight="0.6"
+                                    android:background="@drawable/border"
+                                    android:padding="@dimen/_5sdp"
+                                    android:text="00:00"
+                                    android:textAlignment="center"
+                                    android:textSize="@dimen/_10sdp" />
+
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:weightSum="2">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="@dimen/_5sdp"
+                                    android:layout_weight="1.4"
+                                    android:background="@drawable/border"
+                                    android:padding="@dimen/_5sdp"
+                                    android:text="Stop Time"
+                                    android:textAlignment="center"
+                                    android:textSize="@dimen/_10sdp" />
+
+                                <TextView
+                                    android:id="@+id/stopTime"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="@dimen/_5sdp"
+                                    android:layout_weight="0.6"
+                                    android:background="@drawable/border"
+                                    android:padding="@dimen/_5sdp"
+                                    android:text="00:00"
+                                    android:textAlignment="center"
+                                    android:textSize="@dimen/_10sdp" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:weightSum="2">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="@dimen/_5sdp"
+                                    android:layout_weight="1.4"
+                                    android:background="@drawable/border"
+                                    android:padding="@dimen/_5sdp"
+                                    android:text="Post Stop Time"
+                                    android:textAlignment="center"
+                                    android:textSize="@dimen/_10sdp" />
+
+                                <TextView
+                                    android:id="@+id/postStopTime"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="@dimen/_5sdp"
+                                    android:layout_weight="0.6"
+                                    android:background="@drawable/border"
+                                    android:padding="@dimen/_5sdp"
+                                    android:text="00:00"
+                                    android:textAlignment="center"
+                                    android:textSize="@dimen/_10sdp" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_view_holiday_marking"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/specialTimingCardView"
+                android:layout_margin="@dimen/_5sdp"
+                app:cardBackgroundColor="@color/white"
+                android:visibility="visible"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="10dp">
+
+                <RelativeLayout
+                    android:id="@+id/rl_holiday"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <Button
+                        android:id="@+id/holidayHeading"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_margin="@dimen/_5sdp"
+                        android:background="@drawable/border"
+                        android:padding="@dimen/_5sdp"
+                        android:text="Holiday Marking"
+                        android:textAlignment="center"
+                        android:textSize="@dimen/_10sdp" />
+
+                    <TextView
+                        android:id="@+id/actionTextHoliday"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_margin="@dimen/_5sdp"
+                        android:padding="@dimen/_5sdp"
+                        android:text="Clear"
+                        android:textStyle="bold"
+                        android:textColor="@color/red"
+                        android:textSize="@dimen/_12sdp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/holidayHeading"
+                        android:weightSum="7">
+
+                        <TextView
+                            android:id="@+id/textViewSun"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/_5sdp"
+                            android:layout_weight="1"
+                            android:background="@drawable/border"
+                            android:padding="@dimen/_5sdp"
+                            android:text="Sun"
+                            android:textAlignment="center"
+                            android:textSize="@dimen/_10sdp" />
+
+
+                        <TextView
+                            android:id="@+id/textViewMon"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/_5sdp"
+                            android:layout_weight="1"
+                            android:background="@drawable/border"
+                            android:padding="@dimen/_5sdp"
+                            android:text="Mon"
+                            android:textAlignment="center"
+                            android:textSize="@dimen/_10sdp" />
+
+                        <TextView
+                            android:id="@+id/textViewTue"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/_5sdp"
+                            android:layout_weight="1"
+                            android:background="@drawable/border"
+                            android:padding="@dimen/_5sdp"
+                            android:text="Tue"
+                            android:textAlignment="center"
+                            android:textSize="@dimen/_10sdp" />
+
+                        <TextView
+                            android:id="@+id/textViewWed"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/_5sdp"
+                            android:layout_weight="1"
+                            android:background="@drawable/border"
+                            android:padding="@dimen/_5sdp"
+                            android:text="Wed"
+                            android:textAlignment="center"
+                            android:textSize="@dimen/_10sdp" />
+
+                        <TextView
+                            android:id="@+id/textViewThu"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/_5sdp"
+                            android:layout_weight="1"
+                            android:background="@drawable/border"
+                            android:padding="@dimen/_5sdp"
+                            android:text="Thu"
+                            android:textAlignment="center"
+                            android:textSize="@dimen/_10sdp" />
+
+                        <TextView
+                            android:id="@+id/textViewFri"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/_5sdp"
+                            android:layout_weight="1"
+                            android:background="@drawable/border"
+                            android:padding="@dimen/_5sdp"
+                            android:text="Fri"
+                            android:textAlignment="center"
+                            android:textSize="@dimen/_10sdp" />
+
+                        <TextView
+                            android:id="@+id/textViewSat"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/_5sdp"
+                            android:layout_weight="1"
+                            android:background="@drawable/border"
+                            android:padding="@dimen/_5sdp"
+                            android:text="Sat"
+                            android:textAlignment="center"
+                            android:textSize="@dimen/_10sdp" />
+
+                    </LinearLayout>
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:id="@+id/specialTimingCardView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/card_view_holiday_marking"
+                android:layout_margin="@dimen/_5sdp"
+                app:cardBackgroundColor="@color/white"
+                android:visibility="visible"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="10dp">
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/rl_timing2"
+                    >
+
+                    <Button
+                        android:id="@+id/specialTimingText2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_margin="@dimen/_5sdp"
+                        android:background="@drawable/border"
+                        android:padding="@dimen/_5sdp"
+                        android:text="Special Timing 2"
+                        android:textAlignment="center"
+                        android:textSize="@dimen/_10sdp" />
+
+                    <TextView
+                        android:id="@+id/actionText2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_margin="@dimen/_5sdp"
+                        android:padding="@dimen/_5sdp"
+                        android:text="Clear"
+                        android:textStyle="bold"
+                        android:textColor="@color/red"
+                        android:textSize="@dimen/_12sdp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/specialTimingText2"
+                        android:weightSum="2">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:weightSum="2">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="@dimen/_5sdp"
+                                    android:layout_weight="1.4"
+                                    android:background="@drawable/border"
+                                    android:padding="@dimen/_5sdp"
+                                    android:text="Start Time"
+                                    android:textAlignment="center"
+                                    android:textSize="@dimen/_10sdp" />
+
+                                <TextView
+                                    android:id="@+id/startTime2"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="@dimen/_5sdp"
+                                    android:layout_weight="0.6"
+                                    android:background="@drawable/border"
+                                    android:padding="@dimen/_5sdp"
+                                    android:text="00:00"
+                                    android:textAlignment="center"
+                                    android:textSize="@dimen/_10sdp" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:weightSum="2">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="@dimen/_5sdp"
+                                    android:layout_weight="1.4"
+                                    android:background="@drawable/border"
+                                    android:padding="@dimen/_5sdp"
+                                    android:text="Pre Start Time"
+                                    android:textAlignment="center"
+                                    android:textSize="@dimen/_10sdp" />
+
+                                <TextView
+                                    android:id="@+id/preStartTime2"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="@dimen/_5sdp"
+                                    android:layout_weight="0.6"
+                                    android:background="@drawable/border"
+                                    android:padding="@dimen/_5sdp"
+                                    android:text="00:00"
+                                    android:textAlignment="center"
+                                    android:textSize="@dimen/_10sdp" />
+
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:weightSum="2">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="@dimen/_5sdp"
+                                    android:layout_weight="1.4"
+                                    android:background="@drawable/border"
+                                    android:padding="@dimen/_5sdp"
+                                    android:text="Stop Time"
+                                    android:textAlignment="center"
+                                    android:textSize="@dimen/_10sdp" />
+
+                                <TextView
+                                    android:id="@+id/stopTime2"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="@dimen/_5sdp"
+                                    android:layout_weight="0.6"
+                                    android:background="@drawable/border"
+                                    android:padding="@dimen/_5sdp"
+                                    android:text="00:00"
+                                    android:textAlignment="center"
+                                    android:textSize="@dimen/_10sdp" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:weightSum="2">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="@dimen/_5sdp"
+                                    android:layout_weight="1.4"
+                                    android:background="@drawable/border"
+                                    android:padding="@dimen/_5sdp"
+                                    android:text="Post Stop Time"
+                                    android:textAlignment="center"
+                                    android:textSize="@dimen/_10sdp" />
+
+                                <TextView
+                                    android:id="@+id/postStopTime2"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="@dimen/_5sdp"
+                                    android:layout_weight="0.6"
+                                    android:background="@drawable/border"
+                                    android:padding="@dimen/_5sdp"
+                                    android:text="00:00"
+                                    android:textAlignment="center"
+                                    android:textSize="@dimen/_10sdp" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_view_holiday_marking2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/specialTimingCardView2"
+                android:layout_margin="@dimen/_5sdp"
+                app:cardBackgroundColor="@color/white"
+                android:visibility="visible"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="10dp">
+
+                <RelativeLayout
+                    android:id="@+id/rl_holiday2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <Button
+                        android:id="@+id/holidayHeading2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_margin="@dimen/_5sdp"
+                        android:background="@drawable/border"
+                        android:padding="@dimen/_5sdp"
+                        android:text="Holiday Marking"
+                        android:textAlignment="center"
+                        android:textSize="@dimen/_10sdp" />
+
+                    <TextView
+                        android:id="@+id/actionTextHoliday2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_margin="@dimen/_5sdp"
+                        android:padding="@dimen/_5sdp"
+                        android:text="Clear"
+                        android:textStyle="bold"
+                        android:textColor="@color/red"
+                        android:textSize="@dimen/_12sdp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/holidayHeading2"
+                        android:weightSum="7">
+
+                        <TextView
+                            android:id="@+id/textViewSun2"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/_5sdp"
+                            android:layout_weight="1"
+                            android:background="@drawable/border"
+                            android:padding="@dimen/_5sdp"
+                            android:text="Sun"
+                            android:textAlignment="center"
+                            android:textSize="@dimen/_10sdp" />
+
+
+                        <TextView
+                            android:id="@+id/textViewMon2"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/_5sdp"
+                            android:layout_weight="1"
+                            android:background="@drawable/border"
+                            android:padding="@dimen/_5sdp"
+                            android:text="Mon"
+                            android:textAlignment="center"
+                            android:textSize="@dimen/_10sdp" />
+
+                        <TextView
+                            android:id="@+id/textViewTue2"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/_5sdp"
+                            android:layout_weight="1"
+                            android:background="@drawable/border"
+                            android:padding="@dimen/_5sdp"
+                            android:text="Tue"
+                            android:textAlignment="center"
+                            android:textSize="@dimen/_10sdp" />
+
+                        <TextView
+                            android:id="@+id/textViewWed2"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/_5sdp"
+                            android:layout_weight="1"
+                            android:background="@drawable/border"
+                            android:padding="@dimen/_5sdp"
+                            android:text="Wed"
+                            android:textAlignment="center"
+                            android:textSize="@dimen/_10sdp" />
+
+                        <TextView
+                            android:id="@+id/textViewThu2"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/_5sdp"
+                            android:layout_weight="1"
+                            android:background="@drawable/border"
+                            android:padding="@dimen/_5sdp"
+                            android:text="Thu"
+                            android:textAlignment="center"
+                            android:textSize="@dimen/_10sdp" />
+
+                        <TextView
+                            android:id="@+id/textViewFri2"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/_5sdp"
+                            android:layout_weight="1"
+                            android:background="@drawable/border"
+                            android:padding="@dimen/_5sdp"
+                            android:text="Fri"
+                            android:textAlignment="center"
+                            android:textSize="@dimen/_10sdp" />
+
+                        <TextView
+                            android:id="@+id/textViewSat2"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/_5sdp"
+                            android:layout_weight="1"
+                            android:background="@drawable/border"
+                            android:padding="@dimen/_5sdp"
+                            android:text="Sat"
+                            android:textAlignment="center"
+                            android:textSize="@dimen/_10sdp" />
+
+                    </LinearLayout>
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+            <LinearLayout
+                android:id="@+id/appliedfromlay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/card_view_holiday_marking2"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_70sdp"
+                android:visibility="visible"
+                android:weightSum="5">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:layout_weight="2"
+                    android:padding="@dimen/_5sdp"
+                    android:text="Applied From:"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/_10sdp" />
+
+                <TextView
+                    android:id="@+id/applyFromDate"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:layout_weight="2"
+                    android:background="@drawable/border"
+                    android:hint="Select Date"
+                    android:drawableEnd="@drawable/ic_calander"
+                    android:padding="@dimen/_5sdp"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/_10sdp" />
+
+
+
+            </LinearLayout>
+            <Button
+                android:id="@+id/btnSave"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/card_view_holiday_marking"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="@dimen/_10sdp"
+                android:visibility="gone"
+                android:backgroundTint="@color/blue_600"
+                android:padding="@dimen/_10sdp"
+                android:text="Save" />
+
+        </RelativeLayout>
+    </ScrollView>
+
+
+
+
+</RelativeLayout>

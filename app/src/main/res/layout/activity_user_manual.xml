@@ -1,0 +1,609 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".activities.UserManual">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="5dp">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:padding="@dimen/_4sdp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/naddme"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="center"
+                    android:fontFamily="@font/nunitosans_bold"
+                    android:layout_gravity="center"
+                    android:text="User Manual"
+                    android:textColor="#000"
+                    android:textSize="@dimen/_20sdp" />
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card1"
+                    android:layout_marginTop="@dimen/_13sdp"
+                    app:cardUseCompatPadding="true"
+                    app:cardElevation="@dimen/_5sdp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <ImageView
+                            android:id="@+id/image"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:scaleType="center"
+                            android:src="@drawable/pdf" />
+                        <TextView
+                            android:id="@+id/name"
+                            android:fontFamily="@font/nunitosans_regular"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="10dp"
+                            android:text="@string/register_an_employee"
+                            android:textColor="#000"
+                            android:textSize="@dimen/_13sdp" />
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card2"
+                    app:cardUseCompatPadding="true"
+                    app:cardElevation="@dimen/_5sdp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <ImageView
+                            android:id="@+id/image1"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:scaleType="center"
+                            android:src="@drawable/pdf" />
+                        <TextView
+                            android:id="@+id/name1"
+                            android:fontFamily="@font/nunitosans_regular"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="10dp"
+                            android:text="@string/add_an_employee"
+                            android:textColor="#000"
+                            android:textSize="@dimen/_13sdp" />
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card3"
+                    app:cardUseCompatPadding="true"
+                    app:cardElevation="@dimen/_5sdp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <ImageView
+                            android:id="@+id/image2"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:scaleType="center"
+                            android:src="@drawable/pdf" />
+                        <TextView
+                            android:id="@+id/name2"
+                            android:fontFamily="@font/nunitosans_regular"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="10dp"
+                            android:text="@string/login_employee"
+                            android:textColor="#000"
+                            android:textSize="@dimen/_13sdp" />
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card4"
+                    app:cardUseCompatPadding="true"
+                    app:cardElevation="@dimen/_5sdp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <ImageView
+                            android:id="@+id/image3"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:scaleType="center"
+                            android:src="@drawable/pdf" />
+                        <TextView
+                            android:id="@+id/name3"
+                            android:fontFamily="@font/nunitosans_regular"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="10dp"
+                            android:text="@string/manually_mark_attendance"
+                            android:textColor="#000"
+                            android:textSize="@dimen/_13sdp" />
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card5"
+                    app:cardUseCompatPadding="true"
+                    app:cardElevation="@dimen/_5sdp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <ImageView
+                            android:id="@+id/image4"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:scaleType="center"
+                            android:src="@drawable/pdf" />
+                        <TextView
+                            android:id="@+id/name4"
+                            android:fontFamily="@font/nunitosans_regular"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="10dp"
+                            android:text="@string/unregister_an_employee"
+                            android:textColor="#000"
+                            android:textSize="@dimen/_13sdp" />
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card6"
+                    app:cardUseCompatPadding="true"
+                    app:cardElevation="@dimen/_5sdp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <ImageView
+                            android:id="@+id/image5"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:scaleType="center"
+                            android:src="@drawable/pdf" />
+                        <TextView
+                            android:id="@+id/name5"
+                            android:fontFamily="@font/nunitosans_regular"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="10dp"
+                            android:text="@string/Day_activity"
+                            android:textColor="#000"
+                            android:textSize="@dimen/_13sdp" />
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card7"
+                    app:cardUseCompatPadding="true"
+                    app:cardElevation="@dimen/_5sdp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <ImageView
+                            android:id="@+id/image6"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:scaleType="center"
+                            android:src="@drawable/pdf" />
+                        <TextView
+                            android:id="@+id/name6"
+                            android:fontFamily="@font/nunitosans_regular"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="10dp"
+                            android:text="@string/roster_management"
+                            android:textColor="#000"
+                            android:textSize="@dimen/_13sdp" />
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card8"
+                    app:cardUseCompatPadding="true"
+                    app:cardElevation="@dimen/_5sdp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <ImageView
+                            android:id="@+id/image7"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:scaleType="center"
+                            android:src="@drawable/pdf" />
+                        <TextView
+                            android:id="@+id/name7"
+                            android:fontFamily="@font/nunitosans_regular"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="10dp"
+                            android:text="@string/shift_management"
+                            android:textColor="#000"
+                            android:textSize="@dimen/_13sdp" />
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card9"
+                    app:cardUseCompatPadding="true"
+                    app:cardElevation="@dimen/_5sdp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <ImageView
+                            android:id="@+id/image8"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:scaleType="center"
+                            android:src="@drawable/pdf" />
+                        <TextView
+                            android:id="@+id/name8"
+                            android:fontFamily="@font/nunitosans_regular"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="10dp"
+                            android:text="@string/mark_holiday"
+                            android:textColor="#000"
+                            android:textSize="@dimen/_13sdp" />
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card10"
+                    app:cardUseCompatPadding="true"
+                    app:cardElevation="@dimen/_5sdp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <ImageView
+                            android:id="@+id/image9"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:scaleType="center"
+                            android:src="@drawable/pdf" />
+                        <TextView
+                            android:id="@+id/name9"
+                            android:fontFamily="@font/nunitosans_regular"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="10dp"
+                            android:text="@string/company_settings"
+                            android:textColor="#000"
+                            android:textSize="@dimen/_13sdp" />
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card11"
+                    app:cardUseCompatPadding="true"
+                    app:cardElevation="@dimen/_5sdp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <ImageView
+                            android:id="@+id/image10"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:scaleType="center"
+                            android:src="@drawable/pdf" />
+                        <TextView
+                            android:id="@+id/name10"
+                            android:fontFamily="@font/nunitosans_regular"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="10dp"
+                            android:text="@string/admin_setting"
+                            android:textColor="#000"
+                            android:textSize="@dimen/_13sdp" />
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card12"
+                    app:cardUseCompatPadding="true"
+                    app:cardElevation="@dimen/_5sdp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <ImageView
+                            android:id="@+id/image11"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:src="@drawable/pdf" />
+                        <TextView
+                            android:id="@+id/name11"
+                            android:fontFamily="@font/nunitosans_regular"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="10dp"
+                            android:text="@string/special_shift_management"
+                            android:textColor="#000"
+                            android:textSize="@dimen/_13sdp" />
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card13"
+                    app:cardUseCompatPadding="true"
+                    app:cardElevation="@dimen/_5sdp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <ImageView
+                            android:id="@+id/image12"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:src="@drawable/pdf" />
+                        <TextView
+                            android:id="@+id/name12"
+                            android:fontFamily="@font/nunitosans_regular"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="10dp"
+                            android:text="@string/holiday_attendance"
+                            android:textColor="#000"
+                            android:textSize="@dimen/_13sdp" />
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card14"
+                    app:cardUseCompatPadding="true"
+                    app:cardElevation="@dimen/_5sdp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <ImageView
+                            android:id="@+id/image13"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:src="@drawable/pdf" />
+                        <TextView
+                            android:id="@+id/name13"
+                            android:fontFamily="@font/nunitosans_regular"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="10dp"
+                            android:text="@string/wifi_management"
+                            android:textColor="#000"
+                            android:textSize="@dimen/_13sdp" />
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card15"
+                    app:cardUseCompatPadding="true"
+                    app:cardElevation="@dimen/_5sdp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <ImageView
+                            android:id="@+id/image14"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:src="@drawable/pdf" />
+                        <TextView
+                            android:id="@+id/name14"
+                            android:fontFamily="@font/nunitosans_regular"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="10dp"
+                            android:text="@string/view_an_employee_report"
+                            android:textColor="#000"
+                            android:textSize="@dimen/_13sdp" />
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card16"
+                    app:cardUseCompatPadding="true"
+                    app:cardElevation="@dimen/_5sdp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <ImageView
+                            android:id="@+id/image15"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:src="@drawable/pdf" />
+                        <TextView
+                            android:id="@+id/name15"
+                            android:fontFamily="@font/nunitosans_regular"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="10dp"
+                            android:text="@string/download_an_employee_report"
+                            android:textColor="#000"
+                            android:textSize="@dimen/_13sdp" />
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card17"
+                    app:cardUseCompatPadding="true"
+                    app:cardElevation="@dimen/_5sdp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <ImageView
+                            android:id="@+id/image16"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:src="@drawable/pdf" />
+                        <TextView
+                            android:id="@+id/name16"
+                            android:fontFamily="@font/nunitosans_regular"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="10dp"
+                            android:text="@string/mark_attendance"
+                            android:textColor="#000"
+                            android:textSize="@dimen/_13sdp" />
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card18"
+                    app:cardUseCompatPadding="true"
+                    app:cardElevation="@dimen/_5sdp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <ImageView
+                            android:id="@+id/image17"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:src="@drawable/pdf" />
+                        <TextView
+                            android:id="@+id/name17"
+                            android:fontFamily="@font/nunitosans_regular"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="10dp"
+                            android:text="@string/config_qr"
+                            android:textColor="#000"
+                            android:textSize="@dimen/_12sdp" />
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card19"
+                    app:cardUseCompatPadding="true"
+                    app:cardElevation="@dimen/_5sdp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <ImageView
+                            android:id="@+id/image18"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:src="@drawable/pdf" />
+                        <TextView
+                            android:id="@+id/name18"
+                            android:fontFamily="@font/nunitosans_regular"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="10dp"
+                            android:text="@string/make_a_payment"
+                            android:textColor="#000"
+                            android:textSize="@dimen/_13sdp" />
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card20"
+                    app:cardUseCompatPadding="true"
+                    app:cardElevation="@dimen/_5sdp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <ImageView
+                            android:id="@+id/image19"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:src="@drawable/pdf" />
+                        <TextView
+                            android:id="@+id/name19"
+                            android:fontFamily="@font/nunitosans_regular"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="10dp"
+                            android:text="@string/upgrade_total_employees_system"
+                            android:textColor="#000"
+                            android:textSize="@dimen/_13sdp" />
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</RelativeLayout>

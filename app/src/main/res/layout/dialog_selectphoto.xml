@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_15sdp"
+        android:orientation="vertical">
+
+
+
+        <ImageView
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_width="@dimen/_86sdp"
+            android:layout_height="@dimen/_86sdp"
+            android:layout_gravity="center"
+            android:src="@drawable/photo"/>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:text="Choose photo from Gallary"
+            android:textSize="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:textColor="@color/colorPrimary"
+            android:id="@+id/dialogChoosePhoto"
+            android:gravity="center"/>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:text="Take a Photo"
+            android:textSize="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_1sdp"
+            android:textColor="@color/colorPrimary"
+            android:id="@+id/dialogOpenCamera"
+            android:gravity="center"
+            android:layout_below="@+id/dialogChoosePhoto"/>
+
+
+        <TextView
+            android:id="@+id/cancel_dialog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cancel"
+            android:textSize="@dimen/_11sdp"
+            android:layout_marginTop="@dimen/_1sdp"
+            android:textColor="@color/orange_800"
+            android:gravity="end"
+            android:layout_marginRight="@dimen/_20sdp"
+            android:layout_below="@+id/dialogOpenCamera"/>
+
+
+
+
+    </LinearLayout>
+
+
+
+
+</RelativeLayout>
